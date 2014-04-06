@@ -1196,17 +1196,17 @@ begin
         v.icenable := not ico.diagrdy;
         rdatasel := icache;
       when ASI_DTAG =>
-        tdiagwrite := not dci.eenaddr and dci.enaddr and dci.write;
+        tdiagwrite := dci.write;
         twrite := not dci.eenaddr and dci.enaddr and dci.write;
         rdatasel := dtag; 
       when ASI_MMUSNOOP_DTAG =>
         if DSNOOPSEP then snoopaddr := taddr(OFFSET_HIGH downto OFFSET_LOW); end if; 
-        tdiagwrite := not dci.eenaddr and dci.enaddr and dci.write;
+        tdiagwrite := dci.write;
         tpwrite := not dci.eenaddr and dci.enaddr and dci.write;
         rdatasel := mmusnoop_dtag; senable := (others => '1');
       when ASI_DDATA =>
         if M_EN then
-        ddiagwrite := not dci.eenaddr and dci.enaddr and dci.write;
+        ddiagwrite := dci.write;
         dwrite := not dci.eenaddr and dci.enaddr and dci.write;
         rdatasel := dddata;
         end if;
