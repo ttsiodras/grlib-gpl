@@ -3073,6 +3073,7 @@ begin
 
     if ISETS > 1 then de_inst := r.d.inst(conv_integer(r.d.set));
     else de_inst := r.d.inst(0); end if;
+    if is_fpga(FABTECH) /= 0 then de_inst := r.d.inst(0); end if;
 
     de_icc := r.m.icc; v.a.cwp := r.d.cwp;
     su_et_select(r, v.w.s.ps, v.w.s.s, v.w.s.et, v.a.su, v.a.et);
@@ -3241,7 +3242,11 @@ begin
       end loop;
       v.d.set := ico.set(ISETMSB downto 0);             -- latch instruction
       v.d.mexc := ico.mexc;                             -- latch instruction
-
+      if is_fpga(FABTECH) /= 0 then
+	v.d.inst := (others => zero32);
+	v.d.inst(0) := ico.data(conv_integer(v.d.set));
+	v.d.set := (others => '0');
+      end if;
     end if;
 
 -----------------------------------------------------------------------
