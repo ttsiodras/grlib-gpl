@@ -1,0 +1,168 @@
+From 81dd049ccad1788c70c173899b8a1f228cd84f77 Mon Sep 17 00:00:00 2001
+From: Martin Wilson <mrw@trimetix.co.uk>
+Date: Wed, 14 Jan 2015 10:42:12 +0000
+Subject: [PATCH] Ethernet Debug Configuration
+
+Signed-off-by: Martin Wilson <mrw@trimetix.co.uk>
+---
+ designs/leon3-altium-nano3000-xilinx/.config    |   16 ++++++++--
+ designs/leon3-altium-nano3000-xilinx/config.h   |   16 ++++++++--
+ designs/leon3-altium-nano3000-xilinx/config.vhd |   39 ++++++++---------------
+ 3 files changed, 40 insertions(+), 31 deletions(-)
+
+diff --git a/designs/leon3-altium-nano3000-xilinx/.config b/designs/leon3-altium-nano3000-xilinx/.config
+index c1324db..cb6b1b7 100644
+--- a/designs/leon3-altium-nano3000-xilinx/.config
++++ b/designs/leon3-altium-nano3000-xilinx/.config
+@@ -201,7 +201,7 @@ CONFIG_DSU_ENABLE=y
+ # VHDL debug settings       
+ #
+ # CONFIG_IU_DISAS is not set
+-CONFIG_DEBUG_PC32=y
++# CONFIG_DEBUG_PC32 is not set
+ 
+ #
+ # AMBA configuration
+@@ -219,8 +219,18 @@ CONFIG_APB_HADDR=800
+ # Debug Link           
+ #
+ # CONFIG_DSU_UART is not set
+-CONFIG_DSU_JTAG=y
+-# CONFIG_DSU_ETH is not set
++# CONFIG_DSU_JTAG is not set
++CONFIG_DSU_ETH=y
++# CONFIG_DSU_ETHSZ1 is not set
++CONFIG_DSU_ETHSZ2=y
++# CONFIG_DSU_ETHSZ4 is not set
++# CONFIG_DSU_ETHSZ8 is not set
++# CONFIG_DSU_ETHSZ16 is not set
++CONFIG_DSU_IPMSB=C0A8
++CONFIG_DSU_IPLSB=0033
++CONFIG_DSU_ETHMSB=0000EE
++CONFIG_DSU_ETHLSB=100044
++# CONFIG_DSU_ETH_PROG is not set
+ 
+ #
+ # Memory controllers                
+diff --git a/designs/leon3-altium-nano3000-xilinx/config.h b/designs/leon3-altium-nano3000-xilinx/config.h
+index 713c52e..26133cb 100644
+--- a/designs/leon3-altium-nano3000-xilinx/config.h
++++ b/designs/leon3-altium-nano3000-xilinx/config.h
+@@ -192,7 +192,7 @@
+  * VHDL debug settings       
+  */
+ #undef  CONFIG_IU_DISAS
+-#define CONFIG_DEBUG_PC32 1
++#undef  CONFIG_DEBUG_PC32
+ /*
+  * AMBA configuration
+  */
+@@ -208,8 +208,18 @@
+  * Debug Link           
+  */
+ #undef  CONFIG_DSU_UART
+-#define CONFIG_DSU_JTAG 1
+-#undef  CONFIG_DSU_ETH
++#undef  CONFIG_DSU_JTAG
++#define CONFIG_DSU_ETH 1
++#undef  CONFIG_DSU_ETHSZ1
++#define CONFIG_DSU_ETHSZ2 1
++#undef  CONFIG_DSU_ETHSZ4
++#undef  CONFIG_DSU_ETHSZ8
++#undef  CONFIG_DSU_ETHSZ16
++#define CONFIG_DSU_IPMSB C0A8
++#define CONFIG_DSU_IPLSB 0033
++#define CONFIG_DSU_ETHMSB 0000EE
++#define CONFIG_DSU_ETHLSB 100044
++#undef  CONFIG_DSU_ETH_PROG
+ /*
+  * Memory controllers                
+  */
+diff --git a/designs/leon3-altium-nano3000-xilinx/config.vhd b/designs/leon3-altium-nano3000-xilinx/config.vhd
+index 6afa9ea..19e0125 100644
+--- a/designs/leon3-altium-nano3000-xilinx/config.vhd
++++ b/designs/leon3-altium-nano3000-xilinx/config.vhd
+@@ -1,29 +1,16 @@
++
++
+ -----------------------------------------------------------------------------
+ -- LEON3 Demonstration design test bench configuration
++-- Copyright (C) 2009 Aeroflex Gaisler
+ ------------------------------------------------------------------------------
+---  This file is a part of the GRLIB VHDL IP LIBRARY
+---  Copyright (C) 2003 - 2008, Gaisler Research
+---  Copyright (C) 2008 - 2014, Aeroflex Gaisler
+---  Copyright (C) 2014 Martin Wilson <mrw@trimetix.co.uk>
+---
+---  This program is free software; you can redistribute it and/or modify
+---  it under the terms of the GNU General Public License as published by
+---  the Free Software Foundation; either version 2 of the License, or
+---  (at your option) any later version.
+---
+---  This program is distributed in the hope that it will be useful,
+---  but WITHOUT ANY WARRANTY; without even the implied warranty of
+---  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+---  GNU General Public License for more details.
+---
+---  You should have received a copy of the GNU General Public License
+---  along with this program; if not, write to the Free Software
+---  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+-------------------------------------------------------------------------------
++
+ 
+ library techmap;
+ use techmap.gencomp.all;
++
+ package config is
++
+ -- board options
+ -- Technology and synthesis options
+   constant CFG_FABTECH : integer := spartan3;
+@@ -93,7 +80,7 @@ package config is
+   constant CFG_CACHE_ERRINJ : integer := 0;
+   constant CFG_LEON3_NETLIST: integer := 0;
+   constant CFG_DISAS : integer := 0 + 0;
+-  constant CFG_PCLOW : integer := 0;
++  constant CFG_PCLOW : integer := 2;
+ -- AMBA settings
+   constant CFG_DEFMST : integer := (0);
+   constant CFG_RROBIN : integer := 1;
+@@ -108,14 +95,14 @@ package config is
+ -- DSU UART
+   constant CFG_AHB_UART : integer := 0;
+ -- JTAG based DSU interface
+-  constant CFG_AHB_JTAG : integer := 1;
++  constant CFG_AHB_JTAG : integer := 0;
+ -- Ethernet DSU
+-  constant CFG_DSU_ETH : integer := 0 + 0 + 0;
+-  constant CFG_ETH_BUF : integer := 1;
++  constant CFG_DSU_ETH : integer := 1 + 0 + 0;
++  constant CFG_ETH_BUF : integer := 2;
+   constant CFG_ETH_IPM : integer := 16#C0A8#;
+   constant CFG_ETH_IPL : integer := 16#0033#;
+-  constant CFG_ETH_ENM : integer := 16#020000#;
+-  constant CFG_ETH_ENL : integer := 16#000009#;
++  constant CFG_ETH_ENM : integer := 16#0000EE#;
++  constant CFG_ETH_ENL : integer := 16#100044#;
+ -- LEON2 memory controller
+   constant CFG_MCTRL_LEON2 : integer := 1;
+   constant CFG_MCTRL_RAM8BIT : integer := 0;
+@@ -147,6 +134,7 @@ package config is
+ -- LEON3 interrupt controller
+   constant CFG_IRQ3_ENABLE : integer := 1;
+   constant CFG_IRQ3_NSEC : integer := 0;
++
+ -- Modular timer
+   constant CFG_GPT_ENABLE : integer := 1;
+   constant CFG_GPT_NTIM : integer := (2);
+@@ -156,6 +144,7 @@ package config is
+   constant CFG_GPT_SEPIRQ : integer := 1;
+   constant CFG_GPT_WDOGEN : integer := 0;
+   constant CFG_GPT_WDOG : integer := 16#0#;
++
+ -- GRLIB debugging
+   constant CFG_DUART : integer := 1;
+ end;
+-- 
+1.7.9.5
+
