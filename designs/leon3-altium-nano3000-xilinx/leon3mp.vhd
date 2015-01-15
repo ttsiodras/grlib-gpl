@@ -21,6 +21,10 @@
 --  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
 ------------------------------------------------------------------------------
 
+------------------------------------------------------------------------------
+-- 14 Jan 2015 Martin Wilson Fix problem EDCL active when disabled in config  
+------------------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
 library grlib, techmap;
@@ -423,7 +427,7 @@ begin
       generic map(hindex       => CFG_NCPU+CFG_AHB_UART+CFG_AHB_JTAG,
                   pindex       => 4, paddr => 4, pirq => 4, memtech => memtech,
                   mdcscaler    => CPU_FREQ/1000, enable_mdio => 1, fifosize => CFG_ETH_FIFO,
-                  nsync        => 2, edcl => 1, edclbufsz => CFG_ETH_BUF,
+                  nsync        => 2, edcl => CFG_DSU_ETH, edclbufsz => CFG_ETH_BUF,
                   macaddrh     => CFG_ETH_ENM, macaddrl => CFG_ETH_ENL, phyrstadr => 1,
                   ipaddrh      => CFG_ETH_IPM, ipaddrl => CFG_ETH_IPL,
                   enable_mdint => 0)
