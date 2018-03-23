@@ -918,5 +918,52 @@ package ddrpkg is
     ui_clk_sync_rst   : out   std_logic
    );
   end component ;
+  
+  component ahb2mig_7series_ddr3_dq16 
+  generic(
+    hindex                  : integer := 0;
+    haddr                   : integer := 0;
+    hmask                   : integer := 16#f00#;
+    pindex                  : integer := 0;
+    paddr                   : integer := 0;
+    pmask                   : integer := 16#fff#;
+    maxwriteburst           : integer := 8;
+    maxreadburst            : integer := 8;
+    SIM_BYPASS_INIT_CAL     : string  := "OFF";
+    SIMULATION              : string  := "FALSE";
+    chipabits               : integer := 14; -- number of address bits on the memory
+    abits                   : integer := 28; -- number of bits needed to address all RAM memory
+    banksbits               : integer := 3;  -- number of bank address bits
+    USE_MIG_INTERFACE_MODEL : boolean := false
+  );
+  port(
+    ddr3_dq           : inout std_logic_vector(15 downto 0);
+    ddr3_dqs_p        : inout std_logic_vector(1 downto 0);
+    ddr3_dqs_n        : inout std_logic_vector(1 downto 0);
+    ddr3_addr         : out   std_logic_vector(chipabits-1 downto 0);
+    ddr3_ba           : out   std_logic_vector(banksbits-1 downto 0);
+    ddr3_ras_n        : out   std_logic;
+    ddr3_cas_n        : out   std_logic;
+    ddr3_we_n         : out   std_logic;
+    ddr3_reset_n      : out   std_logic;
+    ddr3_ck_p         : out   std_logic_vector(0 downto 0);
+    ddr3_ck_n         : out   std_logic_vector(0 downto 0);
+    ddr3_cke          : out   std_logic_vector(0 downto 0);
+    ddr3_dm           : out   std_logic_vector(1 downto 0);
+    ddr3_odt          : out   std_logic_vector(0 downto 0);
+    ahbso             : out   ahb_slv_out_type;
+    ahbsi             : in    ahb_slv_in_type;
+    apbi              : in    apb_slv_in_type;
+    apbo              : out   apb_slv_out_type;
+    calib_done        : out   std_logic;
+    rst_n_syn         : in    std_logic;
+    rst_n_async       : in    std_logic;
+    clk_amba          : in    std_logic;
+    sys_clk_i         : in    std_logic;
+--    clk_ref_i         : in    std_logic;
+    ui_clk            : out   std_logic;
+    ui_clk_sync_rst   : out   std_logic
+   );
+   end component;
 
 end package;
