@@ -75,15 +75,6 @@ entity leon3mp is
 --    switch        : in std_logic_vector(7 downto 0); 	-- switches
 --    button        : in std_logic_vector(2 downto 0); 	-- buttons
 
-    ps2clk        : inout std_logic;
-    ps2data       : inout std_logic;
-
-    vid_hsync     : out std_ulogic;
-    vid_vsync     : out std_ulogic;
-    vid_r         : out std_logic;
-    vid_g         : out std_logic;
-    vid_b         : out std_logic
-
 	);
 end;
 
@@ -131,9 +122,6 @@ signal gpioo : gpio_out_type;
 signal lclk, rst : std_ulogic;
 signal tck, tckn, tms, tdi, tdo : std_ulogic;
 
-signal kbdi  : ps2_in_type;
-signal kbdo  : ps2_out_type;
-signal vgao  : apbvga_out_type;
 signal clkval : std_logic_vector(1 downto 0);
 
 
@@ -141,9 +129,6 @@ constant BOARD_FREQ : integer := 50000;   -- input frequency in KHz
 constant CPU_FREQ : integer := BOARD_FREQ * CFG_CLKMUL / CFG_CLKDIV;  -- cpu frequency in KHz
 constant IOAEN : integer := 0;
 
-signal dac_clk, clk1x, vid_clock, video_clk, clkvga : std_logic;  -- signals to vga_clkgen.
-signal clk_sel : std_logic_vector(1 downto 0);
-                         
 attribute keep : boolean;
 attribute syn_keep : boolean;
 attribute syn_preserve : boolean;
@@ -312,18 +297,6 @@ begin
 
   nogpt : if CFG_GPT_ENABLE = 0 generate apbo(3) <= apb_none; end generate;
 
-  kbd : if CFG_KBD_ENABLE /= 0 generate
-    ps20 : apbps2 generic map(pindex => 5, paddr => 5, pirq => 5)
-      port map(rstn, clkm, apbi, apbo(5), kbdi, kbdo);
-  end generate;
-  nokbd : if CFG_KBD_ENABLE = 0 generate 
-	apbo(5) <= apb_none; kbdo <= ps2o_none;
-  end generate;
-  kbdclk_pad : iopad generic map (tech => padtech)
-      port map (ps2clk,kbdo.ps2_clk_o, kbdo.ps2_clk_oe, kbdi.ps2_clk_i);
-  kbdata_pad : iopad generic map (tech => padtech)
-        port map (ps2data, kbdo.ps2_data_o, kbdo.ps2_data_oe, kbdi.ps2_data_i);
-
   clkdiv : process(clk1x, rstn)
     begin
 	if rstn = '0' then clkval <= "00";
@@ -331,43 +304,6 @@ begin
 	  clkval <= clkval + 1;
 	end if;
   end process;
-
-  vga : if CFG_VGA_ENABLE /= 0 generate
-    vga0 : apbvga generic map(memtech => memtech, pindex => 6, paddr => 6)
-       port map(rstn, clkm, video_clk, apbi, apbo(6), vgao);
-    video_clock_pad : outpad generic map ( tech => padtech)
-        port map (vid_clock, dac_clk);
-    dac_clk <= not video_clk;
-    b1 : techbuf generic map (2, virtex2) port map (clkval(0), video_clk);
-   end generate;
-  
-  svga : if CFG_SVGA_ENABLE /= 0 generate
-    clkvga <= clkval(1) when clk_sel = "00" else clkval(0) when clk_sel = "01" else clkm;
-    b1 : techbuf generic map (2, virtex2) port map (clkvga, video_clk);
-    svga0 : svgactrl generic map(memtech => memtech, pindex => 6, paddr => 6,
-                hindex => CFG_NCPU+CFG_AHB_JTAG, 
-		clk0 => 40000, clk1 => 20000, clk2 => 25000)
-       port map(rstn, clkm, video_clk, apbi, apbo(6), vgao, ahbmi, 
-		ahbmo(CFG_NCPU+CFG_AHB_JTAG), clk_sel);
-    dac_clk <= not video_clk;
-    video_clock_pad : outpad generic map ( tech => padtech)
-        port map (vid_clock, dac_clk);
-  end generate;
-
-  novga : if (CFG_VGA_ENABLE = 0 and CFG_SVGA_ENABLE = 0) generate
-    apbo(6) <= apb_none; vgao <= vgao_none;
-  end generate;
-  
-  vert_sync_pad : outpad generic map (tech => padtech)
-        port map (vid_vsync, vgao.vsync);
-  horiz_sync_pad : outpad generic map (tech => padtech)
-        port map (vid_hsync, vgao.hsync);
-  video_out_r_pad : outpad generic map (tech => padtech)
-        port map (vid_r, vgao.video_out_r(7));
-  video_out_g_pad : outpad generic map (tech => padtech)
-        port map (vid_g, vgao.video_out_g(7));
-  video_out_b_pad : outpad generic map (tech => padtech)
-        port map (vid_b, vgao.video_out_b(7)); 
 
   gpio0 : if CFG_GRGPIO_ENABLE /= 0 generate     -- GPIO unit
     grgpio0: grgpio
