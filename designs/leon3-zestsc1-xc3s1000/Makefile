@@ -1,7 +1,7 @@
 GRLIB=../..
 TOP=leon3mp
 BOARD=digilent-xc3s1000
-include $(GRLIB)/boards/$(BOARD)/Makefile.inc
+include Makefile.inc
 DEVICE=$(PART)-$(PACKAGE)$(SPEED)
 #UCF=$(GRLIB)/boards/$(BOARD)/$(TOP).ucf
 UCF=leon3mp.ucf
@@ -9,7 +9,7 @@ QSF=$(GRLIB)/boards/$(BOARD)/$(TOP).qsf
 EFFORT=high
 XSTOPT=
 SYNPOPT="set_option -pipe 0; set_option -retiming 0; set_option -write_apr_constraint 0"
-VHDLSYNFILES=config.vhd ahbrom.vhd vga_clkgen.vhd leon3mp.vhd ZestSC1_Host.vhd ZestSC1_Interfaces.vhd ZestSC1_SRAM.vhd
+VHDLSYNFILES=config.vhd ahbrom.vhd vga_clkgen.vhd leon3mp.vhd ZestSC1_Host.vhd ZestSC1_Interfaces.vhd ZestSC1_SRAM.vhd TheBigLeonski.vhd
 VHDLSIMFILES=testbench.vhd
 SIMTOP=testbench
 #SDCFILE=$(GRLIB)/boards/$(BOARD)/default.sdc
