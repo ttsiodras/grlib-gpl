@@ -122,16 +122,13 @@ signal tck, tckn, tms, tdi, tdo : std_ulogic;
 signal clkval : std_logic_vector(1 downto 0);
 
 
-constant BOARD_FREQ : integer := 50000;   -- input frequency in KHz
+constant BOARD_FREQ : integer := 48000;   -- input frequency in KHz
 constant CPU_FREQ : integer := BOARD_FREQ * CFG_CLKMUL / CFG_CLKDIV;  -- cpu frequency in KHz
 constant IOAEN : integer := 0;
 
 attribute keep : boolean;
 attribute syn_keep : boolean;
 attribute syn_preserve : boolean;
-attribute syn_keep of video_clk : signal is true;
-attribute syn_preserve of video_clk : signal is true;
-attribute keep of video_clk : signal is true;
 
 begin
 
@@ -144,9 +141,8 @@ begin
 
   clk_pad : clkpad generic map (tech => padtech) port map (clk, lclk); 
   clkgen0 : clkgen  		-- clock generator
-    generic map (clktech, CFG_CLKMUL, CFG_CLKDIV, CFG_MCTRL_SDEN,
-	CFG_CLK_NOFB, 0, 0, 0, BOARD_FREQ)
-    port map (lclk, lclk, clkm, open, open, open, open, cgi, cgo, open, clk1x);
+    generic map (clktech, CFG_CLKMUL, CFG_CLKDIV, CFG_MCTRL_SDEN, CFG_CLK_NOFB, 0, 0, 0, BOARD_FREQ)
+    port map (lclk, lclk, clkm, open, open, open, open, cgi, cgo, open, open);
 
   resetn_pad : inpad generic map (tech => padtech) port map (reset, rst); 
   rst0 : rstgen			-- reset generator
@@ -284,14 +280,6 @@ begin
   end generate;
 
   nogpt : if CFG_GPT_ENABLE = 0 generate apbo(3) <= apb_none; end generate;
-
-  clkdiv : process(clk1x, rstn)
-    begin
-	if rstn = '0' then clkval <= "00";
-        elsif rising_edge(clk1x) then
-	  clkval <= clkval + 1;
-	end if;
-  end process;
 
   gpio0 : if CFG_GRGPIO_ENABLE /= 0 generate     -- GPIO unit
     grgpio0: grgpio
