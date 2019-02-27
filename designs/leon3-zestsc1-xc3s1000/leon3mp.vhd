@@ -71,10 +71,7 @@ entity leon3mp is
     txd1   	  : out std_ulogic; 			-- UART1 tx data
     rxd1   	  : in  std_ulogic;  			-- UART1 rx data
 
-    pio           : inout std_logic_vector(17 downto 0); 	-- I/O port
---    switch        : in std_logic_vector(7 downto 0); 	-- switches
---    button        : in std_logic_vector(2 downto 0); 	-- buttons
-
+    pio           : inout std_logic_vector(17 downto 0) 	-- I/O port
 	);
 end;
 
@@ -200,15 +197,6 @@ begin
     dsuo.tstop <= '0'; dsuo.active <= '0';
   end generate;
 
---  dcomgen : if CFG_AHB_UART = 1 generate
---    dcom0: ahbuart		-- Debug UART
---    generic map (hindex => CFG_NCPU, pindex => 7, paddr => 7)
---    port map (rstn, clkm, dui, duo, apbi, apbo(7), ahbmi, ahbmo(CFG_NCPU));
---    dsurx_pad : inpad generic map (tech => padtech) port map (rxd2, dui.rxd); 
---    dsutx_pad : outpad generic map (tech => padtech) port map (txd2, duo.txd);
---  end generate;
---  nouah : if CFG_AHB_UART = 0 generate apbo(7) <= apb_none; end generate;
-
   ahbjtaggen0 :if CFG_AHB_JTAG = 1 generate
     ahbjtag0 : ahbjtag generic map(tech => fabtech, hindex => CFG_NCPU)
       port map(rstn, clkm, tck, tms, tdi, tdo, ahbmi, ahbmo(CFG_NCPU),
@@ -325,16 +313,6 @@ begin
 	tech => CFG_MEMTECH, kbytes => CFG_AHBRSZ, pipe => CFG_AHBRPIPE)
     port map ( rstn, clkm, ahbsi, ahbso(7));
   end generate;
-
------------------------------------------------------------------------
----  Drive unused bus elements  ---------------------------------------
------------------------------------------------------------------------
-
---  nam1 : for i in (CFG_NCPU+FG_AHB_UART+CFG_GRETH+CFG_AHB_JTAG) to NAHBMST-1 generate
---    ahbmo(i) <= ahbm_none;
---  end generate;
---  nap0 : for i in 11 to NAPBSLV-1 generate apbo(i) <= apb_none; end generate;
---  nah0 : for i in 8 to NAHBSLV-1 generate ahbso(i) <= ahbs_none; end generate;
 
 -----------------------------------------------------------------------
 ---  Test report module  ----------------------------------------------
