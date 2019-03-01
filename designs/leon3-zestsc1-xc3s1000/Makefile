@@ -1,5 +1,5 @@
 GRLIB=../..
-TOP=leon3mp
+TOP=TheBigLeonski
 BOARD=digilent-xc3s1000
 include Makefile.inc
 DEVICE=$(PART)-$(PACKAGE)$(SPEED)
