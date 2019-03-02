@@ -25,3 +25,6 @@ Previous (successful) attempts at programming said board are [here](https://gith
 (sigh)
 
 I guess I'll try again at some point in the future, with a Leon2 - or a RISC-V Lite.
+
+**UPDATE**: Setting `CFG_GRGPIO_ENABLE` to 0 (disabling Leon's GPIO) dropped the IOBs
+to 174. I am just over the limit of 173 - ARGH.

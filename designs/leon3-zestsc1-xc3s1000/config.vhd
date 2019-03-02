@@ -139,7 +139,7 @@ package config is
   constant CFG_GPT_WDOGEN : integer := 0;
   constant CFG_GPT_WDOG : integer := 16#0#;
 -- GPIO port
-  constant CFG_GRGPIO_ENABLE : integer := 1;
+  constant CFG_GRGPIO_ENABLE : integer := 0;
   constant CFG_GRGPIO_IMASK : integer := 16#00F0#;
   constant CFG_GRGPIO_WIDTH : integer := (18);
 -- VGA and PS2/ interface
