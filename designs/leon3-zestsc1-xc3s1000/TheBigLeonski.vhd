@@ -57,10 +57,9 @@ architecture arch of TheBigLeonski is
         clk	  : in  std_ulogic; 	-- 48 MHz main clock
         error	  : out std_ulogic;
 
-        address   : out std_logic_vector(19 downto 2);
-        data	  : inout std_logic_vector(31 downto 0);
-        ramsn     : out std_logic_vector (1 downto 0);
-        mben   	  : out std_logic_vector (3 downto 0);
+        address   : out std_logic_vector(22 downto 0);
+        datain	  : in std_logic_vector(17 downto 0);
+        dataout   : out std_logic_vector(17 downto 0);
         oen    	  : out std_ulogic;
         writen 	  : out std_ulogic;
 
@@ -69,8 +68,6 @@ architecture arch of TheBigLeonski is
 
         txd1   	  : out std_ulogic; -- Will go to USB-TTL RX
         rxd1   	  : in  std_ulogic; -- Will go to USB-TTL TX
-
-        pio           : inout std_logic_vector(17 downto 0) 	-- I/O port
     );
     end component;
 
@@ -199,7 +196,7 @@ architecture arch of TheBigLeonski is
     signal SRAMDataIn : std_logic_vector(17 downto 0);
     signal SRAMWE : std_logic;
     signal SRAMRE : std_logic;
-    signal SRAMValid : std_logic;
+    -- signal SRAMValid : std_logic;
 
     -- Interrupt signal
     signal Interrupt : std_logic;
@@ -319,6 +316,11 @@ begin
             rxd1 => rxd1,
             dsuact => dsuact,
             dsubre => dsubre
+            address => SRAMAddr,
+            datain => SRAMDataIn,
+            dataout => SRAMDataOut,
+            oen => SRAMRE,
+            writen => SRAMWE
         );
 
     Interfaces : ZestSC1_Interfaces
@@ -384,7 +386,7 @@ begin
             User_Interrupt => Interrupt,
 
             -- SRAM interface
-            User_SRAM_A => SRAMAddr,
+            User_SRAM_A => address,
             User_SRAM_W => SRAMWE,
             User_SRAM_R => SRAMRE,
             User_SRAM_DR_VALID => SRAMValid,

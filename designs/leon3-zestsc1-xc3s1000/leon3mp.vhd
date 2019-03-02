@@ -58,10 +58,9 @@ entity leon3mp is
     reset	  : in  std_ulogic;
     clk		  : in  std_ulogic; 	-- 50 MHz main clock
     error	  : out std_ulogic;
-    address 	  : out std_logic_vector(19 downto 2);
-    data	  : inout std_logic_vector(31 downto 0);
-    ramsn   	  : out std_logic_vector (1 downto 0);
-    mben   	  : out std_logic_vector (3 downto 0);
+    address 	  : out std_logic_vector(22 downto 0);
+    datain	  : in std_logic_vector(17 downto 0);
+    dataout       : out std_logic_vector(17 downto 0);
     oen    	  : out std_ulogic;
     writen 	  : out std_ulogic;
 
@@ -72,7 +71,7 @@ entity leon3mp is
     rxd1   	  : in  std_ulogic;  			-- UART1 rx data
 
     pio           : inout std_logic_vector(17 downto 0) 	-- I/O port
-	);
+  );
 end;
 
 architecture rtl of leon3mp is
@@ -219,22 +218,17 @@ begin
 	invclk => CFG_CLK_NOFB, sepbus => CFG_MCTRL_SEPBUS)
   port map (rstn, clkm, memi, memo, ahbsi, ahbso(0), apbi, apbo(0), wpo, sdo);
 
-  addr_pad : outpadv generic map (width => 18, tech => padtech) 
-	port map (address, memo.address(19 downto 2));
-  ramsa_pad : outpad generic map (tech => padtech) 
-	port map (ramsn(0), memo.ramsn(0)); 
-  ramsb_pad : outpad generic map (tech => padtech) 
-	port map (ramsn(1), memo.ramsn(0)); 
+  addr_pad : outpadv generic map (width => 23, tech => padtech) 
+	port map (address, memo.address(22 downto 0));
   oen_pad  : outpad generic map (tech => padtech) 
 	port map (oen, memo.oen);
   wri_pad  : outpad generic map (tech => padtech) 
 	port map (writen, memo.writen);
-  mben_pads : outpadv generic map (tech => padtech, width => 4)
-        port map (mben, memo.mben);
 
-  data_pads : iopadvv generic map (tech => padtech, width => 32)
-      port map (data, memo.data(31 downto 0),
-	memo.vbdrive(31 downto 0), memi.data(31 downto 0));
+  dataout_pads : iopadvv generic map (tech => padtech, width => 18)
+      port map (dataout, memo.data(17 downto 0));
+  datain_pads : iopadvv generic map (tech => padtech, width => 18)
+      port map (datain, memi.data(17 downto 0));
 
 ----------------------------------------------------------------------
 ---  APB Bridge and various periherals -------------------------------
@@ -287,17 +281,6 @@ begin
   end generate;
 
   nogpt : if CFG_GPT_ENABLE = 0 generate apbo(3) <= apb_none; end generate;
-
-  gpio0 : if CFG_GRGPIO_ENABLE /= 0 generate     -- GPIO unit
-    grgpio0: grgpio
-    generic map(pindex => 8, paddr => 8, imask => CFG_GRGPIO_IMASK, nbits => 18)
-    port map(rst => rstn, clk => clkm, apbi => apbi, apbo => apbo(8),
-    gpioi => gpioi, gpioo => gpioo);
-    pio_pads : iopadvv generic map (width => 18, tech => padtech)
-            port map (pio, gpioo.dout(17 downto 0), gpioo.oen(17 downto 0), 
-	gpioi.din(17 downto 0));
-
-  end generate;
 
 -----------------------------------------------------------------------
 ---  AHB RAM ----------------------------------------------------------

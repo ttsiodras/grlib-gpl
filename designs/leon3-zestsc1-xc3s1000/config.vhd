@@ -105,7 +105,7 @@ package config is
 -- LEON2 memory controller
   constant CFG_MCTRL_LEON2 : integer := 1;
   constant CFG_MCTRL_RAM8BIT : integer := 0;
-  constant CFG_MCTRL_RAM16BIT : integer := 0;
+  constant CFG_MCTRL_RAM16BIT : integer := 1;
   constant CFG_MCTRL_5CS : integer := 0;
   constant CFG_MCTRL_SDEN : integer := 0;
   constant CFG_MCTRL_SEPBUS : integer := 0;
