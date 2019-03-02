@@ -139,12 +139,16 @@ begin
   vcc <= (others => '1'); gnd <= (others => '0');
   cgi.pllctrl <= "00"; cgi.pllrst <= rstraw;
 
-  clk_pad : clkpad generic map (tech => padtech) port map (clk, lclk); 
+  -- clk_pad : clkpad generic map (tech => padtech) port map (clk, lclk); 
+  lclk <= clk;
+
   clkgen0 : clkgen  		-- clock generator
     generic map (clktech, CFG_CLKMUL, CFG_CLKDIV, CFG_MCTRL_SDEN, CFG_CLK_NOFB, 0, 0, 0, BOARD_FREQ)
     port map (lclk, lclk, clkm, open, open, open, open, cgi, cgo, open, open);
 
-  resetn_pad : inpad generic map (tech => padtech) port map (reset, rst); 
+  -- resetn_pad : inpad generic map (tech => padtech) port map (reset, rst); 
+  rst <= reset;
+
   rst0 : rstgen			-- reset generator
   generic map (acthigh => 1)
   port map (rst, clkm, cgo.clklock, rstn, rstraw);
@@ -185,7 +189,10 @@ begin
          ncpu => CFG_NCPU, tbits => 30, tech => memtech, irq => 0, kbytes => CFG_ATBSZ)
       port map (rstn, clkm, ahbmi, ahbsi, ahbso(2), dbgo, dbgi, dsui, dsuo);
       dsui.enable <= '1'; 
-      dsubre_pad : inpad generic map (tech => padtech) port map (dsubre, dsui.break); 
+
+      -- dsubre_pad : inpad generic map (tech => padtech) port map (dsubre, dsui.break); 
+      dsui.break <= dsubre; 
+
       dsuact_pad : outpad generic map (tech => padtech) port map (dsuact, dsuo.active);
     end generate;
   end generate;
