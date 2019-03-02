@@ -219,21 +219,57 @@ begin
     IO_CLK_P <= 'Z';
     Interrupt <= '0';
 
-    IO(0)<=LEDs(0);
-    IO(1)<=LEDs(1);
-    IO(41)<=LEDs(2);
-    IO(42)<=LEDs(3);
-    IO(43)<=LEDs(4);
-    IO(44)<=LEDs(5);
-    IO(45)<=LEDs(6);
-    IO(46)<=LEDs(7);
-
-    IO(2)<= txd1;
-    rxd1 <= std_ulogic(IO(3));
-
     LEDs(0) <= std_logic(txd1);
-    LEDs(1) <= std_logic(rxd1);
     LEDs(2) <= std_logic(dsuact);
+
+    IO(0) <= LEDs(0);
+    IO(1) <= LEDs(1);
+    IO(2) <= txd1;
+    --serial_RX <= IO(3);
+    rxd1 <= std_ulogic(IO(3));
+    IO(4) <= 'Z';
+    IO(5) <= 'Z';
+    IO(6) <= 'Z';
+    IO(7) <= 'Z';
+    IO(8) <= 'Z';
+    IO(9) <= 'Z';
+    IO(10) <= 'Z';
+    IO(11) <= 'Z';
+    IO(12) <= 'Z';
+    IO(13) <= 'Z';
+    IO(14) <= 'Z';
+    IO(15) <= 'Z';
+    IO(16) <= 'Z';
+    IO(17) <= 'Z';
+    IO(18) <= 'Z';
+    IO(19) <= 'Z';
+    IO(20) <= 'Z';
+    IO(21) <= 'Z';
+    IO(22) <= 'Z';
+    IO(23) <= 'Z';
+    IO(24) <= 'Z';
+    IO(25) <= 'Z';
+    IO(26) <= 'Z';
+    IO(27) <= 'Z';
+    IO(28) <= 'Z';
+    IO(29) <= 'Z';
+    IO(30) <= 'Z';
+    IO(31) <= 'Z';
+    IO(32) <= 'Z';
+    IO(33) <= 'Z';
+    IO(34) <= 'Z';
+    IO(35) <= 'Z';
+    IO(36) <= 'Z';
+    IO(37) <= 'Z';
+    IO(38) <= 'Z';
+    IO(39) <= 'Z';
+    IO(40) <= 'Z';
+    IO(41) <= LEDs(2);
+    IO(42) <= LEDs(3);
+    IO(43) <= LEDs(4);
+    IO(44) <= LEDs(5);
+    IO(45) <= LEDs(6);
+    IO(46) <= LEDs(7);
 
     process (RST, CLK)
     begin
