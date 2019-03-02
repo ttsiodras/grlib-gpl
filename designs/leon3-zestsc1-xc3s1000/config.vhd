@@ -113,7 +113,7 @@ package config is
   constant CFG_MCTRL_SD64 : integer := 0;
   constant CFG_MCTRL_PAGE : integer := 0 + 0;
 -- AHB ROM
-  constant CFG_AHBROMEN : integer := 1;
+  constant CFG_AHBROMEN : integer := 0;
   constant CFG_AHBROPIP : integer := 1;
   constant CFG_AHBRODDR : integer := 16#000#;
   constant CFG_ROMADDR : integer := 16#100#;
