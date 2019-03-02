@@ -28,3 +28,14 @@ I guess I'll try again at some point in the future, with a Leon2 - or a RISC-V L
 
 **UPDATE**: Setting `CFG_GRGPIO_ENABLE` to 0 (disabling Leon's GPIO) dropped the IOBs
 to 174. I am just over the limit of 173 - ARGH.
+
+**UPDATE**: I get it now - the IOBs are exhausted because of "ghost" IO entries for
+the 'data' bus. Me=idiot - all this time I thought the leon3mp component's 
+memory-related signals were something the 'daddy' component would connect;
+instead, these are meant to be connected over the UCF file. Kind of violating
+the SW engineer's principles here - "global" (.ucf-based) connections instead of
+letting the user of `leon3mp` decide how to connect things.
+
+That's my excuse, anyway :-)
+
+Time to properly connect my SRAM. Feeling optimistic.
