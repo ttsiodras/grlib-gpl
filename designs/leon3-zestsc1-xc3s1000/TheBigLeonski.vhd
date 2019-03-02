@@ -54,7 +54,7 @@ architecture arch of TheBigLeonski is
     component leon3mp
       port (
         reset	  : in  std_ulogic;
-        clk		  : in  std_ulogic; 	-- 50 MHz main clock
+        clk	  : in  std_ulogic; 	-- 48 MHz main clock
         error	  : out std_ulogic;
 
         address   : out std_logic_vector(19 downto 2);
