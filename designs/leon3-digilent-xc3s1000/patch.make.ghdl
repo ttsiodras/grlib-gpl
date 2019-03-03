@@ -1,0 +1,20 @@
+--- make.ghdl	2019-03-03 08:41:37.982929943 +0000
++++ make.ghdl.mine	2019-03-03 08:40:56.922929136 +0000
+@@ -1,5 +1,8 @@
+ # Import files in libraries
+-.PHONY: ghdl-import
++.PHONY: ghdl-import unisim
++
++include make.unisim
++
+ ghdl-import:
+ 	mkdir -p gnu
+ 	mkdir -p gnu/grlib
+@@ -31,6 +34,7 @@
+ 	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/dftlib/dftlib.vhd
+ 	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/dftlib/synciotest.vhd
+ 	mkdir -p gnu/unisim
++	$(MAKE) -f make.ghdl unisim
+ 	mkdir -p gnu/techmap
+ 	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/gencomp/gencomp.vhd
+ 	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/gencomp/netcomp.vhd
