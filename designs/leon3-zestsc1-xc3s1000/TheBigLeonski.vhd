@@ -7,6 +7,9 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
+library UNISIM;
+use UNISIM.VCOMPONENTS.ALL;
+
 -- The top-level needs to hook up with ZestSC1 connections:
 entity TheBigLeonski is
     port (
@@ -202,9 +205,8 @@ architecture arch of TheBigLeonski is
     signal dsuact : std_ulogic;
     signal iu_error : std_ulogic;
 
-    -- The SRAM bridge to Leon - the 'inout' must be state-machined
-    -- into the SRAMDataOut and out of SRAMDataIn
-    signal data : std_logic_vector(15 downto 0);
+    signal serial_info_sent_from_PC : std_logic;
+    signal serial_info_sent_from_PC_IBUFD : std_logic;
 begin
 
     -- Tie unused signals.
@@ -217,12 +219,15 @@ begin
     LEDs(0) <= std_logic(dsu_rx);
     LEDs(1) <= std_logic(iu_error);
     LEDs(2) <= std_logic(dsuact);
-    LEDs(3) <= IO(3);
+    -- LEDs(3) <= serial_info_sent_from_PC_IBUFD; -- done directly at IO(42) below
 
+    serial_info_sent_from_PC <= IO(3);
     IO(0) <= LEDs(0);
     IO(1) <= LEDs(1);
     IO(2) <= dsu_rx;
-    dsu_tx <= std_ulogic(IO(3));
+    dsu_tx <= std_ulogic(serial_info_sent_from_PC_IBUFD);
+
+
     IO(4) <= 'Z';
     IO(5) <= 'Z';
     IO(6) <= 'Z';
@@ -261,7 +266,7 @@ begin
     IO(39) <= 'Z';
     IO(40) <= 'Z';
     IO(41) <= LEDs(2);
-    IO(42) <= LEDs(3);
+    IO(42) <= serial_info_sent_from_PC_IBUFD;
     IO(43) <= LEDs(4);
     IO(44) <= LEDs(5);
     IO(45) <= LEDs(6);
@@ -304,6 +309,10 @@ begin
     end process;
 
     -- Instantiate components
+    dsu_rx_inbuf: OBUF
+         port map (
+          I => serial_info_sent_from_PC,
+          O => serial_info_sent_from_PC_IBUFD);
 
     LeonTheProfessional : leon3mp
         port map (
