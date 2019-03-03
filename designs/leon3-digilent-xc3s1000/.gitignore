@@ -52,3 +52,4 @@ testbench
 testbench.mpf
 vcs_libs
 vivado/
+ghdl.log
