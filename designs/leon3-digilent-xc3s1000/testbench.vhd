@@ -226,7 +226,7 @@ begin
 
   begin
 
-    dsucfg(txd2, rxd2);
+    dsucfg(txd1, rxd1);
 
     wait;
   end process;
