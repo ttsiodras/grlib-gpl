@@ -66,6 +66,8 @@ architecture behav of testbench is
   );
   end component;
 
+  constant CLK_PERIOD : time := 20 ns;
+
 begin
   d3 : leon3mp
     port map (
@@ -77,16 +79,13 @@ begin
         dsu_tx => dsu_tx
     );
 
-  process
-  begin
-      clk <= not clk;
-      wait for 50 ns;
-  end process;
+  clk <= not clk after CLK_PERIOD/2;
 
   process
   begin
-    wait for 1000 us;
-    assert (iu_error = '0')
+    wait for 5000 us;
+    if to_x01(iu_error) = '0' then wait on iu_error; end if;
+    assert (to_x01(iu_error) = '0') 
       report "*** IU in error mode, simulation halted ***"
       severity failure;  
   end process;
@@ -97,20 +96,8 @@ begin
       variable c8  : std_logic_vector(7 downto 0);
       constant txp : time := 320 * 1 ns;
     begin
-      dsubre <= '0'; 
-      dsu_tx <= 'H';
-
-      rst <= '0';
-      wait for 25 ns;
-      rst <= '1';
-      wait for 25 ns;
-
       dsutx <= '1';
-      RST <= '1';
-      wait for 2500 ns;
-      RST <= '0';
-      wait;
-      wait for 5000 ns;
+      wait for 50 us;
       txc(dsutx, 16#55#, txp);		-- sync uart
 
       txc(dsutx, 16#c0#, txp);

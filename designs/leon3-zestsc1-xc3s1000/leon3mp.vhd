@@ -108,7 +108,7 @@ architecture rtl of leon3mp is
    signal lclk : std_ulogic;
    signal tck, tckn, tms, tdi, tdo : std_ulogic;
    
-   constant BOARD_FREQ : integer := 48000;   -- input frequency in KHz
+   constant BOARD_FREQ : integer := 50000;   -- input frequency in KHz
    constant CPU_FREQ : integer := BOARD_FREQ * CFG_CLKMUL / CFG_CLKDIV;  -- cpu frequency in KHz
    constant IOAEN : integer := 0;
    
