@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------
 --  LEON3 Demonstration design test bench
---  Copyright (C) 2004 Jiri Gaisler, Gaisler Research
+--  Copyright (C) 2016 Cobham Gaisler
 ------------------------------------------------------------------------------
 --  This file is a part of the GRLIB VHDL IP LIBRARY
 --  Copyright (C) 2003 - 2008, Gaisler Research
@@ -31,7 +31,7 @@ library techmap;
 use techmap.gencomp.all;
 use work.debug.all;
 
-use work.config.all;	-- configuration
+use work.config.all;
 
 entity testbench is
   generic (
@@ -39,189 +39,160 @@ entity testbench is
     memtech   : integer := CFG_MEMTECH;
     padtech   : integer := CFG_PADTECH;
     clktech   : integer := CFG_CLKTECH;
-    disas     : integer := CFG_DISAS;	-- Enable disassembly to console
-    dbguart   : integer := CFG_DUART;	-- Print UART on console
-    pclow     : integer := CFG_PCLOW;
-
-    clkperiod : integer := 20;		-- system clock period
-    romwidth  : integer := 32;		-- rom data width (8/32)
-    romdepth  : integer := 16;		-- rom address depth
-    sramwidth  : integer := 32;		-- ram data width (8/16/32)
-    sramdepth  : integer := 18;		-- ram address depth
-    srambanks  : integer := 2		-- number of ram banks
-  );
-end; 
+    disas     : integer := CFG_DISAS;   -- Enable disassembly to console
+    dbguart   : integer := CFG_DUART;   -- Print UART on console
+    pclow     : integer := CFG_PCLOW
+    );
+end;
 
 architecture behav of testbench is
+  constant lresp : boolean := false;
 
-constant promfile  : string := "prom.srec";  -- rom contents
-constant sramfile  : string := "ram.srec";  -- ram contents
-constant sdramfile : string := "ram.srec"; -- sdram contents
+  signal clk : std_ulogic := '0';
+  signal rst : std_ulogic := '0';
+  signal iu_error : std_ulogic;
+  signal dsubre : std_ulogic;
+  signal dsuact : std_ulogic;
+  signal dsu_tx : std_logic;
+  signal dsu_rx : std_logic;
 
-signal clk : std_logic := '0';
-signal Rst : std_logic := '0';			-- Reset
-constant ct : integer := clkperiod/2;
-
-signal address  : std_logic_vector(22 downto 0);
-signal data     : std_logic_vector(15 downto 0);
-signal mben     : std_logic_vector(3 downto 0);
-signal ramsn   	: std_logic_vector(1 downto 0);
-signal oen      : std_ulogic;
-signal writen   : std_ulogic;
-signal dsuen, dsutx, dsurx, dsubre, dsuact : std_ulogic;
-signal dsurst   : std_ulogic;
-signal GND      : std_ulogic := '0';
-signal VCC      : std_ulogic := '1';
-signal NC       : std_ulogic := 'Z';
-signal clk2     : std_ulogic := '1';
-    
-signal txd1, rxd1 : std_logic;       
-signal txd2, rxd2 : std_logic;       
-signal errorn   : std_logic;       
-
-
-signal vid_hsync   : std_ulogic;
-signal vid_vsync   : std_ulogic;
-signal vid_r       : std_logic;
-signal vid_g       : std_logic;
-signal vid_b       : std_logic;
-signal switch      : std_logic_vector(7 downto 0); 	-- switches
-signal button      : std_logic_vector(2 downto 0); 
-constant lresp : boolean := false;
+  component leon3mp
+    port (
+      clk   : in  std_ulogic;       -- main clock
+      reset : in  std_ulogic;
+      iu_error : out std_ulogic;
+      dsubre : in std_ulogic;
+      dsuact : out std_ulogic;
+      rsrx   : out std_ulogic; -- UART1 tx data
+      rstx   : in  std_ulogic  -- UART1 rx data
+  );
+  end component;
 
 begin
+  d3 : leon3mp
+    port map (
+        clk => CLK,
+        reset => RST,
+        iu_error => iu_error,
+        dsubre => dsubre,
+        dsuact => dsuact,
+        rsrx => dsu_rx,
+        rstx => dsu_tx
+    );
 
--- clock and reset
+  process
+  begin
+      clk <= not clk;
+      wait for 50 ns;
+  end process;
 
-  clk  <= not clk after ct * 1 ns;
-  rst <= dsurst; dsuen <= '1'; dsubre <= '0'; 
-  rxd1 <= 'H';
-  address(1 downto 0) <= "00";
-
-  cpu : entity work.leon3mp
-      generic map ( fabtech, memtech, padtech, clktech, disas, dbguart, pclow)
-      port map (rst, clk, errorn, address(22 downto 0), data, 
-	oen, writen, 
-	dsubre, dsuact, txd1, rxd1
-      );
-
-   sram0 : for i in 0 to 0 generate
-      sr0 : sram16 generic map (index => i*2, abits => 23, fname => sdramfile)
-	port map (address(22 downto 0), data(15 downto 0), 
-		mben(i*2+1), mben(i*2), ramsn(i), writen, oen);
-   end generate;
-
-
-   iuerr : process
-   begin
-     wait for 5000 ns;
-     if to_x01(errorn) = '0' then wait on errorn; end if;
-     assert (to_x01(errorn) = '0') 
-       report "*** IU in error mode, simulation halted ***"
-         severity failure ;
-   end process;
-
-  data <= buskeep(data), (others => 'H') after 250 ns;
+  process
+  begin
+    wait for 10000 us;
+    assert (iu_error = '0')
+      report "*** IU in error mode, simulation halted ***"
+      severity failure;  
+  end process;
 
   dsucom : process
     procedure dsucfg(signal dsurx : in std_ulogic; signal dsutx : out std_ulogic) is
-    variable w32 : std_logic_vector(31 downto 0);
-    variable c8  : std_logic_vector(7 downto 0);
-    constant txp : time := 320 * 1 ns;
+      variable w32 : std_logic_vector(31 downto 0);
+      variable c8  : std_logic_vector(7 downto 0);
+      constant txp : time := 320 * 1 ns;
     begin
-    dsutx <= '1';
-    dsurst <= '1';
-    wait for 2500 ns;
-    dsurst <= '0';
-    wait;
-    wait for 5000 ns;
-    txc(dsutx, 16#55#, txp);		-- sync uart
+      dsubre <= '0'; 
+      dsu_tx <= 'H';
 
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#20#, 16#2e#, txp);
+      rst <= '0';
+      wait for 25 ns;
+      rst <= '1';
+      wait for 25 ns;
 
-    wait for 25000 ns;
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#01#, txp);
+      dsutx <= '1';
+      RST <= '1';
+      wait for 2500 ns;
+      RST <= '0';
+      wait;
+      wait for 5000 ns;
+      txc(dsutx, 16#55#, txp);		-- sync uart
 
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#24#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0D#, txp);
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#20#, 16#2e#, txp);
 
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#70#, 16#11#, 16#78#, txp);
-    txa(dsutx, 16#91#, 16#00#, 16#00#, 16#0D#, txp);
+      wait for 25000 ns;
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#01#, txp);
 
-    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#44#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#20#, 16#00#, txp);
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#90#, 16#40#, 16#00#, 16#24#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0D#, txp);
 
-    txc(dsutx, 16#80#, txp);
-    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#44#, txp);
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#90#, 16#70#, 16#11#, 16#78#, txp);
+      txa(dsutx, 16#91#, 16#00#, 16#00#, 16#0D#, txp);
 
-    wait;
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#0a#, 16#aa#, txp);
-    txa(dsutx, 16#00#, 16#55#, 16#00#, 16#55#, txp);
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#0a#, 16#a0#, txp);
-    txa(dsutx, 16#01#, 16#02#, 16#09#, 16#33#, txp);
+      txa(dsutx, 16#90#, 16#40#, 16#00#, 16#44#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#20#, 16#00#, txp);
 
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#2e#, txp);
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#91#, 16#00#, 16#00#, 16#00#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#2e#, txp);
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0f#, txp);
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#00#, txp);
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#80#, 16#00#, 16#02#, 16#10#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0f#, txp);
+      txc(dsutx, 16#80#, txp);
+      txa(dsutx, 16#90#, 16#40#, 16#00#, 16#44#, txp);
 
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#91#, 16#40#, 16#00#, 16#24#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#24#, txp);
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#91#, 16#70#, 16#00#, 16#00#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#03#, txp);
+      wait;
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#0a#, 16#aa#, txp);
+      txa(dsutx, 16#00#, 16#55#, 16#00#, 16#55#, txp);
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#0a#, 16#a0#, txp);
+      txa(dsutx, 16#01#, 16#02#, 16#09#, 16#33#, txp);
 
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#2e#, txp);
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#91#, 16#00#, 16#00#, 16#00#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#2e#, txp);
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0f#, txp);
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#00#, txp);
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#80#, 16#00#, 16#02#, 16#10#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0f#, txp);
 
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#91#, 16#40#, 16#00#, 16#24#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#24#, txp);
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#91#, 16#70#, 16#00#, 16#00#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#03#, txp);
 
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#ff#, 16#ff#, txp);
 
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#90#, 16#40#, 16#00#, 16#48#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#12#, txp);
 
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#ff#, 16#ff#, txp);
+      txc(dsutx, 16#c0#, txp);
+      txa(dsutx, 16#90#, 16#40#, 16#00#, 16#60#, txp);
+      txa(dsutx, 16#00#, 16#00#, 16#12#, 16#10#, txp);
 
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#48#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#12#, txp);
+      txc(dsutx, 16#80#, txp);
+      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
+      rxi(dsurx, w32, txp, lresp);
 
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#60#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#12#, 16#10#, txp);
-
-    txc(dsutx, 16#80#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
-    rxi(dsurx, w32, txp, lresp);
-
-    txc(dsutx, 16#a0#, txp);
-    txa(dsutx, 16#40#, 16#00#, 16#00#, 16#00#, txp);
-    rxi(dsurx, w32, txp, lresp);
-
-    end;
-
+      txc(dsutx, 16#a0#, txp);
+      txa(dsutx, 16#40#, 16#00#, 16#00#, 16#00#, txp);
+      rxi(dsurx, w32, txp, lresp);
+    end procedure;
   begin
-
-    dsucfg(txd2, rxd2);
-
+    dsucfg(dsu_tx, dsu_rx);
     wait;
   end process;
-end ;
+end;
 

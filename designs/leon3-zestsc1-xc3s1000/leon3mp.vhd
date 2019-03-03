@@ -58,7 +58,7 @@ entity leon3mp is
   port (
     reset	  : in  std_ulogic;
     clk		  : in  std_ulogic; 	-- 50 MHz main clock
-    error	  : out std_ulogic;
+    iu_error	  : out std_ulogic;
     -- address 	  : out std_logic_vector(22 downto 0);
     -- data          : inout std_logic_vector(15 downto 0);
     -- oen    	  : out std_ulogic;
@@ -146,8 +146,8 @@ begin
     generic map (clktech, CFG_CLKMUL, CFG_CLKDIV, CFG_MCTRL_SDEN, CFG_CLK_NOFB, 0, 0, 0, BOARD_FREQ)
     port map (lclk, lclk, clkm, open, open, open, open, cgi, cgo, open, open);
 
-  -- resetn_pad : inpad generic map (tech => padtech) port map (reset, rst); 
-  rst <= reset;
+  resetn_pad : inpad generic map (tech => padtech) port map (reset, rst); 
+  -- rst <= reset;
 
   rst0 : rstgen			-- reset generator
   generic map (acthigh => 1)
@@ -181,7 +181,7 @@ begin
       		irqi(i), irqo(i), dbgi(i), dbgo(i));
     end generate;
     nerror <= not dbgo(0).error;
-    error_pad : outpad generic map (tech => padtech) port map (error, nerror);
+    error_pad : outpad generic map (tech => padtech) port map (iu_error, nerror);
     
     dsugen : if CFG_DSU = 1 generate
       dsu0 : dsu3			-- LEON3 Debug Support Unit
