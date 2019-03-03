@@ -3,3 +3,6 @@ all:
 	make ghdl-import
 	patch -p0 < patch.make.ghdl
 	bash -c 'GHDL_BACKEND=gcc make ghdl-run |& tee ghdl.log'
+
+fast:
+	GHDL_BACKEND=gcc ghdl -m -fexplicit --ieee=synopsys --mb-comments --warn-no-binding --workdir=gnu/work --work=work `cat ghdl.path` testbench && ./testbench --assert-level=error --ieee-asserts=disable
