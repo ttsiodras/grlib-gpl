@@ -42,15 +42,16 @@ Time to properly connect my SRAM. Feeling optimistic.
 
 **UPDATE**: Slight detour: Waiting for a complete S/P/R every time I want to try
 something is not an option... I need to set a proper simulation-first workflow.
-But when I tried `make ghdl`...  it failed for the `unisim` parts.
+But when I tried `make ghdl`...  it failed for the `unisim` parts - somehow,
+the generated `make.ghdl` is missing their processing.
 
-After a lot of huffing and puffing, I managed to fix it - by patching the `make.ghdl`
-file that Jiri's scripts create, to delegate the `unisim` parts to a
+After a lot of huffing and puffing, I managed to fix this - by patching the
+`make.ghdl` file that Jiri's scripts create, to delegate the `unisim` parts to a
 [smaller Makefile of my own](designs/leon3-minimal/make.unisim).
 That one processes VHDL files from the ISE's `src` folder, as well as the
-`libraries` folder of GHDL (which was added as a submodule).
+`libraries` folder of GHDL (which was added as a submodule to this repo).
 
-Et voila!
+And indeed, I can now simulate one of the Spartan3 samples:
 
     $ cd designs/leon3-digilent-xc3s1000
     $ make -f Makefile.ttsiod-ghdl
@@ -126,10 +127,13 @@ Et voila!
     
     testbench.vhd:126:6:@1167615ns:(assertion failure): *** IU in error mode, simulation halted ***
 
-I now have an optimal workflow to test my ZestSC1 work via GHDL before I do
+So I now have an optimal workflow to test my ZestSC1 work via GHDL *before* I do
 anything on the real board.
 
-**UPDATE**: I learned a lot - GHDL was key. I got my ZestSC1 + AHBRAM (BlockRAM) to this point:
+**UPDATE**: Concluded for this weekend. I learned a lot - making GHDL work was key.
+In the end, I setup AHBRAM (BlockRAM) for my ZestSC1 (figuring out SRAM turned
+out to be more difficult than I expected, due to tri-states) - and ended up
+on this point:
 
     $ cd grlib-gpl/designs/leon3-zestsc1-xc3s1000
     $ make  -f Makefile.ttsiod-ghdl 
@@ -138,7 +142,7 @@ anything on the real board.
 
     $ make  -f Makefile.ttsiod-ghdl fast
 
-Gives this:
+Which gives this:
 
     Resetting for 40 cycles
     LEON3 Digilent XC3S1000 Demonstration design
@@ -187,8 +191,33 @@ see it. I launch as follows:
     constant CFG_CLKMUL : integer := (2);
     constant CFG_CLKDIV : integer := (4);
 
-...could mean that I should run at 24MHz. Tried that too - no luck; and
+...could mean that I should run at 24MHz? Tried that too - no luck; and
 without any `-freq` either (in case it could be autodetected).
 
-Ergo I join the armies of the *"But it works in simulation!"* people.
-Oh well, I learned a lot anyway :-)
+So I join the armies of the *"But it works in simulation!"* people :-)
+
+Oh well, I learned a lot at least.
+
+Here are the Xilinx Webpack ISE reports:
+
+- [synthesis](designs/leon3-zestsc1-xc3s1000/TheBigLeonski.srp),
+- [mapping](designs/leon3-zestsc1-xc3s1000/TheBigLeonski.mrp) and
+- [placement and routing](designs/leon3-zestsc1-xc3s1000/TheBigLeonski.par) and
+- [timing](designs/leon3-zestsc1-xc3s1000/TheBigLeonski.twr).
+
+All constraints met... the maximum frequency is far above the 24MHz
+I asked for (via `CFG_CLKMUL/DIV`):
+
+    Design statistics:
+       Minimum period:  28.164ns{1}   (Maximum frequency:  35.506MHz)
+       Minimum input required time before clock:   5.178ns
+       Minimum output required time after clock:   6.676ns
+
+I also gave my code on the PC the ability to
+[reset the board](designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd#284)
+over the USB bus - and verified the commands get there, by hooking this
+up to one of the board LEDs - as I did for the UART TX, which can be
+seen flashing the moment grmon tries to connect over UART in the
+video shown below (just click on the image):
+
+[![Video of current state](contrib/image.jpg "Video of current state.")](https://drive.google.com/open?id=1gLzqmvmTQcRpCRPtwAekiSrse7h4pfPa)

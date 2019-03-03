@@ -1,0 +1,152 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: /home/ttsiod/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild
+TheBigLeonski.ngc -aul -uc leon3mp.ucf -p xc3s1000-ft256-5 -sd
+../../netlists/xilinx/Spartan3
+
+Reading NGO file
+"/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.ngc"
+...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "leon3mp.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem:59 - Constraint <net "IO<0>" LOC = "T12";>
+   [leon3mp.ucf(261)]: NET "IO<0>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<net "IO<0>" LOC = "T12";> [leon3mp.ucf(261)]' could not be found and so the
+   Locate constraint will be removed.
+
+INFO:ConstraintSystem:59 - Constraint <net "IO<2>" LOC = "P16";>
+   [leon3mp.ucf(263)]: NET "IO<2>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<net "IO<2>" LOC = "P16";> [leon3mp.ucf(263)]' could not be found and so the
+   Locate constraint will be removed.
+
+INFO:ConstraintSystem:178 - TNM 'USB_StreamCLK', used in period specification
+   'TS_StreamCLK', was traced into DCM instance
+   Interfaces/INST_ZestSC1_Host/StreamDCM. The following new TNM groups and
+   period specifications were generated at the DCM output(s): 
+   CLK0: <TIMESPEC TS_Interfaces_INST_ZestSC1_Host_StreamCLKFB = PERIOD
+   "Interfaces_INST_ZestSC1_Host_StreamCLKFB" TS_StreamCLK HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'USB_RegCLK', used in period specification
+   'TS_RegCLK', was traced into DCM instance
+   Interfaces/INST_ZestSC1_Host/RegDCM. The following new TNM groups and period
+   specifications were generated at the DCM output(s): 
+   CLK0: <TIMESPEC TS_Interfaces_INST_ZestSC1_Host_RegCLKFB = PERIOD
+   "Interfaces_INST_ZestSC1_Host_RegCLKFB" TS_RegCLK HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'Interfaces_INST_ZestSC1_Host_RegCLKFB', used in
+   period specification 'TS_Interfaces_INST_ZestSC1_Host_RegCLKFB', was traced
+   into DCM instance Interfaces/INST_SRAM/DCM_INST. The following new TNM groups
+   and period specifications were generated at the DCM output(s): 
+   CLK0: <TIMESPEC TS_Interfaces_INST_SRAM_SramClkOut = PERIOD
+   "Interfaces_INST_SRAM_SramClkOut" TS_Interfaces_INST_ZestSC1_Host_RegCLKFB
+   PHASE -1.953125 ns HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'Interfaces_INST_ZestSC1_Host_RegCLKFB', used in
+   period specification 'TS_Interfaces_INST_ZestSC1_Host_RegCLKFB', was traced
+   into DCM instance LeonTheProfessional/clkgen0/xc3s.v/dll0. The following new
+   TNM groups and period specifications were generated at the DCM output(s): 
+   CLKFX: <TIMESPEC TS_LeonTheProfessional_clkgen0_xc3s_v_clk0B = PERIOD
+   "LeonTheProfessional_clkgen0_xc3s_v_clk0B"
+   TS_Interfaces_INST_ZestSC1_Host_RegCLKFB / 0.5 HIGH 50%>
+
+WARNING:ConstraintSystem - The Offset constraint <net "USB_StreamFlags_n<0>"
+   OFFSET = IN 7 ns BEFORE USB_StreamCLK;> [leon3mp.ucf(61)], is specified
+   without a duration.  This will result in a lack of hold time checks in timing
+   reports.  If hold time checks are desired a duration value should be
+   specified following the 'VALID' keyword.
+
+WARNING:ConstraintSystem - The Offset constraint <net "USB_StreamFlags_n<1>"
+   OFFSET = IN 7 ns BEFORE USB_StreamCLK;> [leon3mp.ucf(63)], is specified
+   without a duration.  This will result in a lack of hold time checks in timing
+   reports.  If hold time checks are desired a duration value should be
+   specified following the 'VALID' keyword.
+
+WARNING:ConstraintSystem - The Offset constraint <net "USB_StreamData<*>" OFFSET
+   = in 4.0 ns before USB_StreamCLK;> [leon3mp.ucf(95)], is specified without a
+   duration.  This will result in a lack of hold time checks in timing reports. 
+   If hold time checks are desired a duration value should be specified
+   following the 'VALID' keyword.
+
+Done...
+
+Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'N4399' has no driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(38)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(39)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(0)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(1)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(2)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(3)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(4)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(4)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(5)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(5)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(6)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(6)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(7)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(7)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(8)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(9)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(10)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(11)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO_CLK_N' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(12)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO_CLK_P' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(13)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(14)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(20)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(15)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(21)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(16)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(22)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(17)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(23)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(18)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(24)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(19)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(30)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(25)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(26)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(31)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(32)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(27)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(33)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(28)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(34)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(29)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(40)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(35)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(36)' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'IO(37)' has no legal driver
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:  53
+
+Total memory usage is 420884 kilobytes
+
+Writing NGD file "TheBigLeonski.ngd" ...
+Total REAL time to NGDBUILD completion:  6 sec
+Total CPU time to NGDBUILD completion:   6 sec
+
+Writing NGDBUILD log file "TheBigLeonski.bld"...
