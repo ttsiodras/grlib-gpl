@@ -19,8 +19,8 @@ package config is
   constant CFG_SCAN : integer := 0;
 -- Clock generator
   constant CFG_CLKTECH : integer := spartan3;
-  constant CFG_CLKMUL : integer := (4);
-  constant CFG_CLKDIV : integer := (5);
+  constant CFG_CLKMUL : integer := (2);
+  constant CFG_CLKDIV : integer := (4);
   constant CFG_OCLKDIV : integer := 1;
   constant CFG_OCLKBDIV : integer := 0;
   constant CFG_OCLKCDIV : integer := 0;
