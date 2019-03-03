@@ -2,4 +2,4 @@ all:
 	rm -f scriptgendone
 	make ghdl-import
 	patch -p0 < patch.make.ghdl
-	GHDL_BACKEND=gcc make ghdl-run
+	bash -c 'GHDL_BACKEND=gcc make ghdl-run |& tee ghdl.log'
