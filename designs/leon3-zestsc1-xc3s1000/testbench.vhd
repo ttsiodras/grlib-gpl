@@ -62,10 +62,9 @@ signal clk : std_logic := '0';
 signal Rst : std_logic := '0';			-- Reset
 constant ct : integer := clkperiod/2;
 
-signal address  : std_logic_vector(19 downto 0);
-signal data     : std_logic_vector(31 downto 0);
+signal address  : std_logic_vector(22 downto 0);
+signal data     : std_logic_vector(15 downto 0);
 signal mben     : std_logic_vector(3 downto 0);
-signal pio     	: std_logic_vector(17 downto 0);
 signal ramsn   	: std_logic_vector(1 downto 0);
 signal oen      : std_ulogic;
 signal writen   : std_ulogic;
@@ -80,8 +79,6 @@ signal txd1, rxd1 : std_logic;
 signal txd2, rxd2 : std_logic;       
 signal errorn   : std_logic;       
 
-signal ps2clk      : std_logic;
-signal ps2data     : std_logic;
 
 signal vid_hsync   : std_ulogic;
 signal vid_vsync   : std_ulogic;
@@ -99,24 +96,20 @@ begin
   clk  <= not clk after ct * 1 ns;
   rst <= dsurst; dsuen <= '1'; dsubre <= '0'; 
   rxd1 <= 'H';
-  ps2clk <= 'H'; ps2data <= 'H';
-  pio(4) <= pio(5); pio(1) <= pio(2); pio <= (others => 'H');
   address(1 downto 0) <= "00";
 
   cpu : entity work.leon3mp
       generic map ( fabtech, memtech, padtech, clktech, disas, dbguart, pclow)
-      port map (rst, clk, errorn, address(19 downto 2), data, 
-	ramsn, mben, oen, writen, 
-	dsubre, dsuact, txd1, rxd1, pio, --switch, button,
-        ps2clk, ps2data, 
-        vid_hsync, vid_vsync, vid_r, vid_g, vid_b 
+      port map (rst, clk, errorn, address(22 downto 0), data, 
+	oen, writen, 
+	dsubre, dsuact, txd1, rxd1
       );
 
-  sram0 : for i in 0 to 1 generate
-      sr0 : sram16 generic map (index => i*2, abits => 18, fname => sdramfile)
-	port map (address(19 downto 2), data(31-i*16 downto 16-i*16), 
+   sram0 : for i in 0 to 0 generate
+      sr0 : sram16 generic map (index => i*2, abits => 23, fname => sdramfile)
+	port map (address(22 downto 0), data(15 downto 0), 
 		mben(i*2+1), mben(i*2), ramsn(i), writen, oen);
-  end generate;
+   end generate;
 
 
    iuerr : process

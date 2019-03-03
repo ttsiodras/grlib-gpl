@@ -59,8 +59,7 @@ entity leon3mp is
     clk		  : in  std_ulogic; 	-- 50 MHz main clock
     error	  : out std_ulogic;
     address 	  : out std_logic_vector(22 downto 0);
-    datain	  : in std_logic_vector(17 downto 0);
-    dataout       : out std_logic_vector(17 downto 0);
+    data          : inout std_logic_vector(15 downto 0);
     oen    	  : out std_ulogic;
     writen 	  : out std_ulogic;
 
@@ -68,67 +67,65 @@ entity leon3mp is
     dsuact  	  : out std_ulogic;
 
     txd1   	  : out std_ulogic; 			-- UART1 tx data
-    rxd1   	  : in  std_ulogic;  			-- UART1 rx data
-
-    pio           : inout std_logic_vector(17 downto 0) 	-- I/O port
+    rxd1   	  : in  std_ulogic  			-- UART1 rx data
   );
 end;
 
 architecture rtl of leon3mp is
 
-constant blength : integer := 12;
-constant fifodepth : integer := 8;
-constant maxahbm : integer := CFG_NCPU+
-	CFG_AHB_JTAG+CFG_SVGA_ENABLE;
-
-signal vcc, gnd   : std_logic_vector(4 downto 0);
-signal memi  : memory_in_type;
-signal memo  : memory_out_type;
-signal wpo   : wprot_out_type;
-signal sdi   : sdctrl_in_type;
-signal sdo   : sdram_out_type;
-
-signal apbi  : apb_slv_in_type;
-signal apbo  : apb_slv_out_vector := (others => apb_none);
-signal ahbsi : ahb_slv_in_type;
-signal ahbso : ahb_slv_out_vector := (others => ahbs_none);
-signal ahbmi : ahb_mst_in_type;
-signal ahbmo : ahb_mst_out_vector := (others => ahbm_none);
-
-signal clkm, rstn, rstraw, nerror : std_ulogic;
-signal cgi   : clkgen_in_type;
-signal cgo   : clkgen_out_type;
-signal u1i, u2i, dui : uart_in_type;
-signal u1o, u2o, duo : uart_out_type;
-
-signal irqi : irq_in_vector(0 to CFG_NCPU-1);
-signal irqo : irq_out_vector(0 to CFG_NCPU-1);
-
-signal dbgi : l3_debug_in_vector(0 to CFG_NCPU-1);
-signal dbgo : l3_debug_out_vector(0 to CFG_NCPU-1);
-
-signal dsui : dsu_in_type;
-signal dsuo : dsu_out_type; 
-
-signal gpti : gptimer_in_type;
-
-signal gpioi : gpio_in_type;
-signal gpioo : gpio_out_type;
-
-signal lclk, rst : std_ulogic;
-signal tck, tckn, tms, tdi, tdo : std_ulogic;
-
-signal clkval : std_logic_vector(1 downto 0);
-
-
-constant BOARD_FREQ : integer := 48000;   -- input frequency in KHz
-constant CPU_FREQ : integer := BOARD_FREQ * CFG_CLKMUL / CFG_CLKDIV;  -- cpu frequency in KHz
-constant IOAEN : integer := 0;
-
-attribute keep : boolean;
-attribute syn_keep : boolean;
-attribute syn_preserve : boolean;
-
+   constant blength : integer := 12;
+   constant fifodepth : integer := 8;
+   constant maxahbm : integer := CFG_NCPU+
+   	CFG_AHB_JTAG+CFG_SVGA_ENABLE;
+   
+   signal vcc, gnd   : std_logic_vector(4 downto 0);
+   signal memi  : memory_in_type;
+   signal memo  : memory_out_type;
+   signal wpo   : wprot_out_type;
+   signal sdi   : sdctrl_in_type;
+   signal sdo   : sdram_out_type;
+   
+   signal apbi  : apb_slv_in_type;
+   signal apbo  : apb_slv_out_vector := (others => apb_none);
+   signal ahbsi : ahb_slv_in_type;
+   signal ahbso : ahb_slv_out_vector := (others => ahbs_none);
+   signal ahbmi : ahb_mst_in_type;
+   signal ahbmo : ahb_mst_out_vector := (others => ahbm_none);
+   
+   signal clkm, rstn, rstraw, nerror : std_ulogic;
+   signal cgi   : clkgen_in_type;
+   signal cgo   : clkgen_out_type;
+   signal u1i, u2i, dui : uart_in_type;
+   signal u1o, u2o, duo : uart_out_type;
+   
+   signal irqi : irq_in_vector(0 to CFG_NCPU-1);
+   signal irqo : irq_out_vector(0 to CFG_NCPU-1);
+   
+   signal dbgi : l3_debug_in_vector(0 to CFG_NCPU-1);
+   signal dbgo : l3_debug_out_vector(0 to CFG_NCPU-1);
+   
+   signal dsui : dsu_in_type;
+   signal dsuo : dsu_out_type; 
+   
+   signal gpti : gptimer_in_type;
+   
+   signal gpioi : gpio_in_type;
+   signal gpioo : gpio_out_type;
+   
+   signal lclk, rst : std_ulogic;
+   signal tck, tckn, tms, tdi, tdo : std_ulogic;
+   
+   signal clkval : std_logic_vector(1 downto 0);
+   
+   
+   constant BOARD_FREQ : integer := 48000;   -- input frequency in KHz
+   constant CPU_FREQ : integer := BOARD_FREQ * CFG_CLKMUL / CFG_CLKDIV;  -- cpu frequency in KHz
+   constant IOAEN : integer := 0;
+   
+   attribute keep : boolean;
+   attribute syn_keep : boolean;
+   attribute syn_preserve : boolean;
+   
 begin
 
 ----------------------------------------------------------------------
@@ -225,10 +222,8 @@ begin
   wri_pad  : outpad generic map (tech => padtech) 
 	port map (writen, memo.writen);
 
-  dataout_pads : iopadvv generic map (tech => padtech, width => 18)
-      port map (dataout, memo.data(17 downto 0));
-  datain_pads : iopadvv generic map (tech => padtech, width => 18)
-      port map (datain, memi.data(17 downto 0));
+  data_pads : iopadvv generic map (tech => padtech, width => 16)
+      port map (data, memi.data(15 downto 0));
 
 ----------------------------------------------------------------------
 ---  APB Bridge and various periherals -------------------------------
@@ -315,5 +310,5 @@ begin
    mdel => 1
   );
 -- pragma translate_on
-end;
 
+end;

@@ -56,10 +56,8 @@ architecture arch of TheBigLeonski is
         reset	  : in  std_ulogic;
         clk	  : in  std_ulogic; 	-- 48 MHz main clock
         error	  : out std_ulogic;
-
         address   : out std_logic_vector(22 downto 0);
-        datain	  : in std_logic_vector(17 downto 0);
-        dataout   : out std_logic_vector(17 downto 0);
+        data  	  : inout std_logic_vector(15 downto 0);
         oen    	  : out std_ulogic;
         writen 	  : out std_ulogic;
 
@@ -67,7 +65,7 @@ architecture arch of TheBigLeonski is
         dsuact    : out std_ulogic;
 
         txd1   	  : out std_ulogic; -- Will go to USB-TTL RX
-        rxd1   	  : in  std_ulogic; -- Will go to USB-TTL TX
+        rxd1   	  : in  std_ulogic  -- Will go to USB-TTL TX
     );
     end component;
 
@@ -315,10 +313,10 @@ begin
             txd1 => txd1,
             rxd1 => rxd1,
             dsuact => dsuact,
-            dsubre => dsubre
+            dsubre => dsubre,
             address => SRAMAddr,
-            datain => SRAMDataIn,
-            dataout => SRAMDataOut,
+            data => SRAMDataIn,
+            data => SRAMDataOut,
             oen => SRAMRE,
             writen => SRAMWE
         );
