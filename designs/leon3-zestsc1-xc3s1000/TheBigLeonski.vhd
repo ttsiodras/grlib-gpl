@@ -56,11 +56,10 @@ architecture arch of TheBigLeonski is
     -- We instantiate our Leon3
     component leon3mp
       port (
-        reset : in  std_ulogic;
+        resetn : in  std_ulogic;
         clk : in  std_ulogic; 	-- 48 MHz main clock
         iu_error : out std_ulogic;
 
-        dsubre : in std_ulogic;
         dsuact : out std_ulogic;
 
         dsu_rx : out std_ulogic; -- UART1 tx data
@@ -205,7 +204,6 @@ architecture arch of TheBigLeonski is
     -- The bridge to Leon - hopefully, GRMON will speak over it
     signal dsu_rx : std_ulogic; -- UART1 tx data
     signal dsu_tx : std_ulogic; -- UART1 rx data
-    signal dsubre : std_ulogic;
     signal dsuact : std_ulogic;
     signal iu_error : std_ulogic;
 
@@ -301,8 +299,6 @@ begin
             USB_DataOut <= (others => '0');
             USB_DataInBusy <= '0';
 
-            dsubre <= '0'; 
-
         elsif rising_edge(CLK) then
 
             -- I am handling all "pulses" in a common way - the main clock
@@ -342,11 +338,10 @@ begin
 
     LeonTheProfessional : leon3mp
         port map (
-            reset => myRST,
+            resetn => myRST,
             clk => CLK,
             iu_error => iu_error,
             dsuact => dsuact,
-            dsubre => dsubre,
             dsu_rx => dsu_rx,
             dsu_tx => dsu_tx
         );
