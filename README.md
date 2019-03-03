@@ -128,3 +128,67 @@ Et voila!
 
 I now have an optimal workflow to test my ZestSC1 work via GHDL before I do
 anything on the real board.
+
+**UPDATE**: I learned a lot - GHDL was key. I got my ZestSC1 + AHBRAM (BlockRAM) to this point:
+
+    $ cd grlib-gpl/designs/leon3-zestsc1-xc3s1000
+    $ make  -f Makefile.ttsiod-ghdl 
+    
+...or, after the first build - for very fast TB testing:
+
+    $ make  -f Makefile.ttsiod-ghdl fast
+
+Gives this:
+
+    Resetting for 40 cycles
+    LEON3 Digilent XC3S1000 Demonstration design
+    GRLIB Version 2017.3.0, build 4208
+    Target technology: spartan3  , memory library: spartan3  
+    ahbctrl: AHB arbiter/multiplexer rev 1
+    ahbctrl: Common I/O area disabled
+    ahbctrl: AHB masters: 2, AHB slaves: 8
+    ahbctrl: Configuration area at 0xfffff000, 4 kbyte
+    ahbctrl: mst0: Cobham Gaisler          LEON3 SPARC V8 Processor       
+    ahbctrl: mst1: Cobham Gaisler          AHB Debug UART                 
+    ahbctrl: slv1: Cobham Gaisler          AHB/APB Bridge                 
+    ahbctrl:       memory at 0x80000000, size 1 Mbyte
+    ahbctrl: slv2: Cobham Gaisler          LEON3 Debug Support Unit       
+    ahbctrl:       memory at 0x90000000, size 256 Mbyte
+    ahbctrl: slv3: Cobham Gaisler          Single-port AHB SRAM module    
+    ahbctrl:       memory at 0xa0000000, size 1 Mbyte, cacheable, prefetch
+    ahbctrl: slv4: Cobham Gaisler          Test report module             
+    ahbctrl:       memory at 0x20000000, size 1 Mbyte
+    apbctrl: APB Bridge at 0x80000000 rev 1
+    apbctrl: slv2: Cobham Gaisler          Multi-processor Interrupt Ctrl.
+    apbctrl:       I/O ports at 0x80000200, size 256 byte 
+    apbctrl: slv3: Cobham Gaisler          Modular Timer Unit             
+    apbctrl:       I/O ports at 0x80000300, size 256 byte 
+    apbctrl: slv4: Cobham Gaisler          AHB Debug UART                 
+    apbctrl:       I/O ports at 0x80000700, size 256 byte 
+    testmod4: Test report module
+    ahbram3: AHB SRAM Module rev 1, 16 kbytes
+    gptimer3: Timer Unit rev 1, 8-bit scaler, 2 32-bit timers, irq 8
+    irqmp: Multi-processor Interrupt Controller rev 4, #cpu 1, eirq 0
+    ahbuart4: AHB Debug UART rev 0
+    dsu3_2: LEON3 Debug support unit + AHB Trace Buffer, 2 kbytes
+    leon3_0: LEON3 SPARC V8 processor rev 3: iuft: 0, fpft: 0, cacheft: 0
+    leon3_0: icache 1*8 kbyte, dcache 1*8 kbyte
+    clkgen_spartan3e: spartan3/e sdram/pci clock generator, version 1
+    clkgen_spartan3e: Frequency 48000 KHz, DCM divisor 2/4
+    Reset complete.
+
+So in theory, everything should work on my board... alas, grmon doesn't 
+see it. I launch as follows:
+
+    $ /path/to/grmon3 -uart /dev/ttyUSB0 -freq 48 -u
+
+...and tried using 48MHz since that's what my board runs at. Then again, the...
+
+    constant CFG_CLKMUL : integer := (2);
+    constant CFG_CLKDIV : integer := (4);
+
+...could mean that I should run at 24MHz. Tried that too - no luck; and
+without any `-freq` either (in case it could be autodetected).
+
+Ergo I join the armies of the *"But it works in simulation!"* people.
+Oh well, I learned a lot anyway :-)
