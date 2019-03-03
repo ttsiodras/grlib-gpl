@@ -198,6 +198,10 @@ architecture arch of TheBigLeonski is
     -- Interrupt signal
     signal Interrupt : std_logic;
 
+    -- Will reset the CPU over the USB bus
+    signal myRST : std_logic := '1';
+    signal myRST_OBUFD : std_logic := '1';
+
     -- The bridge to Leon - hopefully, GRMON will speak over it
     signal dsu_rx : std_ulogic; -- UART1 tx data
     signal dsu_tx : std_ulogic; -- UART1 rx data
@@ -205,29 +209,18 @@ architecture arch of TheBigLeonski is
     signal dsuact : std_ulogic;
     signal iu_error : std_ulogic;
 
+    -- OBUF used to forward the USB-TTL signal to both a LED 
+    -- and the DSU UART.
     signal serial_info_sent_from_PC : std_logic;
-    signal serial_info_sent_from_PC_IBUFD : std_logic;
-begin
+    signal serial_info_sent_from_PC_OBUFD : std_logic;
 
+begin
     -- Tie unused signals.
     User_Signals <= "ZZZZZZZZ";
     LEDs(7 downto 4) <= "1111";
     IO_CLK_N <= 'Z';
     IO_CLK_P <= 'Z';
     Interrupt <= '0';
-
-    LEDs(0) <= std_logic(dsu_rx);
-    LEDs(1) <= std_logic(iu_error);
-    LEDs(2) <= std_logic(dsuact);
-    -- LEDs(3) <= serial_info_sent_from_PC_IBUFD; -- done directly at IO(42) below
-
-    serial_info_sent_from_PC <= IO(3);
-    IO(0) <= LEDs(0);
-    IO(1) <= LEDs(1);
-    IO(2) <= dsu_rx;
-    dsu_tx <= std_ulogic(serial_info_sent_from_PC_IBUFD);
-
-
     IO(4) <= 'Z';
     IO(5) <= 'Z';
     IO(6) <= 'Z';
@@ -265,12 +258,40 @@ begin
     IO(38) <= 'Z';
     IO(39) <= 'Z';
     IO(40) <= 'Z';
+
+    LEDs(0) <= std_logic(dsu_rx);
+    LEDs(1) <= std_logic(iu_error);
+    LEDs(2) <= std_logic(dsuact);
+    -- LEDs(3) <= serial_info_sent_from_PC_OBUFD; -- done directly at IO(42) below
+    -- LEDs(4) <= myRST;
+
+    serial_info_sent_from_PC <= IO(3);
+    IO(2) <= dsu_rx;
+    dsu_tx <= std_ulogic(serial_info_sent_from_PC_OBUFD);
+
+    IO(0) <= LEDs(0);
+    IO(1) <= LEDs(1);
     IO(41) <= LEDs(2);
-    IO(42) <= serial_info_sent_from_PC_IBUFD;
-    IO(43) <= LEDs(4);
+    IO(42) <= serial_info_sent_from_PC_OBUFD;
+    IO(43) <= myRST_OBUFD;
     IO(44) <= LEDs(5);
     IO(45) <= LEDs(6);
     IO(46) <= LEDs(7);
+
+    process (RST, CLK, dsu_rx, iu_error, dsuact, Addr, WE)
+    begin
+        if (RST /= '1' and CLK'event and CLK='1') then
+            if (WE='1') then
+                case Addr is
+                    when X"2000" => myRST <= '1';
+                    when X"2001" => myRST <= '0';
+                    when others => myRST <= '0';
+                end case;
+            else
+                myRST <= myRST;
+            end if;
+        end if;
+    end process;
 
     process (RST, CLK)
     begin
@@ -309,14 +330,19 @@ begin
     end process;
 
     -- Instantiate components
-    dsu_rx_inbuf: OBUF
+    dsu_rx_obuf: OBUF
          port map (
           I => serial_info_sent_from_PC,
-          O => serial_info_sent_from_PC_IBUFD);
+          O => serial_info_sent_from_PC_OBUFD);
+
+    myRST_obuf : OBUF
+         port map (
+          I => myRST,
+          O => myRST_OBUFD);
 
     LeonTheProfessional : leon3mp
         port map (
-            reset => RST,
+            reset => myRST,
             clk => CLK,
             iu_error => iu_error,
             dsuact => dsuact,
@@ -374,11 +400,11 @@ begin
             User_StreamDataOutBusy => open,
 
             -- Register interface
-            User_RegAddr => open,
-            User_RegDataIn => open,
-            User_RegDataOut => X"00",
-            User_RegWE => open,
-            User_RegRE => open,
+            User_RegAddr => Addr,
+            User_RegDataIn => DataIn,
+            User_RegDataOut => DataOut,
+            User_RegWE => WE,
+            User_RegRE => RE,
 
             -- Signals and interrupts
             User_Interrupt => '0',
