@@ -102,3 +102,4 @@ e~testbench.o
 ghdl.log
 gnu/
 testbench
+**/*.swp

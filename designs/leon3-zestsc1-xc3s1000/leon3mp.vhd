@@ -56,19 +56,13 @@ entity leon3mp is
     use_ahbram_sim          : integer := 0
   );
   port (
-    reset	  : in  std_ulogic;
-    clk		  : in  std_ulogic; 	-- 50 MHz main clock
-    iu_error	  : out std_ulogic;
-    -- address 	  : out std_logic_vector(22 downto 0);
-    -- data          : inout std_logic_vector(15 downto 0);
-    -- oen    	  : out std_ulogic;
-    -- writen 	  : out std_ulogic;
-
-    dsubre  	  : in std_ulogic;
-    dsuact  	  : out std_ulogic;
-
-    rsrx   	  : out std_ulogic; 			-- UART1 tx data
-    rstx   	  : in  std_ulogic  			-- UART1 rx data
+    reset    : in  std_ulogic;
+    clk	     : in  std_ulogic;
+    iu_error : out std_ulogic;
+    dsubre   : in std_ulogic;
+    dsuact   : out std_ulogic;
+    dsu_rx   : out std_ulogic;
+    dsu_tx   : in  std_ulogic
   );
 end;
 
@@ -112,11 +106,8 @@ architecture rtl of leon3mp is
    signal gpioi : gpio_in_type;
    signal gpioo : gpio_out_type;
    
-   signal lclk, rst : std_ulogic;
+   signal lclk : std_ulogic;
    signal tck, tckn, tms, tdi, tdo : std_ulogic;
-   
-   signal clkval : std_logic_vector(1 downto 0);
-   
    
    constant BOARD_FREQ : integer := 48000;   -- input frequency in KHz
    constant CPU_FREQ : integer := BOARD_FREQ * CFG_CLKMUL / CFG_CLKDIV;  -- cpu frequency in KHz
@@ -146,12 +137,9 @@ begin
     generic map (clktech, CFG_CLKMUL, CFG_CLKDIV, CFG_MCTRL_SDEN, CFG_CLK_NOFB, 0, 0, 0, BOARD_FREQ)
     port map (lclk, lclk, clkm, open, open, open, open, cgi, cgo, open, open);
 
-  resetn_pad : inpad generic map (tech => padtech) port map (reset, rst); 
-  -- rst <= reset;
-
   rst0 : rstgen			-- reset generator
   generic map (acthigh => 1)
-  port map (rst, clkm, cgo.clklock, rstn, rstraw);
+  port map (reset, clkm, cgo.clklock, rstn, rstraw);
 
 ----------------------------------------------------------------------
 ---  AHB CONTROLLER --------------------------------------------------
@@ -209,8 +197,8 @@ begin
   end generate;
   nouah : if CFG_AHB_UART = 0 generate apbo(4) <= apb_none; end generate;
 
-  urx_pad : inpad generic map (tech  => padtech) port map (rstx, rxd1);
-  utx_pad : outpad generic map (tech => padtech) port map (rsrx, txd1);
+  urx_pad : inpad generic map (tech  => padtech) port map (dsu_tx, rxd1);
+  utx_pad : outpad generic map (tech => padtech) port map (dsu_rx, txd1);
   txd1 <= duo.txd;
   
   -- ahbjtaggen0 :if CFG_AHB_JTAG = 1 generate

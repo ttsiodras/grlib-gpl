@@ -60,8 +60,8 @@ architecture arch of TheBigLeonski is
         dsubre : in std_ulogic;
         dsuact : out std_ulogic;
 
-        rsrx : out std_ulogic; -- UART1 tx data
-        rstx : in  std_ulogic  -- UART1 rx data
+        dsu_rx : out std_ulogic; -- UART1 tx data
+        dsu_tx : in  std_ulogic  -- UART1 rx data
     );
     end component;
 
@@ -311,8 +311,8 @@ begin
             iu_error => iu_error,
             dsuact => dsuact,
             dsubre => dsubre,
-            rsrx => rsrx,
-            rstx => rstx
+            dsu_rx => rsrx,
+            dsu_tx => rstx
         );
 
     Interfaces : ZestSC1_Interfaces

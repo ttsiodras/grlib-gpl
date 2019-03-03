@@ -63,8 +63,8 @@ architecture behav of testbench is
       iu_error : out std_ulogic;
       dsubre : in std_ulogic;
       dsuact : out std_ulogic;
-      rsrx   : out std_ulogic; -- UART1 tx data
-      rstx   : in  std_ulogic  -- UART1 rx data
+      dsu_rx : out std_ulogic; -- UART1 tx data
+      dsu_tx : in  std_ulogic  -- UART1 rx data
   );
   end component;
 
@@ -76,8 +76,8 @@ begin
         iu_error => iu_error,
         dsubre => dsubre,
         dsuact => dsuact,
-        rsrx => dsu_rx,
-        rstx => dsu_tx
+        dsu_rx => dsu_rx,
+        dsu_tx => dsu_tx
     );
 
   process
@@ -195,4 +195,3 @@ begin
     wait;
   end process;
 end;
-
