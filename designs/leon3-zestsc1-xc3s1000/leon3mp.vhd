@@ -69,7 +69,7 @@ architecture rtl of leon3mp is
 
    constant blength : integer := 12;
    constant fifodepth : integer := 8;
-   constant maxahbm : integer := CFG_NCPU+CFG_AHB_JTAG+CFG_SVGA_ENABLE;
+   constant maxahbm : integer := CFG_NCPU+CFG_AHB_UART+CFG_AHB_JTAG;
    
    signal vcc, gnd   : std_logic_vector(4 downto 0);
    signal memi  : memory_in_type;
@@ -198,9 +198,9 @@ begin
   txd1 <= duo.txd;
   
   -- ahbjtaggen0 :if CFG_AHB_JTAG = 1 generate
-  --   ahbjtag0 : ahbjtag generic map(tech => fabtech, hindex => CFG_NCPU+CFG_AHB_UART)
-  --     port map(rstn, clkm, tck, tms, tdi, tdo, ahbmi, ahbmo(CFG_NCPU+CFG_AHB_UART),
-  --              open, open, open, open, open, open, open, gnd);
+  --   ahbjtag0 : ahbjtag generic map(tech => fabtech, hindex => CFG_NCPU+CFG_AHB_UART+CFG_AHB_JTAG)
+  --     port map(rstn, clkm, tck, tms, tdi, tdo, ahbmi, ahbmo(CFG_NCPU+CFG_AHB_UART+CFG_AHB_JTAG),
+  --              open, open, open, open, open, open, open, gnd(0));
   -- end generate;
 
 ----------------------------------------------------------------------

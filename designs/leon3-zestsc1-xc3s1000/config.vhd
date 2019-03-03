@@ -103,7 +103,7 @@ package config is
 -- DSU UART
   constant CFG_AHB_UART : integer := 1;
 -- JTAG based DSU interface
-  constant CFG_AHB_JTAG : integer := 1;
+  constant CFG_AHB_JTAG : integer := 0;
 -- LEON2 memory controller
   constant CFG_MCTRL_LEON2 : integer := 1;
   constant CFG_MCTRL_RAM8BIT : integer := 0;
