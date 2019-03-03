@@ -49,7 +49,7 @@ architecture behav of testbench is
   constant lresp : boolean := false;
 
   signal clk : std_ulogic := '0';
-  signal rst : std_ulogic := '0';
+  signal rstn : std_ulogic := '1';
   signal iu_error : std_ulogic;
   signal dsuact : std_ulogic;
   signal dsu_tx : std_logic;
@@ -72,7 +72,7 @@ begin
   d3 : leon3mp
     port map (
         clk => CLK,
-        resetn => RST,
+        resetn => rstn,
         iu_error => iu_error,
         dsuact => dsuact,
         dsu_rx => dsu_rx,
@@ -97,7 +97,10 @@ begin
       constant txp : time := 320 * 1 ns;
     begin
       dsutx <= '1';
-      wait for 50 us;
+      rstn <= '0';
+      wait for 40*CLK_PERIOD;
+      rstn <= '1';
+      wait for 5000 ns;
       txc(dsutx, 16#55#, txp);		-- sync uart
 
       txc(dsutx, 16#c0#, txp);
