@@ -88,7 +88,7 @@ begin
 
   process
   begin
-    wait for 10000 us;
+    wait for 1000 us;
     assert (iu_error = '0')
       report "*** IU in error mode, simulation halted ***"
       severity failure;  

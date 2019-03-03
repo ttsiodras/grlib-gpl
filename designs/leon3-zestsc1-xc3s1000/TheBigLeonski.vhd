@@ -53,19 +53,15 @@ architecture arch of TheBigLeonski is
     -- We instantiate our Leon3
     component leon3mp
       port (
-        reset	  : in  std_ulogic;
-        clk	  : in  std_ulogic; 	-- 48 MHz main clock
-        error	  : out std_ulogic;
-        -- address   : out std_logic_vector(22 downto 0);
-        -- data  	  : inout std_logic_vector(15 downto 0);
-        -- oen    	  : out std_ulogic;
-        -- writen 	  : out std_ulogic;
+        reset : in  std_ulogic;
+        clk : in  std_ulogic; 	-- 48 MHz main clock
+        iu_error : out std_ulogic;
 
-        dsubre    : in std_ulogic;
-        dsuact    : out std_ulogic;
+        dsubre : in std_ulogic;
+        dsuact : out std_ulogic;
 
-        rsrx   	  : out std_ulogic; -- UART1 tx data
-        rstx   	  : in  std_ulogic  -- UART1 rx data
+        rsrx : out std_ulogic; -- UART1 tx data
+        rstx : in  std_ulogic  -- UART1 rx data
     );
     end component;
 
@@ -204,6 +200,7 @@ architecture arch of TheBigLeonski is
     signal rstx   : std_ulogic; -- UART1 rx data
     signal dsubre : std_ulogic;
     signal dsuact : std_ulogic;
+    signal iu_error : std_ulogic;
 
     -- The SRAM bridge to Leon - the 'inout' must be state-machined
     -- into the SRAMDataOut and out of SRAMDataIn
@@ -218,6 +215,7 @@ begin
     Interrupt <= '0';
 
     LEDs(0) <= std_logic(rsrx);
+    LEDs(1) <= std_logic(iu_error);
     LEDs(2) <= std_logic(dsuact);
 
     IO(0) <= LEDs(0);
@@ -308,16 +306,13 @@ begin
 
     LeonTheProfessional : leon3mp
         port map (
-            clk => CLK,
             reset => RST,
-            rsrx => rsrx,
-            rstx => rstx,
+            clk => CLK,
+            iu_error => iu_error,
             dsuact => dsuact,
-            dsubre => dsubre
-            -- address => SRAMAddr,
-            -- data => data,
-            -- oen => SRAMRE,
-            -- writen => SRAMWE
+            dsubre => dsubre,
+            rsrx => rsrx,
+            rstx => rstx
         );
 
     Interfaces : ZestSC1_Interfaces
