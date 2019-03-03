@@ -1,0 +1,346 @@
+# Import files in libraries
+.PHONY: ghdl-import unisim
+
+include make.unisim
+
+ghdl-import:
+	mkdir -p gnu
+	mkdir -p gnu/grlib
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/stdlib/version.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/stdlib/config_types.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/stdlib/config.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/stdlib/stdlib.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/stdlib/stdio.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/stdlib/testlib.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/util/util.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/sparc/sparc.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/sparc/sparc_disas.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/sparc/cpu_disas.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/modgen/multlib.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/modgen/leaves.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/amba/amba.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/amba/devices.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/amba/defmst.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/amba/apbctrl.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/amba/apbctrlx.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/amba/apbctrldp.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/amba/apbctrlsp.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/amba/ahbctrl.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/amba/dma2ahb_pkg.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/amba/dma2ahb.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/amba/ahbmst.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/amba/dma2ahb_tp.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/amba/amba_tp.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/dftlib/dftlib.vhd
+	ghdl -i  --workdir=gnu/grlib --work=grlib -Pgnu -Pgnu/grlib ../../lib/grlib/dftlib/synciotest.vhd
+	mkdir -p gnu/unisim
+	$(MAKE) -f make.ghdl unisim
+	mkdir -p gnu/techmap
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/gencomp/gencomp.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/gencomp/netcomp.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/inferred/memory_inferred.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/inferred/ddr_inferred.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/inferred/mul_inferred.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/inferred/ddr_phy_inferred.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/inferred/ddrphy_datapath.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/inferred/fifo_inferred.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/inferred/sim_pll.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/inferred/lpddr2_phy_inferred.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/unisim/memory_unisim.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/unisim/buffer_unisim.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/unisim/pads_unisim.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/unisim/clkgen_unisim.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/unisim/tap_unisim.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/unisim/ddr_unisim.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/unisim/ddr_phy_unisim.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/unisim/sysmon_unisim.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/unisim/mul_unisim.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/unisim/spictrl_unisim.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/allclkgen.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/techbuf.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/allddr.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/allmem.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/allmul.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/allpads.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/alltap.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/clkgen.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/clkmux.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/clkinv.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/clkand.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/grgates.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/ddr_ireg.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/ddr_oreg.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/clkpad.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/clkpad_ds.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/inpad.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/inpad_ds.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/iodpad.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/iopad.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/iopad_ds.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/lvds_combo.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/odpad.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/outpad.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/outpad_ds.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/toutpad.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/toutpad_ds.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/skew_outpad.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/ddrphy.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/syncram.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/syncram64.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/syncram_2p.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/syncram_dp.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/syncfifo_2p.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/regfile_3p.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/tap.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/nandtree.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/grlfpw_net.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/grfpw_net.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/leon3_net.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/leon4_net.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/mul_61x61.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/cpu_disas_net.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/ringosc.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/grpci2_phy_net.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/system_monitor.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/inpad_ddr.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/outpad_ddr.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/iopad_ddr.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/syncram128bw.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/syncram256bw.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/syncram128.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/syncram156bw.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/techmult.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/spictrl_net.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/scanreg.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/syncrambw.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/syncram_2pbw.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/sdram_phy.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/syncreg.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/serdes.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/iopad_tm.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/toutpad_tm.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/memrwcol.vhd
+	ghdl -i  --workdir=gnu/techmap --work=techmap -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap ../../lib/techmap/maps/cdcbus.vhd
+	mkdir -p gnu/eth
+	ghdl -i  --workdir=gnu/eth --work=eth -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth ../../lib/eth/comp/ethcomp.vhd
+	ghdl -i  --workdir=gnu/eth --work=eth -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth ../../lib/eth/core/greth_pkg.vhd
+	ghdl -i  --workdir=gnu/eth --work=eth -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth ../../lib/eth/core/eth_rstgen.vhd
+	ghdl -i  --workdir=gnu/eth --work=eth -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth ../../lib/eth/core/eth_edcl_ahb_mst.vhd
+	ghdl -i  --workdir=gnu/eth --work=eth -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth ../../lib/eth/core/eth_ahb_mst.vhd
+	ghdl -i  --workdir=gnu/eth --work=eth -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth ../../lib/eth/core/greth_tx.vhd
+	ghdl -i  --workdir=gnu/eth --work=eth -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth ../../lib/eth/core/greth_rx.vhd
+	ghdl -i  --workdir=gnu/eth --work=eth -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth ../../lib/eth/core/grethc.vhd
+	ghdl -i  --workdir=gnu/eth --work=eth -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth ../../lib/eth/wrapper/greth_gen.vhd
+	ghdl -i  --workdir=gnu/eth --work=eth -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth ../../lib/eth/wrapper/greth_gbit_gen.vhd
+	mkdir -p gnu/opencores
+	ghdl -i  --workdir=gnu/opencores --work=opencores -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores ../../lib/opencores/i2c/i2c_master_bit_ctrl.vhd
+	ghdl -i  --workdir=gnu/opencores --work=opencores -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores ../../lib/opencores/i2c/i2c_master_byte_ctrl.vhd
+	ghdl -i  --workdir=gnu/opencores --work=opencores -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores ../../lib/opencores/i2c/i2coc.vhd
+	ghdl -i  --workdir=gnu/opencores --work=opencores -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores ../../lib/opencores/ge_1000baseX/ge_1000baseX_comp.vhd
+	mkdir -p gnu/gaisler
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/arith/arith.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/arith/mul32.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/arith/div32.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/memctrl/memctrl.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/memctrl/sdctrl.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/memctrl/sdctrl64.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/memctrl/sdmctrl.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/memctrl/srctrl.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/srmmu/mmuconfig.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/srmmu/mmuiface.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/srmmu/libmmu.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/srmmu/mmutlbcam.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/srmmu/mmulrue.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/srmmu/mmulru.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/srmmu/mmutlb.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/srmmu/mmutw.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/srmmu/mmu.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3/leon3.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3/grfpushwx.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/tbufmem.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/tbufmem_2p.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/dsu3x.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/dsu3.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/dsu3_mb.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/libfpu.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/libiu.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/libcache.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/libleon3.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/regfile_3p_l3.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/mmu_acache.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/mmu_icache.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/mmu_dcache.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/cachemem.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/mmu_cache.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/grfpwx.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/grlfpwx.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/iu3.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/proc3.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/grfpwxsh.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/leon3x.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/leon3cg.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/leon3s.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/leon3sh.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/l3stat.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon3v3/cmvalidbits.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/leon4/leon4.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/irqmp/irqmp.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/irqmp/irqamp.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/irqmp/irqmp_bmode.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/l2cache/pkg/l2cache.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/misc.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/rstgen.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/gptimer.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/ahbram.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/ahbdpram.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/ahbtrace_mmb.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/ahbtrace_mb.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/ahbtrace.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/grgpio.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/ahbstat.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/logan.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/apbps2.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/charrom_package.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/charrom.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/apbvga.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/svgactrl.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/grsysmon.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/gracectrl.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/grgpreg.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/ahb_mst_iface.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/grgprbank.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/grversion.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/apb3cdc.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/ahbsmux.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/misc/ahbmmux.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/net/net.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/uart/uart.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/uart/libdcom.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/uart/apbuart.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/uart/dcom.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/uart/dcom_uart.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/uart/ahbuart.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/sim.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/sram.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/sram16.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/phy.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/ser_phy.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/ahbrep.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/delay_wire.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/pwm_check.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/ddrram.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/ddr2ram.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/ddr3ram.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/sdrtestmod.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/ahbram_sim.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/aximem.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/axirep.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/sim/axixmem.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/jtag/jtag.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/jtag/libjtagcom.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/jtag/jtagcom.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/jtag/bscanregs.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/jtag/bscanregsbd.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/jtag/jtagcom2.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/jtag/ahbjtag.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/jtag/ahbjtag_bsd.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/jtag/jtagtst.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/ethernet_mac.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/greth.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/greth_mb.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/greth_gbit.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/greths.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/greth_gbit_mb.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/greths_mb.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/grethm.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/grethm_mb.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/adapters/rgmii.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/adapters/comma_detect.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/adapters/sgmii.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/adapters/elastic_buffer.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/adapters/gmii_to_mii.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/greth/adapters/word_aligner.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/axi/axi.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/axi/ahbm2axi.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/axi/ahbm2axi3.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/axi/ahbm2axi4.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/axi/axinullslv.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/axi/ahb2axib.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/axi/ahb2axi3b.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/axi/ahb2axi4b.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ddrpkg.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ddrintpkg.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ddrphy_wrap.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ddr2spax_ahb.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ddr2spax_ddr.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ddr2buf.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ddr2spax.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ddr2spa.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ddr1spax.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ddr1spax_ddr.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ddrspa.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ahb2mig_7series_pkg.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ahb2mig_7series.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ahb2mig_7series_ddr2_dq16_ad13_ba3.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ahb2mig_7series_ddr3_dq16.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ahb2mig_7series_ddr3_dq16_ad15_ba3.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ahb2mig_7series_cpci_xc7k.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ahb2axi_mig_7series.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ahb2avl_async.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/ddr/ahb2avl_async_be.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/i2c/i2c.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/i2c/i2cmst.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/i2c/i2cmst_gen.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/i2c/i2cslv.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/i2c/i2c2ahbx.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/i2c/i2c2ahb.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/i2c/i2c2ahb_apb.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/i2c/i2c2ahb_gen.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/i2c/i2c2ahb_apb_gen.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/spi/spi.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/spi/spimctrl.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/spi/spictrlx.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/spi/spictrl.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/spi/spi2ahbx.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/spi/spi2ahb.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/spi/spi2ahb_apb.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/spi/spi_flash.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/grdmac/grdmac_pkg.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/grdmac/apbmem.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/grdmac/grdmac_ahbmst.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/grdmac/grdmac_alignram.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/grdmac/grdmac.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/grdmac/grdmac_1p.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/subsys/subsys.vhd
+	ghdl -i  --workdir=gnu/gaisler --work=gaisler -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler ../../lib/gaisler/subsys/leon_dsu_stat_base.vhd
+	mkdir -p gnu/esa
+	ghdl -i  --workdir=gnu/esa --work=esa -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa ../../lib/esa/memoryctrl/memoryctrl.vhd
+	ghdl -i  --workdir=gnu/esa --work=esa -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa ../../lib/esa/memoryctrl/mctrl.vhd
+	mkdir -p gnu/fmf
+	ghdl -i  --workdir=gnu/fmf --work=fmf -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf ../../lib/fmf/utilities/conversions.vhd
+	ghdl -i  --workdir=gnu/fmf --work=fmf -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf ../../lib/fmf/utilities/gen_utils.vhd
+	ghdl -i  --workdir=gnu/fmf --work=fmf -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf ../../lib/fmf/flash/flash.vhd
+	ghdl -i  --workdir=gnu/fmf --work=fmf -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf ../../lib/fmf/flash/s25fl064a.vhd
+	ghdl -i  --workdir=gnu/fmf --work=fmf -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf ../../lib/fmf/flash/m25p80.vhd
+	ghdl -i  --workdir=gnu/fmf --work=fmf -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf ../../lib/fmf/fifo/idt7202.vhd
+	mkdir -p gnu/spansion
+	mkdir -p gnu/gsi
+	ghdl -i  --workdir=gnu/gsi --work=gsi -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi ../../lib/gsi/ssram/functions.vhd
+	ghdl -i  --workdir=gnu/gsi --work=gsi -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi ../../lib/gsi/ssram/core_burst.vhd
+	ghdl -i  --workdir=gnu/gsi --work=gsi -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi ../../lib/gsi/ssram/g880e18bt.vhd
+	mkdir -p gnu/micron
+	ghdl -i  --workdir=gnu/micron --work=micron -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi -Pgnu/micron ../../lib/micron/sdram/components.vhd
+	ghdl -i  --workdir=gnu/micron --work=micron -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi -Pgnu/micron ../../lib/micron/sdram/mt48lc16m16a2.vhd
+	mkdir -p gnu/cypress
+	ghdl -i  --workdir=gnu/cypress --work=cypress -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi -Pgnu/micron -Pgnu/cypress ../../lib/cypress/ssram/components.vhd
+	ghdl -i  --workdir=gnu/cypress --work=cypress -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi -Pgnu/micron -Pgnu/cypress ../../lib/cypress/ssram/package_utility.vhd
+	ghdl -i  --workdir=gnu/cypress --work=cypress -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi -Pgnu/micron -Pgnu/cypress ../../lib/cypress/ssram/cy7c1354b.vhd
+	ghdl -i  --workdir=gnu/cypress --work=cypress -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi -Pgnu/micron -Pgnu/cypress ../../lib/cypress/ssram/cy7c1380d.vhd
+	mkdir -p gnu/work
+	ghdl -i  --workdir=gnu/work --work=work -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi -Pgnu/micron -Pgnu/cypress -Pgnu/work ../../lib/work/debug/debug.vhd
+	ghdl -i  --workdir=gnu/work --work=work -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi -Pgnu/micron -Pgnu/cypress -Pgnu/work ../../lib/work/debug/grtestmod.vhd
+	ghdl -i  --workdir=gnu/work --work=work -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi -Pgnu/micron -Pgnu/cypress -Pgnu/work ../../lib/work/debug/cpu_disas.vhd
+	ghdl -i  --workdir=gnu/work --work=work -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi -Pgnu/micron -Pgnu/cypress -Pgnu/work config.vhd
+	ghdl -i  --workdir=gnu/work --work=work -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi -Pgnu/micron -Pgnu/cypress -Pgnu/work ahbrom.vhd
+	ghdl -i  --workdir=gnu/work --work=work -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi -Pgnu/micron -Pgnu/cypress -Pgnu/work leon3mp.vhd
+	ghdl -i  --workdir=gnu/work --work=work -Pgnu -Pgnu/grlib -Pgnu/unisim -Pgnu/techmap -Pgnu/eth -Pgnu/opencores -Pgnu/gaisler -Pgnu/esa -Pgnu/fmf -Pgnu/spansion -Pgnu/gsi -Pgnu/micron -Pgnu/cypress -Pgnu/work testbench.vhd
