@@ -83,7 +83,7 @@ begin
 
   process
   begin
-    wait for 5000 us;
+    wait for 50*CLK_PERIOD;
     if to_x01(iu_error) = '0' then wait on iu_error; end if;
     assert (to_x01(iu_error) = '0') 
       report "*** IU in error mode, simulation halted ***"
@@ -107,126 +107,6 @@ begin
       writeline(output, l);
       write(l, String'("Waiting for peripherals to settle."));
       writeline(output, l);
-      wait for 5000 ns;
-      write(l, String'("Interactive with DSU begins"));
-      writeline(output, l);
-
-      write(l, String'("sync uart"));
-      writeline(output, l);
-      txc(dsutx, 16#55#, txp);
-
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#20#, 16#2e#, txp);
-
-      write(l, String'("Wait for DSU to wake up..."));
-      writeline(output, l);
-      wait for 25000 ns;
-      write(l, String'("It has awoken"));
-      writeline(output, l);
-
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#01#, txp);
-
-      write(l, String'("Step 1"));
-      writeline(output, l);
-
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#90#, 16#40#, 16#00#, 16#24#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0D#, txp);
-
-      write(l, String'("Step 2"));
-      writeline(output, l);
-
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#90#, 16#70#, 16#11#, 16#78#, txp);
-      txa(dsutx, 16#91#, 16#00#, 16#00#, 16#0D#, txp);
-
-      write(l, String'("Step 3"));
-      writeline(output, l);
-
-      txa(dsutx, 16#90#, 16#40#, 16#00#, 16#44#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#20#, 16#00#, txp);
-
-      write(l, String'("Step 4"));
-      writeline(output, l);
-
-      txc(dsutx, 16#80#, txp);
-      txa(dsutx, 16#90#, 16#40#, 16#00#, 16#44#, txp);
-
-      wait;
-
-      write(l, String'("Step 5"));
-      writeline(output, l);
-
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#0a#, 16#aa#, txp);
-      txa(dsutx, 16#00#, 16#55#, 16#00#, 16#55#, txp);
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#0a#, 16#a0#, txp);
-      txa(dsutx, 16#01#, 16#02#, 16#09#, 16#33#, txp);
-
-      write(l, String'("Step 6"));
-      writeline(output, l);
-
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#2e#, txp);
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#91#, 16#00#, 16#00#, 16#00#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#2e#, txp);
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0f#, txp);
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#00#, txp);
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#80#, 16#00#, 16#02#, 16#10#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0f#, txp);
-
-      write(l, String'("Step 7"));
-      writeline(output, l);
-
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#91#, 16#40#, 16#00#, 16#24#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#24#, txp);
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#91#, 16#70#, 16#00#, 16#00#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#03#, txp);
-
-      write(l, String'("Step 8"));
-      writeline(output, l);
-
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#ff#, 16#ff#, txp);
-
-      write(l, String'("Step 9"));
-      writeline(output, l);
-
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#90#, 16#40#, 16#00#, 16#48#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#00#, 16#12#, txp);
-
-      write(l, String'("Step 10"));
-      writeline(output, l);
-
-      txc(dsutx, 16#c0#, txp);
-      txa(dsutx, 16#90#, 16#40#, 16#00#, 16#60#, txp);
-      txa(dsutx, 16#00#, 16#00#, 16#12#, 16#10#, txp);
-
-      write(l, String'("Step 11"));
-      writeline(output, l);
-
-      txc(dsutx, 16#80#, txp);
-      txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
-      rxi(dsurx, w32, txp, lresp);
-
-      txc(dsutx, 16#a0#, txp);
-      txa(dsutx, 16#40#, 16#00#, 16#00#, 16#00#, txp);
-      rxi(dsurx, w32, txp, lresp);
     end procedure;
   begin
     dsucfg(dsu_tx, dsu_rx);
