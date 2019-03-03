@@ -52,22 +52,23 @@ entity leon3mp is
     clktech       : integer := CFG_CLKTECH;
     disas         : integer := CFG_DISAS;	-- Enable disassembly to console
     dbguart       : integer := CFG_DUART;	-- Print UART on console
-    pclow         : integer := CFG_PCLOW
+    pclow         : integer := CFG_PCLOW;
+    use_ahbram_sim          : integer := 0
   );
   port (
     reset	  : in  std_ulogic;
     clk		  : in  std_ulogic; 	-- 50 MHz main clock
     error	  : out std_ulogic;
-    address 	  : out std_logic_vector(22 downto 0);
-    data          : inout std_logic_vector(15 downto 0);
-    oen    	  : out std_ulogic;
-    writen 	  : out std_ulogic;
+    -- address 	  : out std_logic_vector(22 downto 0);
+    -- data          : inout std_logic_vector(15 downto 0);
+    -- oen    	  : out std_ulogic;
+    -- writen 	  : out std_ulogic;
 
     dsubre  	  : in std_ulogic;
     dsuact  	  : out std_ulogic;
 
-    txd1   	  : out std_ulogic; 			-- UART1 tx data
-    rxd1   	  : in  std_ulogic  			-- UART1 rx data
+    rsrx   	  : out std_ulogic; 			-- UART1 tx data
+    rstx   	  : in  std_ulogic  			-- UART1 rx data
   );
 end;
 
@@ -75,8 +76,7 @@ architecture rtl of leon3mp is
 
    constant blength : integer := 12;
    constant fifodepth : integer := 8;
-   constant maxahbm : integer := CFG_NCPU+
-   	CFG_AHB_JTAG+CFG_SVGA_ENABLE;
+   constant maxahbm : integer := CFG_NCPU+CFG_AHB_JTAG+CFG_SVGA_ENABLE;
    
    signal vcc, gnd   : std_logic_vector(4 downto 0);
    signal memi  : memory_in_type;
@@ -96,7 +96,7 @@ architecture rtl of leon3mp is
    signal cgi   : clkgen_in_type;
    signal cgo   : clkgen_out_type;
    signal u1i, u2i, dui : uart_in_type;
-   signal u1o, u2o, duo : uart_out_type;
+   signal u2o, duo : uart_out_type;
    
    signal irqi : irq_in_vector(0 to CFG_NCPU-1);
    signal irqo : irq_out_vector(0 to CFG_NCPU-1);
@@ -126,6 +126,10 @@ architecture rtl of leon3mp is
    attribute syn_keep : boolean;
    attribute syn_preserve : boolean;
    
+  -- RS232 APB Uart
+  signal rxd1 : std_logic;
+  signal txd1 : std_logic;
+
 begin
 
 ----------------------------------------------------------------------
@@ -196,44 +200,24 @@ begin
     dsuo.tstop <= '0'; dsuo.active <= '0';
   end generate;
 
-  ahbjtaggen0 :if CFG_AHB_JTAG = 1 generate
-    ahbjtag0 : ahbjtag generic map(tech => fabtech, hindex => CFG_NCPU)
-      port map(rstn, clkm, tck, tms, tdi, tdo, ahbmi, ahbmo(CFG_NCPU),
-               open, open, open, open, open, open, open, gnd(0));
+  -- Debug UART
+  dcomgen : if CFG_AHB_UART = 1 generate
+    dcom0 : ahbuart
+      generic map (hindex => CFG_NCPU, pindex => 4, paddr => 7)
+      port map (rstn, clkm, dui, duo, apbi, apbo(4), ahbmi, ahbmo(CFG_NCPU));
+    dui.rxd <= rxd1;
   end generate;
+  nouah : if CFG_AHB_UART = 0 generate apbo(4) <= apb_none; end generate;
+
+  urx_pad : inpad generic map (tech  => padtech) port map (rstx, rxd1);
+  utx_pad : outpad generic map (tech => padtech) port map (rsrx, txd1);
+  txd1 <= duo.txd;
   
-----------------------------------------------------------------------
----  Memory controllers ----------------------------------------------
-----------------------------------------------------------------------
-
-  memi.writen <= '1'; memi.wrn <= "1111"; memi.bwidth <= "00";
-
-  mctrl0 : mctrl generic map (hindex => 0, pindex => 0,
-	rommask => 16#000#, iomask => 16#000#,
-	paddr => 0, srbanks => 1, ram8 => CFG_MCTRL_RAM8BIT, 
-	ram16 => CFG_MCTRL_RAM16BIT, sden => CFG_MCTRL_SDEN, 
-	invclk => CFG_CLK_NOFB, sepbus => CFG_MCTRL_SEPBUS)
-  port map (rstn, clkm, memi, memo, ahbsi, ahbso(0), apbi, apbo(0), wpo, sdo);
-
-  addr_pad : outpadv generic map (width => 23, tech => padtech) 
-	port map (address, memo.address(22 downto 0));
-  oen_pad  : outpad generic map (tech => padtech) 
-	port map (oen, memo.oen);
-  wri_pad  : outpad generic map (tech => padtech) 
-	port map (writen, memo.writen);
-
-  data_pads : iopadvv generic map (tech => padtech, width => 16)
-      port map (data, memi.data(15 downto 0));
-
-----------------------------------------------------------------------
----  APB Bridge and various periherals -------------------------------
-----------------------------------------------------------------------
-
-  bpromgen : if CFG_AHBROMEN /= 0 generate
-    brom : entity work.ahbrom
-      generic map (hindex => 6, haddr => CFG_AHBRODDR, pipe => CFG_AHBROPIP)
-      port map ( rstn, clkm, ahbsi, ahbso(6));
-  end generate;
+  -- ahbjtaggen0 :if CFG_AHB_JTAG = 1 generate
+  --   ahbjtag0 : ahbjtag generic map(tech => fabtech, hindex => CFG_NCPU+CFG_AHB_UART)
+  --     port map(rstn, clkm, tck, tms, tdi, tdo, ahbmi, ahbmo(CFG_NCPU+CFG_AHB_UART),
+  --              open, open, open, open, open, open, open, gnd);
+  -- end generate;
 
 ----------------------------------------------------------------------
 ---  APB Bridge and various periherals -------------------------------
@@ -242,17 +226,6 @@ begin
   apb0 : apbctrl				-- AHB/APB bridge
   generic map (hindex => 1, haddr => CFG_APBADDR, nslaves => 16)
   port map (rstn, clkm, ahbsi, ahbso(1), apbi, apbo );
-
-  ua1 : if CFG_UART1_ENABLE /= 0 generate
-    uart1 : apbuart			-- UART 1
-    generic map (pindex => 1, paddr => 1,  pirq => 2, console => dbguart,
-	fifosize => CFG_UART1_FIFO)
-    port map (rstn, clkm, apbi, apbo(1), u1i, u1o);
-    u1i.extclk <= '0';
-    rxd1_pad : inpad generic map (tech => padtech) port map (rxd1, u1i.rxd); 
-    txd1_pad : outpad generic map (tech => padtech) port map (txd1, u1o.txd);
-  end generate;
-  noua0 : if CFG_UART1_ENABLE = 0 generate apbo(1) <= apb_none; end generate;
 
   irqctrl : if CFG_IRQ3_ENABLE /= 0 generate
     irqctrl0 : irqmp			-- interrupt controller
@@ -281,11 +254,25 @@ begin
 ---  AHB RAM ----------------------------------------------------------
 -----------------------------------------------------------------------
 
-  ocram : if CFG_AHBRAMEN = 1 generate 
-    ahbram0 : ahbram generic map (hindex => 7, haddr => CFG_AHBRADDR, 
-	tech => CFG_MEMTECH, kbytes => CFG_AHBRSZ, pipe => CFG_AHBRPIPE)
-    port map ( rstn, clkm, ahbsi, ahbso(7));
+  ahbramgen : if CFG_AHBRAMEN = 1 generate
+--pragma translate_off
+    phys : if use_ahbram_sim = 0 generate
+--pragma translate_on
+    ahbram0 : ahbram
+      generic map (hindex => 3, haddr => CFG_AHBRADDR, tech => CFG_MEMTECH,
+                   kbytes => CFG_AHBRSZ, pipe => CFG_AHBRPIPE)
+      port map (rstn, clkm, ahbsi, ahbso(3));
+--pragma translate_off
+    end generate;
+    simram : if use_ahbram_sim /= 0 generate
+      ahbram0 : ahbram_sim
+      generic map (hindex => 3, haddr => CFG_AHBRADDR, tech => CFG_MEMTECH,
+                   kbytes => 1024, pipe => CFG_AHBRPIPE, fname => "ram.srec")
+      port map (rstn, clkm, ahbsi, ahbso(3));
+    end generate;
+--pragma translate_on
   end generate;
+  nram : if CFG_AHBRAMEN = 0 generate ahbso(3) <= ahbs_none; end generate;
 
 -----------------------------------------------------------------------
 ---  Test report module  ----------------------------------------------

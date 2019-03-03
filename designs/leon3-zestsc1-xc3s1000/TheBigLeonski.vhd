@@ -56,16 +56,16 @@ architecture arch of TheBigLeonski is
         reset	  : in  std_ulogic;
         clk	  : in  std_ulogic; 	-- 48 MHz main clock
         error	  : out std_ulogic;
-        address   : out std_logic_vector(22 downto 0);
-        data  	  : inout std_logic_vector(15 downto 0);
-        oen    	  : out std_ulogic;
-        writen 	  : out std_ulogic;
+        -- address   : out std_logic_vector(22 downto 0);
+        -- data  	  : inout std_logic_vector(15 downto 0);
+        -- oen    	  : out std_ulogic;
+        -- writen 	  : out std_ulogic;
 
         dsubre    : in std_ulogic;
         dsuact    : out std_ulogic;
 
-        txd1   	  : out std_ulogic; -- Will go to USB-TTL RX
-        rxd1   	  : in  std_ulogic  -- Will go to USB-TTL TX
+        rsrx   	  : out std_ulogic; -- UART1 tx data
+        rstx   	  : in  std_ulogic  -- UART1 rx data
     );
     end component;
 
@@ -194,17 +194,20 @@ architecture arch of TheBigLeonski is
     signal SRAMDataIn : std_logic_vector(17 downto 0);
     signal SRAMWE : std_logic;
     signal SRAMRE : std_logic;
-    -- signal SRAMValid : std_logic;
+    signal SRAMValid : std_logic;
 
     -- Interrupt signal
     signal Interrupt : std_logic;
 
     -- The bridge to Leon - hopefully, GRMON will speak over it
-    signal txd1 : std_ulogic; -- Will go to USB-TTL RX
-    signal rxd1 : std_ulogic; -- Will go to USB-TTL TX
+    signal rsrx   : std_ulogic; -- UART1 tx data
+    signal rstx   : std_ulogic; -- UART1 rx data
     signal dsubre : std_ulogic;
     signal dsuact : std_ulogic;
 
+    -- The SRAM bridge to Leon - the 'inout' must be state-machined
+    -- into the SRAMDataOut and out of SRAMDataIn
+    signal data : std_logic_vector(15 downto 0);
 begin
 
     -- Tie unused signals.
@@ -214,14 +217,13 @@ begin
     IO_CLK_P <= 'Z';
     Interrupt <= '0';
 
-    LEDs(0) <= std_logic(txd1);
+    LEDs(0) <= std_logic(rsrx);
     LEDs(2) <= std_logic(dsuact);
 
     IO(0) <= LEDs(0);
     IO(1) <= LEDs(1);
-    IO(2) <= txd1;
-    --serial_RX <= IO(3);
-    rxd1 <= std_ulogic(IO(3));
+    IO(2) <= rsrx;
+    rstx <= std_ulogic(IO(3));
     IO(4) <= 'Z';
     IO(5) <= 'Z';
     IO(6) <= 'Z';
@@ -286,8 +288,6 @@ begin
             -- This allows me to not need to introduce states to "set high",
             -- "wait one cycle", "set low", etc.
 
-            SRAMWE <= '0';
-            SRAMRE <= '0';
             USB_DataInBusy <= '0';
             USB_DataOutWE <= '0';
 
@@ -310,15 +310,14 @@ begin
         port map (
             clk => CLK,
             reset => RST,
-            txd1 => txd1,
-            rxd1 => rxd1,
+            rsrx => rsrx,
+            rstx => rstx,
             dsuact => dsuact,
-            dsubre => dsubre,
-            address => SRAMAddr,
-            data => SRAMDataIn,
-            data => SRAMDataOut,
-            oen => SRAMRE,
-            writen => SRAMWE
+            dsubre => dsubre
+            -- address => SRAMAddr,
+            -- data => data,
+            -- oen => SRAMRE,
+            -- writen => SRAMWE
         );
 
     Interfaces : ZestSC1_Interfaces
@@ -359,37 +358,33 @@ begin
             User_CLK => CLK,
             User_RST => RST,
 
-            -- We don't care much about speed, do we?
-            -- This should suffice anyway.
-            User_StreamBusGrantLength => X"100",
+            User_StreamBusGrantLength => X"000",
 
-            -- Unused - the streaming interface sending data from the PC
-            User_StreamDataIn => USB_DataIn,
-            User_StreamDataInWE => USB_DataInWE,
-            User_StreamDataInBusy => USB_DataInBusy,
+            User_StreamDataIn => open,
+            User_StreamDataInWE => open,
+            User_StreamDataInBusy => '1',
 
-            -- The Streaming interface back to the PC (used to send frame)
-            User_StreamDataOut => USB_DataOut,
-            User_StreamDataOutWE => USB_DataOutWE,
-            User_StreamDataOutBusy => USB_DataOutBusy,
+            User_StreamDataOut => X"0000",
+            User_StreamDataOutWE => '0',
+            User_StreamDataOutBusy => open,
 
             -- Register interface
-            User_RegAddr => Addr,
-            User_RegDataIn => DataIn,
-            User_RegDataOut => DataOut,
-            User_RegWE => WE,
-            User_RegRE => RE,
+            User_RegAddr => open,
+            User_RegDataIn => open,
+            User_RegDataOut => X"00",
+            User_RegWE => open,
+            User_RegRE => open,
 
-            -- Interrupts
-            User_Interrupt => Interrupt,
+            -- Signals and interrupts
+            User_Interrupt => '0',
 
             -- SRAM interface
-            User_SRAM_A => address,
-            User_SRAM_W => SRAMWE,
-            User_SRAM_R => SRAMRE,
-            User_SRAM_DR_VALID => SRAMValid,
-            User_SRAM_DW => SRAMDataOut,
-            User_SRAM_DR => SRAMDataIn
+            User_SRAM_A => "00000000000000000000000",
+            User_SRAM_W => '0',
+            User_SRAM_R => '0',
+            User_SRAM_DR_VALID => open,
+            User_SRAM_DW => "000000000000000000",
+            User_SRAM_DR => open
         );
 
 end arch;

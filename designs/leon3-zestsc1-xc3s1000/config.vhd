@@ -100,6 +100,8 @@ package config is
   constant CFG_AHB_MONERR : integer := 0;
   constant CFG_AHB_MONWAR : integer := 0;
   constant CFG_AHB_DTRACE : integer := 0;
+-- DSU UART
+  constant CFG_AHB_UART : integer := 1;
 -- JTAG based DSU interface
   constant CFG_AHB_JTAG : integer := 1;
 -- LEON2 memory controller
@@ -113,14 +115,14 @@ package config is
   constant CFG_MCTRL_SD64 : integer := 0;
   constant CFG_MCTRL_PAGE : integer := 0 + 0;
 -- AHB ROM
-  constant CFG_AHBROMEN : integer := 1;
+  constant CFG_AHBROMEN : integer := 0;
   constant CFG_AHBROPIP : integer := 1;
   constant CFG_AHBRODDR : integer := 16#000#;
   constant CFG_ROMADDR : integer := 16#100#;
   constant CFG_ROMMASK : integer := 16#E00# + 16#100#;
 -- AHB RAM
-  constant CFG_AHBRAMEN : integer := 0;
-  constant CFG_AHBRSZ : integer := 1;
+  constant CFG_AHBRAMEN : integer := 1;
+  constant CFG_AHBRSZ : integer := 16;
   constant CFG_AHBRADDR : integer := 16#A00#;
   constant CFG_AHBRPIPE : integer := 0;
 -- UART 1
