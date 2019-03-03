@@ -29,8 +29,8 @@ use gaisler.libdcom.all;
 use gaisler.sim.all;
 library techmap;
 use techmap.gencomp.all;
+use std.textio.all;
 use work.debug.all;
-
 use work.config.all;	-- configuration
 
 entity testbench is
@@ -135,94 +135,18 @@ begin
     variable w32 : std_logic_vector(31 downto 0);
     variable c8  : std_logic_vector(7 downto 0);
     constant txp : time := 320 * 1 ns;
-    begin
+    variable l : line;
+  begin
     dsutx <= '1';
     dsurst <= '1';
+    write(l, String'("Resetting for 2500 ns"));
+    writeline(output, l);
     wait for 2500 ns;
     dsurst <= '0';
+    write(l, String'("Reset complete. Test program starts from RAM now..."));
+    writeline(output, l);
     wait;
-    wait for 5000 ns;
-    txc(dsutx, 16#55#, txp);		-- sync uart
-
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#20#, 16#2e#, txp);
-
-    wait for 25000 ns;
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#01#, txp);
-
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#24#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0D#, txp);
-
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#70#, 16#11#, 16#78#, txp);
-    txa(dsutx, 16#91#, 16#00#, 16#00#, 16#0D#, txp);
-
-    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#44#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#20#, 16#00#, txp);
-
-    txc(dsutx, 16#80#, txp);
-    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#44#, txp);
-
-    wait;
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#0a#, 16#aa#, txp);
-    txa(dsutx, 16#00#, 16#55#, 16#00#, 16#55#, txp);
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#0a#, 16#a0#, txp);
-    txa(dsutx, 16#01#, 16#02#, 16#09#, 16#33#, txp);
-
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#2e#, txp);
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#91#, 16#00#, 16#00#, 16#00#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#2e#, txp);
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0f#, txp);
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#00#, txp);
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#80#, 16#00#, 16#02#, 16#10#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0f#, txp);
-
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#91#, 16#40#, 16#00#, 16#24#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#24#, txp);
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#91#, 16#70#, 16#00#, 16#00#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#03#, txp);
-
-
-
-
-
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#ff#, 16#ff#, txp);
-
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#48#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#12#, txp);
-
-    txc(dsutx, 16#c0#, txp);
-    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#60#, txp);
-    txa(dsutx, 16#00#, 16#00#, 16#12#, 16#10#, txp);
-
-    txc(dsutx, 16#80#, txp);
-    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
-    rxi(dsurx, w32, txp, lresp);
-
-    txc(dsutx, 16#a0#, txp);
-    txa(dsutx, 16#40#, 16#00#, 16#00#, 16#00#, txp);
-    rxi(dsurx, w32, txp, lresp);
-
-    end;
+  end;
 
   begin
 
