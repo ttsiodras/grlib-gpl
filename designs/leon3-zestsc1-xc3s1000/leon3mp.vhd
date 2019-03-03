@@ -56,7 +56,7 @@ entity leon3mp is
     use_ahbram_sim          : integer := 0
   );
   port (
-    reset    : in  std_ulogic;
+    resetn   : in  std_ulogic;
     clk	     : in  std_ulogic;
     iu_error : out std_ulogic;
     dsuact   : out std_ulogic;
@@ -138,7 +138,7 @@ begin
 
   rst0 : rstgen			-- reset generator
   generic map (acthigh => 1)
-  port map (reset, clkm, cgo.clklock, rstn, rstraw);
+  port map (resetn, clkm, cgo.clklock, rstn, rstraw);
 
 ----------------------------------------------------------------------
 ---  AHB CONTROLLER --------------------------------------------------

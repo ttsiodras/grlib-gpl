@@ -58,7 +58,7 @@ architecture behav of testbench is
   component leon3mp
     port (
       clk   : in  std_ulogic;       -- main clock
-      reset : in  std_ulogic;
+      resetn : in  std_ulogic;
       iu_error : out std_ulogic;
       dsuact : out std_ulogic;
       dsu_rx : out std_ulogic; -- UART1 tx data
@@ -70,7 +70,7 @@ begin
   d3 : leon3mp
     port map (
         clk => CLK,
-        reset => RST,
+        resetn => RST,
         iu_error => iu_error,
         dsuact => dsuact,
         dsu_rx => dsu_rx,
