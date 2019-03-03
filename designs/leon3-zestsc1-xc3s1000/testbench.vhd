@@ -51,7 +51,6 @@ architecture behav of testbench is
   signal clk : std_ulogic := '0';
   signal rst : std_ulogic := '0';
   signal iu_error : std_ulogic;
-  signal dsubre : std_ulogic;
   signal dsuact : std_ulogic;
   signal dsu_tx : std_logic;
   signal dsu_rx : std_logic;
@@ -61,7 +60,6 @@ architecture behav of testbench is
       clk   : in  std_ulogic;       -- main clock
       reset : in  std_ulogic;
       iu_error : out std_ulogic;
-      dsubre : in std_ulogic;
       dsuact : out std_ulogic;
       dsu_rx : out std_ulogic; -- UART1 tx data
       dsu_tx : in  std_ulogic  -- UART1 rx data
@@ -74,7 +72,6 @@ begin
         clk => CLK,
         reset => RST,
         iu_error => iu_error,
-        dsubre => dsubre,
         dsuact => dsuact,
         dsu_rx => dsu_rx,
         dsu_tx => dsu_tx

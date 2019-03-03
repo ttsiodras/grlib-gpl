@@ -59,7 +59,6 @@ entity leon3mp is
     reset    : in  std_ulogic;
     clk	     : in  std_ulogic;
     iu_error : out std_ulogic;
-    dsubre   : in std_ulogic;
     dsuact   : out std_ulogic;
     dsu_rx   : out std_ulogic;
     dsu_tx   : in  std_ulogic
@@ -177,10 +176,7 @@ begin
          ncpu => CFG_NCPU, tbits => 30, tech => memtech, irq => 0, kbytes => CFG_ATBSZ)
       port map (rstn, clkm, ahbmi, ahbsi, ahbso(2), dbgo, dbgi, dsui, dsuo);
       dsui.enable <= '1'; 
-
-      -- dsubre_pad : inpad generic map (tech => padtech) port map (dsubre, dsui.break); 
-      dsui.break <= dsubre; 
-
+      dsui.break <= '0'; 
       dsuact_pad : outpad generic map (tech => padtech) port map (dsuact, dsuo.active);
     end generate;
   end generate;
