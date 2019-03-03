@@ -1,0 +1,24 @@
+UNISIM_BASE?=${HOME}/Xilinx/14.7/ISE_DS/ISE/vhdl/src/unisims
+
+unisim:
+	ghdl -i  --workdir=gnu/unisim --work=unisim -Pgnu -Pgnu/grlib ../../lib/techmap/unisim/pads_unisim.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim -Pgnu -Pgnu/grlib ../../lib/techmap/unisim/ddr_phy_unisim.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim -Pgnu -Pgnu/grlib ../../lib/techmap/unisim/buffer_unisim.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim -Pgnu -Pgnu/grlib ../../lib/techmap/unisim/ddr_unisim.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim -Pgnu -Pgnu/grlib ../../lib/techmap/unisim/spictrl_unisim.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim -Pgnu -Pgnu/grlib ../../lib/techmap/unisim/memory_unisim.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim -Pgnu -Pgnu/grlib ../../lib/techmap/unisim/clkgen_unisim.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim -Pgnu -Pgnu/grlib ../../lib/techmap/unisim/sysmon_unisim.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim -Pgnu -Pgnu/grlib ../../lib/techmap/unisim/mul_unisim.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim -Pgnu -Pgnu/grlib ../../lib/techmap/unisim/tap_unisim.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim ${UNISIM_BASE}/primitive/BUFG.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim ${UNISIM_BASE}/primitive/BUFGMUX.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim ${UNISIM_BASE}/primitive/DCM.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim ${UNISIM_BASE}/primitive/*.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim ${UNISIM_BASE}/unisim_VPKG.vhd
+	ghdl -i  --workdir=gnu/unisim --work=unisim ${UNISIM_BASE}/unisim_VCOMP.vhd
+	ghdl -i  --workdir=gnu/unisim --work=ieee ../../ghdl/libraries/vital95/*.vhdl
+	ghdl -i  --workdir=gnu/unisim --work=ieee ../../ghdl/libraries/ieee/std_logic_1164*.vhdl
+	ghdl -i  --workdir=gnu/unisim --work=ieee ../../ghdl/libraries/ieee/numeric_std*.vhdl
+	ghdl -i  --workdir=gnu/unisim --work=ieee ../../ghdl/libraries/ieee/math_real*.vhdl
+	ghdl -i  --workdir=gnu/unisim --work=ieee ../../ghdl/libraries/synopsys/*.vhdl
