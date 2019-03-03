@@ -196,8 +196,8 @@ architecture arch of TheBigLeonski is
     signal Interrupt : std_logic;
 
     -- The bridge to Leon - hopefully, GRMON will speak over it
-    signal rsrx   : std_ulogic; -- UART1 tx data
-    signal rstx   : std_ulogic; -- UART1 rx data
+    signal dsu_rx : std_ulogic; -- UART1 tx data
+    signal dsu_tx : std_ulogic; -- UART1 rx data
     signal dsubre : std_ulogic;
     signal dsuact : std_ulogic;
     signal iu_error : std_ulogic;
@@ -209,19 +209,20 @@ begin
 
     -- Tie unused signals.
     User_Signals <= "ZZZZZZZZ";
-    LEDs(7 downto 3) <= "11111";
+    LEDs(7 downto 4) <= "1111";
     IO_CLK_N <= 'Z';
     IO_CLK_P <= 'Z';
     Interrupt <= '0';
 
-    LEDs(0) <= std_logic(rsrx);
+    LEDs(0) <= std_logic(dsu_rx);
     LEDs(1) <= std_logic(iu_error);
     LEDs(2) <= std_logic(dsuact);
+    LEDs(3) <= IO(3);
 
     IO(0) <= LEDs(0);
     IO(1) <= LEDs(1);
-    IO(2) <= rsrx;
-    rstx <= std_ulogic(IO(3));
+    IO(2) <= dsu_rx;
+    dsu_tx <= std_ulogic(IO(3));
     IO(4) <= 'Z';
     IO(5) <= 'Z';
     IO(6) <= 'Z';
@@ -311,8 +312,8 @@ begin
             iu_error => iu_error,
             dsuact => dsuact,
             dsubre => dsubre,
-            dsu_rx => rsrx,
-            dsu_tx => rstx
+            dsu_rx => dsu_rx,
+            dsu_tx => dsu_tx
         );
 
     Interfaces : ZestSC1_Interfaces
