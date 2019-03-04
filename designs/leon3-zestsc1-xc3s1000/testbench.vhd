@@ -83,7 +83,7 @@ begin
 
   process
   begin
-    wait for 50*CLK_PERIOD;
+    wait for 10000*CLK_PERIOD;
     if to_x01(iu_error) = '0' then wait on iu_error; end if;
     assert (to_x01(iu_error) = '0') 
       report "*** IU in error mode, simulation halted ***"
@@ -91,7 +91,7 @@ begin
   end process;
 
   dsucom : process
-    procedure dsucfg(signal dsurx : in std_ulogic; signal dsutx : out std_ulogic) is
+    procedure dsucfg(signal dsutx : out std_ulogic; signal dsurx : in std_ulogic) is
       variable w32 : std_logic_vector(31 downto 0);
       variable c8  : std_logic_vector(7 downto 0);
       constant txp : time := 320 * 1 ns;
@@ -103,6 +103,94 @@ begin
       rstn <= '1';
       wait for 40*CLK_PERIOD;
       rstn <= '0';
+      wait for 10*CLK_PERIOD;
+
+    wait for 5000 ns;
+    txc(dsutx, 16#55#, txp);		-- sync uart
+
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#20#, 16#2e#, txp);
+
+    wait for 25000 ns;
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#01#, txp);
+
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#24#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0D#, txp);
+
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#90#, 16#70#, 16#11#, 16#78#, txp);
+    txa(dsutx, 16#91#, 16#00#, 16#00#, 16#0D#, txp);
+
+    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#44#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#20#, 16#00#, txp);
+
+    txc(dsutx, 16#80#, txp);
+    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#44#, txp);
+
+    wait;
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#0a#, 16#aa#, txp);
+    txa(dsutx, 16#00#, 16#55#, 16#00#, 16#55#, txp);
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#0a#, 16#a0#, txp);
+    txa(dsutx, 16#01#, 16#02#, 16#09#, 16#33#, txp);
+
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#2e#, txp);
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#91#, 16#00#, 16#00#, 16#00#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#2e#, txp);
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0f#, txp);
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#00#, txp);
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#80#, 16#00#, 16#02#, 16#10#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0f#, txp);
+
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#91#, 16#40#, 16#00#, 16#24#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#24#, txp);
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#91#, 16#70#, 16#00#, 16#00#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#03#, txp);
+
+
+
+
+
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#ff#, 16#ff#, txp);
+
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#48#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#00#, 16#12#, txp);
+
+    txc(dsutx, 16#c0#, txp);
+    txa(dsutx, 16#90#, 16#40#, 16#00#, 16#60#, txp);
+    txa(dsutx, 16#00#, 16#00#, 16#12#, 16#10#, txp);
+
+    txc(dsutx, 16#80#, txp);
+    txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
+    rxi(dsurx, w32, txp, lresp);
+
+    txc(dsutx, 16#a0#, txp);
+    txa(dsutx, 16#40#, 16#00#, 16#00#, 16#00#, txp);
+    rxi(dsurx, w32, txp, lresp);
+
+
+
+
+
+
       write(l, String'("Reset complete."));
       writeline(output, l);
       write(l, String'("Waiting for peripherals to settle."));

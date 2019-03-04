@@ -103,3 +103,4 @@ ghdl.log
 gnu/
 testbench
 **/*.swp
+data.vcd.gz
