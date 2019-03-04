@@ -238,3 +238,24 @@ As far as I can tell, this shows my Leon3...
 - Then the testbench starts speaking to the DSU over `dsu_tx`, and the DSU seems to respond after a bit; first by raising `dsuact` (which is internally mapped to `dsuo.active`) - and then by starting to speak over `dsu_rx`.
 
 Not that I speak the DSU protocol or anything; but this seems to indicate that at least my design isn't "dead"; the DSU is responsive. Why my grmon can't speak to it in real life, is still a mystery.
+
+**UPDATE**: Success, sort of! Since the DSU is alive and beating, I realized that perhaps grmon is NOT sending the same data that the testbench is; so I recorded the data sent over the serial by grmon and they were indeed different!
+
+So I instead created a file with the [50 bytes sent by the testbench](designs/leon3-zestsc1-xc3s1000/testbench.vhd#L109) until that first `wait` in the testbench *(this scenario was copied from the fully operational (under GHDL) leon3-digilent-xc3s1000 testbench)*. 
+
+I tried sending this data directly to the board...
+
+    $ grmon -uart /dev/ttyUSB
+    ...
+    Ctrl-C 
+    # This leaves the UART setup the right way - baud rate, etc
+
+    $ cat designs/leon3-zestsc1-xc3s1000/speak.to.DSU.data > /dev/ttyUSB0
+
+...and indeed, just as in the simulation, the `dsuact` woke up - its LED lit up!
+
+We therefore *are* able to speak to the DSU, it's just that grmon doesn't say the right magic words to wake it up!
+
+(facepalm)
+
+Could it be that the change to grmon3 introduced some sort of regression that doesn't allow grmon to interoperate well over UART?
