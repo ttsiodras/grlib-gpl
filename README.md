@@ -221,3 +221,20 @@ seen flashing the moment grmon tries to connect over UART in the
 video shown below (just click on the image):
 
 [![Video of current state](contrib/image.jpg "Video of current state.")](https://drive.google.com/open?id=1gLzqmvmTQcRpCRPtwAekiSrse7h4pfPa)
+
+**UPDATE**: To see if the DSU responds under simulation, I added code 
+in the testbench that 'speaks' to it - and indeed, after recording...
+
+    $ make  -f Makefile.ttsiod-ghdl fastvcd
+    ...
+    $ zcat data.vcd.gz | gtkwave --vcd
+
+![DSU active turns high](contrib/wave.png "DSU active turns high")
+
+As far as I can tell, this shows my Leon3...
+
+- raising an IU error shortly after reset; which I believe is normal, since there's no ROM there, and the tiny BlockRAM is also empty of valid code.
+
+- Then the testbench starts speaking to the DSU over `dsu_tx`, and the DSU seems to respond after a bit; first by raising `dsuact` (which is internally mapped to `dsuo.active`) - and then by starting to speak over `dsu_rx`.
+
+Not that I speak the DSU protocol or anything; but this seems to indicate that at least my design isn't "dead"; the DSU is responsive. Why my grmon can't speak to it in real life, is still a mystery.

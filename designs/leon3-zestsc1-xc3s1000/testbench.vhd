@@ -83,7 +83,7 @@ begin
 
   process
   begin
-    wait for 10000*CLK_PERIOD;
+    wait for 30000*CLK_PERIOD;
     if to_x01(iu_error) = '0' then wait on iu_error; end if;
     assert (to_x01(iu_error) = '0') 
       report "*** IU in error mode, simulation halted ***"
