@@ -12,7 +12,7 @@ Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 
@@ -1806,11 +1806,11 @@ Analyzing Entity <TheBigLeonski> in library <work> (Architecture <arch>).
     Set user-defined property "DRIVE =  12" for instance <myRST_obuf> in unit <TheBigLeonski>.
     Set user-defined property "IOSTANDARD =  DEFAULT" for instance <myRST_obuf> in unit <TheBigLeonski>.
     Set user-defined property "SLEW =  SLOW" for instance <myRST_obuf> in unit <TheBigLeonski>.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 349: Unconnected output port 'User_StreamDataIn' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 349: Unconnected output port 'User_StreamDataInWE' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 349: Unconnected output port 'User_StreamDataOutBusy' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 349: Unconnected output port 'User_SRAM_DR_VALID' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 349: Unconnected output port 'User_SRAM_DR' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 359: Unconnected output port 'User_StreamDataIn' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 359: Unconnected output port 'User_StreamDataInWE' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 359: Unconnected output port 'User_StreamDataOutBusy' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 359: Unconnected output port 'User_SRAM_DR_VALID' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 359: Unconnected output port 'User_SRAM_DR' of component 'ZestSC1_Interfaces'.
 INFO:Xst:2679 - Register <SRAMDataOut> in unit <TheBigLeonski> has a constant value of 000000000000000000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <USB_DataOutWE> in unit <TheBigLeonski> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <USB_DataOut> in unit <TheBigLeonski> has a constant value of 0000000000000000 during circuit operation. The register is replaced by logic.
@@ -1826,28 +1826,28 @@ Analyzing generic Entity <leon3mp> in library <work> (Architecture <rtl>).
 	padtech = 11
 	pclow = 2
 	use_ahbram_sim = 0
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 135: Unconnected output port 'clkn' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 135: Unconnected output port 'clk2x' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 135: Unconnected output port 'sdclk' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 135: Unconnected output port 'pciclk' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 135: Unconnected output port 'clk4x' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 135: Unconnected output port 'clk1xu' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 135: Unconnected output port 'clk2xu' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 135: Unconnected output port 'clkb' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 135: Unconnected output port 'clkc' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 135: Unconnected output port 'clk8x' of component 'clkgen'.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 139: Unconnected input port 'testrst' of component 'rstgen' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 139: Unconnected input port 'testen' of component 'rstgen' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 147: Unconnected input port 'testen' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 147: Unconnected input port 'testrst' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 147: Unconnected input port 'scanen' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 147: Unconnected input port 'testoen' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 147: Unconnected input port 'testsig' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 171: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 180: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 197: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 215: Unconnected input port 'cpurun' of component 'irqmp' is tied to default value.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 227: Unconnected output port 'gpto' of component 'gptimer'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clkn' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clk2x' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'sdclk' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'pciclk' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clk4x' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clk1xu' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clk2xu' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clkb' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clkc' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clk8x' of component 'clkgen'.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 142: Unconnected input port 'testrst' of component 'rstgen' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 142: Unconnected input port 'testen' of component 'rstgen' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected input port 'testen' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected input port 'testrst' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected input port 'scanen' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected input port 'testoen' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected input port 'testsig' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 174: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 183: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 212: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 230: Unconnected input port 'cpurun' of component 'irqmp' is tied to default value.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 242: Unconnected output port 'gpto' of component 'gptimer'.
 Entity <leon3mp> analyzed. Unit <leon3mp> generated.
 
 Analyzing generic Entity <clkgen> in library <techmap> (Architecture <struct>).
@@ -6604,6 +6604,52 @@ Unit <leon3s> synthesized.
 
 Synthesizing Unit <leon3mp>.
     Related source file is "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd".
+WARNING:Xst:2563 - Inout <IO(43)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(38)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(44)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(39)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(46)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(0)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(1)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(2)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(3)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(4)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(5)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(6)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(7)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(8)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(9)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(10)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(11)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(12)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(13)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(14)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(20)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(15)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(21)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(16)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(22)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(17)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(23)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(18)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(24)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(19)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(30)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(25)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(31)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(26)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(32)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(27)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(33)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(28)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(34)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(29)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(40)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(35)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(41)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(36)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(42)> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <IO(37)> is never assigned. Tied to value Z.
 WARNING:Xst:1780 - Signal <wpo.wprothit> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <vcc> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <u2o.txen> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -7012,58 +7058,74 @@ WARNING:Xst:1781 - Signal <ahbmo(10).hconfig> is used but never assigned. Tied t
 WARNING:Xst:653 - Signal <ahbmo(10).hbusreq> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:653 - Signal <ahbmo(10).hburst> is used but never assigned. This sourceless signal will be automatically connected to value 000.
 WARNING:Xst:653 - Signal <ahbmo(10).haddr> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+    Found 1-bit tristate buffer for signal <IO(46)>.
+    Found 1-bit register for signal <IO(45)>.
+    Found 1-bit tristate buffer for signal <IO(44)>.
+    Found 1-bit tristate buffer for signal <IO(43)>.
+    Found 1-bit tristate buffer for signal <IO(42)>.
+    Found 1-bit tristate buffer for signal <IO(41)>.
+    Found 1-bit tristate buffer for signal <IO(40)>.
+    Found 1-bit tristate buffer for signal <IO(39)>.
+    Found 1-bit tristate buffer for signal <IO(38)>.
+    Found 1-bit tristate buffer for signal <IO(37)>.
+    Found 1-bit tristate buffer for signal <IO(36)>.
+    Found 1-bit tristate buffer for signal <IO(35)>.
+    Found 1-bit tristate buffer for signal <IO(34)>.
+    Found 1-bit tristate buffer for signal <IO(33)>.
+    Found 1-bit tristate buffer for signal <IO(32)>.
+    Found 1-bit tristate buffer for signal <IO(31)>.
+    Found 1-bit tristate buffer for signal <IO(30)>.
+    Found 1-bit tristate buffer for signal <IO(29)>.
+    Found 1-bit tristate buffer for signal <IO(28)>.
+    Found 1-bit tristate buffer for signal <IO(27)>.
+    Found 1-bit tristate buffer for signal <IO(26)>.
+    Found 1-bit tristate buffer for signal <IO(25)>.
+    Found 1-bit tristate buffer for signal <IO(24)>.
+    Found 1-bit tristate buffer for signal <IO(23)>.
+    Found 1-bit tristate buffer for signal <IO(22)>.
+    Found 1-bit tristate buffer for signal <IO(21)>.
+    Found 1-bit tristate buffer for signal <IO(20)>.
+    Found 1-bit tristate buffer for signal <IO(19)>.
+    Found 1-bit tristate buffer for signal <IO(18)>.
+    Found 1-bit tristate buffer for signal <IO(17)>.
+    Found 1-bit tristate buffer for signal <IO(16)>.
+    Found 1-bit tristate buffer for signal <IO(15)>.
+    Found 1-bit tristate buffer for signal <IO(14)>.
+    Found 1-bit tristate buffer for signal <IO(13)>.
+    Found 1-bit tristate buffer for signal <IO(12)>.
+    Found 1-bit tristate buffer for signal <IO(11)>.
+    Found 1-bit tristate buffer for signal <IO(10)>.
+    Found 1-bit tristate buffer for signal <IO(9)>.
+    Found 1-bit tristate buffer for signal <IO(8)>.
+    Found 1-bit tristate buffer for signal <IO(7)>.
+    Found 1-bit tristate buffer for signal <IO(6)>.
+    Found 1-bit tristate buffer for signal <IO(5)>.
+    Found 1-bit tristate buffer for signal <IO(4)>.
+    Found 1-bit tristate buffer for signal <IO(3)>.
+    Found 1-bit tristate buffer for signal <IO(2)>.
+    Found 1-bit tristate buffer for signal <IO(1)>.
+    Found 1-bit tristate buffer for signal <IO(0)>.
+    Found 32-bit up counter for signal <counter2>.
+    Found 1-bit register for signal <heartbeat>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+	inferred  46 Tristate(s).
 Unit <leon3mp> synthesized.
 
 
 Synthesizing Unit <TheBigLeonski>.
     Related source file is "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd".
-WARNING:Xst:2565 - Inout <IO(38)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(39)> is never assigned.
 WARNING:Xst:2565 - Inout <User_Signals(0)> is never assigned.
 WARNING:Xst:2565 - Inout <User_Signals(1)> is never assigned.
 WARNING:Xst:2565 - Inout <User_Signals(2)> is never assigned.
 WARNING:Xst:2565 - Inout <User_Signals(3)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(4)> is never assigned.
 WARNING:Xst:2565 - Inout <User_Signals(4)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(5)> is never assigned.
 WARNING:Xst:2565 - Inout <User_Signals(5)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(6)> is never assigned.
 WARNING:Xst:2565 - Inout <User_Signals(6)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(7)> is never assigned.
 WARNING:Xst:2565 - Inout <User_Signals(7)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(8)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(9)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(10)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(11)> is never assigned.
 WARNING:Xst:2565 - Inout <IO_CLK_N> is never assigned.
-WARNING:Xst:2565 - Inout <IO(12)> is never assigned.
 WARNING:Xst:2565 - Inout <IO_CLK_P> is never assigned.
-WARNING:Xst:2565 - Inout <IO(13)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(14)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(20)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(15)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(21)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(16)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(22)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(17)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(23)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(18)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(24)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(19)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(30)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(25)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(26)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(31)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(32)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(27)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(33)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(28)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(34)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(29)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(40)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(35)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(36)> is never assigned.
-WARNING:Xst:2565 - Inout <IO(37)> is never assigned.
 WARNING:Xst:646 - Signal <USB_DataOutWE> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <USB_DataOutBusy> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <USB_DataOut> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -7077,14 +7139,18 @@ WARNING:Xst:646 - Signal <SRAMDataOut> is assigned but never used. This unconnec
 WARNING:Xst:1780 - Signal <SRAMDataIn> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <SRAMAddr> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <RE> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <LEDs<7:6>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <LEDs<4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <LEDs<3>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <Interrupt> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <DataOut> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
 WARNING:Xst:646 - Signal <DataIn> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 32-bit up counter for signal <counter>.
+    Found 1-bit register for signal <heartbeat>.
     Found 1-bit register for signal <myRST>.
     Summary:
-	inferred   1 D-type flip-flop(s).
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
 Unit <TheBigLeonski> synthesized.
 
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -7120,15 +7186,16 @@ Macro Statistics
  7-bit subtractor                                      : 1
  8-bit adder                                           : 2
  9-bit subtractor                                      : 1
-# Counters                                             : 10
+# Counters                                             : 12
  12-bit down counter                                   : 1
  2-bit up counter                                      : 1
  3-bit up counter                                      : 3
  30-bit up counter                                     : 1
+ 32-bit up counter                                     : 2
  4-bit up counter                                      : 2
  8-bit up counter                                      : 2
-# Registers                                            : 494
- 1-bit register                                        : 322
+# Registers                                            : 497
+ 1-bit register                                        : 325
  10-bit register                                       : 1
  12-bit register                                       : 1
  14-bit register                                       : 2
@@ -7176,7 +7243,8 @@ Macro Statistics
  8-bit 4-to-1 multiplexer                              : 2
 # Priority Encoders                                    : 2
  32-bit 1-of-6 priority encoder                        : 2
-# Tristates                                            : 4
+# Tristates                                            : 50
+ 1-bit tristate buffer                                 : 46
  16-bit tristate buffer                                : 1
  8-bit tristate buffer                                 : 1
  9-bit tristate buffer                                 : 2
@@ -7294,15 +7362,16 @@ Macro Statistics
  7-bit subtractor                                      : 1
  8-bit adder                                           : 2
  9-bit subtractor                                      : 1
-# Counters                                             : 10
+# Counters                                             : 12
  12-bit down counter                                   : 1
  2-bit up counter                                      : 1
  3-bit up counter                                      : 3
  30-bit up counter                                     : 1
+ 32-bit up counter                                     : 2
  4-bit up counter                                      : 2
  8-bit up counter                                      : 2
-# Registers                                            : 2666
- Flip-Flops                                            : 2666
+# Registers                                            : 2669
+ Flip-Flops                                            : 2669
 # Comparators                                          : 196
  12-bit comparator equal                               : 176
  14-bit comparator equal                               : 1
@@ -7504,170 +7573,168 @@ Optimizing unit <ahbram> ...
 Optimizing unit <cachemem> ...
 
 Optimizing unit <dsu3x> ...
-
-Optimizing unit <leon3mp> ...
-WARNING:Xst:1303 - From in and out of unit ahbramgen.ahbram0, both signals clk and clkm have a KEEP attribute, signal clk will be lost.
-WARNING:Xst:1303 - From in and out of unit l3.cpu[0].u0/leon3x0/vhdl.cmem0, both signals clk and clkm have a KEEP attribute, signal clk will be lost.
-WARNING:Xst:1303 - From in and out of unit l3.dsugen.dsu0/x0, both signals cpuclk and clkm have a KEEP attribute, signal cpuclk will be lost.
+WARNING:Xst:1303 - From in and out of unit LeonTheProfessional/ahbramgen.ahbram0, both signals clk and LeonTheProfessional/clkm have a KEEP attribute, signal clk will be lost.
+WARNING:Xst:1303 - From in and out of unit LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.cmem0, both signals clk and LeonTheProfessional/clkm have a KEEP attribute, signal clk will be lost.
+WARNING:Xst:1303 - From in and out of unit LeonTheProfessional/l3.dsugen.dsu0/x0, both signals cpuclk and LeonTheProfessional/clkm have a KEEP attribute, signal cpuclk will be lost.
 WARNING:Xst:1426 - The value init of the FF/Latch LeonTheProfessional/l3.dsugen.dsu0/x0/r.en_0 hinder the constant cleaning in the block TheBigLeonski.
    You should achieve better results by setting this init to 1.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_3> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_4> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_7> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_8> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_9> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_10> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_11> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_15> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_16> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_17> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_18> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_19> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_20> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_21> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_22> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_23> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_25> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_26> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_27> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_28> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_29> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_30> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_31> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.dsugen.dsu0/x0/tr.hburst_1> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.dsugen.dsu0/x0/tr.hburst_2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.dsugen.dsu0/x0/tr.hmaster_1> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.dsugen.dsu0/x0/tr.hmaster_2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.dsugen.dsu0/x0/tr.hmaster_3> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.dsugen.dsu0/x0/tr.hsize_2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahbramgen.ahbram0/r.size_2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/a0/r.retry> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.bpmiss> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_0> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_3> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_18> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_19> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_20> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_21> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_22> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_23> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_25> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_26> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_27> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_30> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_0> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_1> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.dsugen.dsu0/x0/r.pwd_0> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/apb0/apbx/r.p(0).haddr_0> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/apb0/apbx/r.p(0).haddr_1> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/dcomgen.dcom0/ahbmst0/r.start> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.diag_op> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_0> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_1> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_2> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_3> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_4> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_5> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_6> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_7> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_8> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_9> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_10> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_11> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_12> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_13> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_14> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_15> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_16> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_17> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_18> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_19> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_20> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_21> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_22> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_23> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_24> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_25> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_26> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_27> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_28> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_29> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_30> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_31> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.wb.asi_0> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.wb.asi_1> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.wb.asi_2> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.wb.asi_3> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.su> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.cmiss> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.asi_1> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.asi_2> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.asi_3> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.asi_4> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.cmiss> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.eocl> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_0> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_1> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_2> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_3> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_4> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_5> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_6> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_7> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.su> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.dci.asi_5> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.dci.asi_6> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.dci.asi_7> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.su> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/gpt.timer0/r.wdog> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/gpt.timer0/r.wdogn> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.cpurst_0> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_3> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_4> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_5> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_6> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_7> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_8> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_9> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_10> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_11> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_12> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_13> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_14> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_15> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_16> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_17> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_18> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_19> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_20> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_21> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_22> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_23> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_24> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_25> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_26> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_27> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_28> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_29> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_30> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_31> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.forceerr_0> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_0> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_30> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_27> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_26> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_25> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_23> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_22> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_21> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_20> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_19> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_18> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_3> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_0> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.bpmiss> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/a0/r.retry> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahbramgen.ahbram0/r.size_2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.dsugen.dsu0/x0/tr.hsize_2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.dsugen.dsu0/x0/tr.hmaster_3> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.dsugen.dsu0/x0/tr.hmaster_2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.dsugen.dsu0/x0/tr.hmaster_1> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.dsugen.dsu0/x0/tr.hburst_2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.dsugen.dsu0/x0/tr.hburst_1> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_31> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_30> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_29> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_28> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_27> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_26> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_25> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_23> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_22> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_21> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_20> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_19> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_18> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_17> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_16> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_15> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_11> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_10> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_9> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_8> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_7> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_4> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_3> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.setaddrboot> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/dcomgen.dcom0/ahbmst0/r.retry> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/a0/r.retry2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.forceerr_0> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_31> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_30> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_29> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_28> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_27> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_26> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_25> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_24> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_23> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_22> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_21> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_20> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_19> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_18> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_17> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_16> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_15> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_14> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_13> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_12> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_11> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_10> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_9> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_8> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_7> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_6> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_5> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_4> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_3> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.cpurst_0> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/gpt.timer0/r.wdogn> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/gpt.timer0/r.wdog> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.su> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.dci.asi_7> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.dci.asi_6> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.dci.asi_5> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.su> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_7> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_6> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_5> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_4> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_3> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_2> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_1> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.ctx_0> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.eocl> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.cmiss> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.asi_4> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.asi_3> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.asi_2> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.asi_1> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.cmiss> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.su> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.wb.asi_3> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.wb.asi_2> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.wb.asi_1> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.wb.asi_0> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_31> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_30> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_29> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_28> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_27> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_26> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_25> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_24> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_23> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_22> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_21> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_20> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_19> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_18> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_17> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_16> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_15> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_14> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_13> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_12> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_11> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_10> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_9> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_8> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_7> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_6> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_5> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_4> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_3> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_2> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_1> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.vaddr_0> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.diag_op> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/dcomgen.dcom0/ahbmst0/r.start> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/apb0/apbx/r.p(0).haddr_1> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/apb0/apbx/r.p(0).haddr_0> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.dsugen.dsu0/x0/r.pwd_0> of sequential type is unconnected in block <TheBigLeonski>.
 WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.a.bpimiss> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_0> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_1> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_2> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_3> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_4> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_5> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_6> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_7> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.wb.lock2> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/a0/r.retry2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/dcomgen.dcom0/ahbmst0/r.retry> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <LeonTheProfessional/ahb0/r.hmasterlockd> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.wb.lock2> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_7> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_6> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_5> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_4> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_3> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_2> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_1> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_0> of sequential type is unconnected in block <TheBigLeonski>.
 WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.pcheld> of sequential type is unconnected in block <TheBigLeonski>.
 INFO:Xst:2399 - RAMs <Interfaces/INST_ZestSC1_Host/Mram_FIFOOut16>, <Interfaces/INST_ZestSC1_Host/Mram_FIFOOut15> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <Interfaces/INST_ZestSC1_Host/Mram_FIFOOut16>, <Interfaces/INST_ZestSC1_Host/Mram_FIFOOut13> are equivalent, second RAM is removed
@@ -7693,31 +7760,31 @@ INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_14> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_14> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_20> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_20> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_15> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_15> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_21> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_21> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_16> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_16> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_22> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_22> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_21> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_21> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_17> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_17> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_23> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_23> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_22> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_22> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_18> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_18> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_23> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_23> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_24> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_24> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_19> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_19> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_30> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_30> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_25> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_25> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_31> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_31> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_30> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_30> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_26> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_26> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_31> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_31> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_27> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_27> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_28> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_28> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_29> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_29> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahbramgen.ahbram0/r.addr_2> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahb0/r.haddr_2> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahbramgen.ahbram0/r.addr_3> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahb0/r.haddr_3> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.haddr_2> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahbramgen.ahbram0/r.addr_2> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.haddr_3> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahbramgen.ahbram0/r.addr_3> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wren> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wren> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahbramgen.ahbram0/r.addr_4> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahb0/r.haddr_4> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahbramgen.ahbram0/r.addr_5> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahb0/r.haddr_5> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahbramgen.ahbram0/r.addr_6> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahb0/r.haddr_6> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahbramgen.ahbram0/r.addr_7> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahb0/r.haddr_7> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahbramgen.ahbram0/r.addr_8> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahb0/r.haddr_8> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.haddr_4> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahbramgen.ahbram0/r.addr_4> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.haddr_5> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahbramgen.ahbram0/r.addr_5> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.haddr_6> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahbramgen.ahbram0/r.addr_6> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.haddr_7> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahbramgen.ahbram0/r.addr_7> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.haddr_8> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahbramgen.ahbram0/r.addr_8> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.address_0> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.address_0> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahbramgen.ahbram0/r.addr_9> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahb0/r.haddr_9> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.haddr_9> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahbramgen.ahbram0/r.addr_9> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_0> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_0> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.address_1> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.address_1> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_1> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_1> 
@@ -7735,19 +7802,21 @@ INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_7> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_7> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_8> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_8> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_9> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_9> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_5> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahb0/r.hrdatam_6> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/mm.msigned> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_19> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahbramgen.ahbram0/r.addr_10> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahb0/r.haddr_10> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahbramgen.ahbram0/r.addr_11> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahb0/r.cfga11> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_12> in Unit <TheBigLeonski> is equivalent to the following 2 FFs/Latches, which will be removed : <LeonTheProfessional/ahb0/r.hrdatam_13> <LeonTheProfessional/ahb0/r.hrdatam_24> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_6> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahb0/r.hrdatam_5> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_19> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/mm.msigned> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.haddr_10> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahbramgen.ahbram0/r.addr_10> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.cfga11> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/ahbramgen.ahbram0/r.addr_11> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_24> in Unit <TheBigLeonski> is equivalent to the following 2 FFs/Latches, which will be removed : <LeonTheProfessional/ahb0/r.hrdatam_13> <LeonTheProfessional/ahb0/r.hrdatam_12> 
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x1/rwcol0/r2.wdata_10> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/s1.rhu/s1.dp.x0/rwcol0/r2.wdata_10> 
-INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/mm.xsigned> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_19> 
+INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_19> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/mm.xsigned> 
 Replicating register myRST to handle IOB=TRUE attribute
+Replicating register heartbeat to handle IOB=TRUE attribute
 Replicating register LeonTheProfessional/dcomgen.dcom0/dcom_uart0/r.tshift_0 to handle IOB=TRUE attribute
 Replicating register LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.nerror to handle IOB=TRUE attribute
 Replicating register LeonTheProfessional/l3.dsugen.dsu0/x0/r.act to handle IOB=TRUE attribute
 
-FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.cnt_0 has been replicated 1 time(s)
+FlipFlop LeonTheProfessional/ahb0/r.cfgsel has been replicated 1 time(s)
+FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/rst has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.cnt_1 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_20 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_21 has been replicated 1 time(s)
@@ -7756,20 +7825,20 @@ FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_24 has b
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_30 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_31 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_19 has been replicated 1 time(s)
-FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_20 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.invop2 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp2 has been replicated 1 time(s)
+FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_19 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_20 has been replicated 2 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_21 has been replicated 2 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_22 has been replicated 2 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_24 has been replicated 1 time(s)
+FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_30 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.result_0 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.result_1 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.result_2 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.result_3 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.rstate_3 has been replicated 1 time(s)
-FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/mm.msigned has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/rm.state_0 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/rm.state_1 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/rm.state_2 has been replicated 1 time(s)
@@ -7777,44 +7846,44 @@ FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/rm.state_2 h
 Final Macro Processing ...
 
 Processing Unit <TheBigLeonski> :
-	Found 2-bit shift register for signal <LeonTheProfessional/dcomgen.dcom0/dcom_uart0/r.rxf_1>.
-	Found 5-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dsur.cfc_4>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.cwp_0>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.cwp_1>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.cwp_2>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_14>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_15>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_16>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_17>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_18>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_0>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_1>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_2>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_3>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_4>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_9>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_10>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_11>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_12>.
-	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_13>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_14>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_15>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_16>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_17>.
-	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_18>.
-	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_25>.
-	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_26>.
-	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_27>.
-	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_28>.
 	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_29>.
+	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_28>.
+	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_27>.
+	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_26>.
+	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_25>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_18>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_17>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_16>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_15>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_14>.
+	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_13>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_12>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_11>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_10>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_9>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_4>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_3>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_2>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_1>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_0>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_18>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_17>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_16>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_15>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_14>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.cwp_2>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.cwp_1>.
+	Found 2-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.cwp_0>.
+	Found 5-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dsur.cfc_4>.
+	Found 2-bit shift register for signal <LeonTheProfessional/dcomgen.dcom0/dcom_uart0/r.rxf_1>.
 Unit <TheBigLeonski> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 2399
- Flip-Flops                                            : 2399
+# Registers                                            : 2468
+ Flip-Flops                                            : 2468
 # Shift Registers                                      : 30
  2-bit shift register                                  : 23
  3-bit shift register                                  : 6
@@ -7846,33 +7915,33 @@ Design Statistics
 # IOs                              : 161
 
 Cell Usage :
-# BELS                             : 10492
+# BELS                             : 10722
 #      GND                         : 25
-#      INV                         : 28
-#      LUT1                        : 102
-#      LUT2                        : 757
-#      LUT2_D                      : 57
-#      LUT2_L                      : 64
-#      LUT3                        : 1600
+#      INV                         : 34
+#      LUT1                        : 164
+#      LUT2                        : 758
+#      LUT2_D                      : 52
+#      LUT2_L                      : 63
+#      LUT3                        : 1609
 #      LUT3_D                      : 134
-#      LUT3_L                      : 138
-#      LUT4                        : 5171
-#      LUT4_D                      : 306
-#      LUT4_L                      : 750
-#      MUXCY                       : 408
-#      MUXF5                       : 574
+#      LUT3_L                      : 129
+#      LUT4                        : 5208
+#      LUT4_D                      : 309
+#      LUT4_L                      : 727
+#      MUXCY                       : 487
+#      MUXF5                       : 581
 #      MUXF6                       : 31
 #      MUXF7                       : 20
 #      VCC                         : 1
-#      XORCY                       : 326
-# FlipFlops/Latches                : 2430
-#      FD                          : 234
+#      XORCY                       : 390
+# FlipFlops/Latches                : 2499
+#      FD                          : 235
 #      FDC                         : 8
 #      FDCE                        : 28
-#      FDE                         : 1677
+#      FDE                         : 1680
 #      FDPE                        : 2
-#      FDR                         : 50
-#      FDRE                        : 122
+#      FDR                         : 82
+#      FDRE                        : 155
 #      FDRS                        : 84
 #      FDRSE                       : 3
 #      FDS                         : 162
@@ -7886,11 +7955,12 @@ Cell Usage :
 #      SRL16E                      : 29
 # Clock Buffers                    : 5
 #      BUFG                        : 5
-# IO Buffers                       : 112
-#      IBUF                        : 25
+# IO Buffers                       : 149
+#      IBUF                        : 24
 #      IBUFG                       : 2
+#      IOBUF                       : 1
 #      OBUF                        : 43
-#      OBUFT                       : 42
+#      OBUFT                       : 79
 # DCMs                             : 4
 #      DCM                         : 4
 # MULTs                            : 1
@@ -7904,15 +7974,15 @@ Device utilization summary:
 
 Selected Device : 3s1000ft256-5 
 
- Number of Slices:                     4858  out of   7680    63%  
- Number of Slice Flip Flops:           2410  out of  15360    15%  
- Number of 4 input LUTs:               9139  out of  15360    59%  
-    Number used as logic:              9107
+ Number of Slices:                     4898  out of   7680    63%  
+ Number of Slice Flip Flops:           2477  out of  15360    16%  
+ Number of 4 input LUTs:               9219  out of  15360    60%  
+    Number used as logic:              9187
     Number used as Shift registers:      30
     Number used as RAMs:                  2
  Number of IOs:                         161
- Number of bonded IOBs:                 113  out of    173    65%  
-    IOB Flip Flops:                      20
+ Number of bonded IOBs:                 150  out of    173    86%  
+    IOB Flip Flops:                      22
  Number of BRAMs:                        24  out of     24   100%  
  Number of MULT18X18s:                    1  out of     24     4%  
  Number of GCLKs:                         5  out of      8    62%  
@@ -7939,10 +8009,10 @@ Clock Information:
 -----------------------------------+---------------------------------------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                                                 | Load  |
 -----------------------------------+---------------------------------------------------------------------------------------+-------+
-USB_RegCLK                         | Interfaces/INST_ZestSC1_Host/RegDCM:CLK0                                              | 8     |
+USB_RegCLK                         | Interfaces/INST_ZestSC1_Host/RegDCM:CLK0                                              | 42    |
 USB_StreamCLK                      | Interfaces/INST_ZestSC1_Host/StreamDCM:CLK0                                           | 45    |
 USB_RegCLK                         | Interfaces/INST_ZestSC1_Host/RegDCM:CLK0+Interfaces/INST_SRAM/DCM_INST:CLK0           | 2     |
-USB_RegCLK                         | Interfaces/INST_ZestSC1_Host/RegDCM:CLK0+LeonTheProfessional/clkgen0/xc3s.v/dll0:CLKFX| 2432  |
+USB_RegCLK                         | Interfaces/INST_ZestSC1_Host/RegDCM:CLK0+LeonTheProfessional/clkgen0/xc3s.v/dll0:CLKFX| 2467  |
 -----------------------------------+---------------------------------------------------------------------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -7960,7 +8030,7 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 8.313ns (Maximum Frequency: 120.289MHz)
+   Minimum period: 8.411ns (Maximum Frequency: 118.893MHz)
    Minimum input arrival time before clock: 6.249ns
    Maximum output required time after clock: 8.965ns
    Maximum combinational path delay: 9.179ns
@@ -7971,36 +8041,35 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'USB_RegCLK'
-  Clock period: 8.313ns (frequency: 120.289MHz)
-  Total number of paths / destination ports: 5257065 / 5685
+  Clock period: 8.411ns (frequency: 118.893MHz)
+  Total number of paths / destination ports: 5168114 / 5823
 -------------------------------------------------------------------------
-Delay:               16.627ns (Levels of Logic = 12)
-  Source:            LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.result_4 (FF)
+Delay:               16.822ns (Levels of Logic = 11)
+  Source:            LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.annul (FF)
   Destination:       LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.cmem0/ime.im0[0].itags0/xc2v.x0/a8.x[0].r0/ime.im0[0].itags0/xc2v.x0/a8.x[0].r0 (RAM)
   Source Clock:      USB_RegCLK rising 0.5X
   Destination Clock: USB_RegCLK rising 0.5X
 
-  Data Path: LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.result_4 to LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.cmem0/ime.im0[0].itags0/xc2v.x0/a8.x[0].r0/ime.im0[0].itags0/xc2v.x0/a8.x[0].r0
+  Data Path: LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.annul to LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.cmem0/ime.im0[0].itags0/xc2v.x0/a8.x[0].r0/ime.im0[0].itags0/xc2v.x0/a8.x[0].r0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              8   0.626   1.216  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.result_4 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.result_4)
-     LUT4:I0->O            1   0.479   0.704  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/xc_vectt_mux0001(4)11 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/xc_vectt_mux0001(4)11)
-     LUT4:I3->O            5   0.479   1.078  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/xc_vectt_mux0001(4)28 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/xc_vectt_mux0001(4))
-     LUT4:I0->O            1   0.479   0.681  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dmode_mux000133 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dmode_mux000133)
-     MUXF5:S->O            2   0.540   0.768  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dmode_mux000184_SW0 (N1904)
-     LUT4_D:I3->O          2   0.479   0.768  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dmode_mux0001136_1 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dmode_mux0001136)
-     LUT4_D:I3->O          4   0.479   0.802  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/xc_result_10_mux0003211_1 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/xc_result_10_mux0003211)
-     LUT4_D:I3->O         31   0.479   1.593  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/npc_mux0006(8)121 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/N903)
-     LUT4:I3->O            1   0.479   0.976  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/rin_f_pc(12)124 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/rin_f_pc(12)124)
-     LUT4:I0->O            2   0.479   0.804  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/rin_f_pc(12)1268 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/N711)
-     LUT4_L:I2->LO         1   0.479   0.123  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/taddr_12_mux000121 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/taddr_12_mux000121)
-     LUT4:I3->O            6   0.479   0.853  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/taddr_12_mux000127 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.cmem0/crami_icramin_address(10))
+     FDE:C->Q             46   0.626   1.702  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.annul (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.annul)
+     LUT3_D:I2->O         14   0.479   1.304  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/v_w_s_s_mux00043 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dmode_mux0001132)
+     LUT3:I0->O           14   0.479   1.032  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/v_x_annul_all_mux000418 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/rin_x_annul_all)
+     LUT4:I3->O           12   0.479   0.973  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/ici_flush_or00001 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/ici_flush_or0000)
+     LUT4:I3->O            3   0.479   0.794  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dci_nullify12 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dci_nullify12)
+     LUT4:I3->O            6   0.479   0.853  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dci_nullify38 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dci_nullify38)
+     MUXF5:S->O            1   0.540   0.740  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dci_nullify87_SW3 (N1962)
+     LUT4_D:I2->O         12   0.479   1.009  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_diag_op_not000111 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/flush0_and0002)
+     LUT4_D:I2->O          2   0.479   0.804  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r_flush_or0000171 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r_flush_or0000171)
+     LUT4:I2->O           11   0.479   1.031  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r_flush_or0000197_1 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r_flush_or0000197)
+     LUT3:I2->O            1   0.479   0.681  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.cmem0/_mux00191 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.cmem0/itdatain(0)(8))
      begin scope: 'LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.cmem0/ime.im0[0].itags0/xc2v.x0/a8.x[0].r0'
-     RAMB16:ADDRB12            0.304          ime.im0[0].itags0/xc2v.x0/a8.x[0].r0
+     RAMB16:DIB8               0.421          ime.im0[0].itags0/xc2v.x0/a8.x[0].r0
     ----------------------------------------
-    Total                     16.627ns (6.260ns logic, 10.367ns route)
-                                       (37.7% logic, 62.3% route)
+    Total                     16.822ns (5.898ns logic, 10.924ns route)
+                                       (35.1% logic, 64.9% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'USB_StreamCLK'
@@ -8019,7 +8088,7 @@ Delay:               7.852ns (Levels of Logic = 5)
     ----------------------------------------  ------------
      FDCE:C->Q             5   0.626   1.078  Interfaces/INST_ZestSC1_Host/DataOutRegFull (Interfaces/INST_ZestSC1_Host/DataOutRegFull)
      LUT3:I0->O            1   0.479   0.704  Interfaces/INST_ZestSC1_Host/LastDir_not00011_SW0 (N810)
-     LUT4_D:I3->LO         1   0.479   0.123  Interfaces/INST_ZestSC1_Host/LastDir_not00011 (N3910)
+     LUT4_D:I3->LO         1   0.479   0.123  Interfaces/INST_ZestSC1_Host/LastDir_not00011 (N3915)
      LUT4:I3->O           13   0.479   1.017  Interfaces/INST_ZestSC1_Host/GrantPeriod_not00011 (Interfaces/INST_ZestSC1_Host/GrantPeriod_not0001)
      LUT4_D:I3->O          1   0.479   0.704  Interfaces/INST_ZestSC1_Host/Granted_not0001165 (N4)
      LUT4:I3->O            1   0.479   0.681  Interfaces/INST_ZestSC1_Host/Granted_not0001 (Interfaces/INST_ZestSC1_Host/Granted_not0001)
@@ -8030,24 +8099,24 @@ Delay:               7.852ns (Levels of Logic = 5)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'USB_RegCLK'
-  Total number of paths / destination ports: 41 / 7
+  Total number of paths / destination ports: 107 / 73
 -------------------------------------------------------------------------
-Offset:              3.843ns (Levels of Logic = 3)
-  Source:            USB_RegCS_n (PAD)
-  Destination:       myRST (FF)
+Offset:              5.203ns (Levels of Logic = 2)
+  Source:            Interfaces/INST_ZestSC1_Host/ROC_1:O (PAD)
+  Destination:       counter_0 (FF)
   Destination Clock: USB_RegCLK rising
 
-  Data Path: USB_RegCS_n to myRST
+  Data Path: Interfaces/INST_ZestSC1_Host/ROC_1:O to counter_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             3   0.715   1.066  USB_RegCS_n_IBUF (USB_RegCS_n_IBUF)
-     LUT4:I0->O            1   0.479   0.000  myRST_not00011 (myRST_not00011)
-     MUXF5:I0->O           2   0.314   0.745  myRST_not0001_f5 (myRST_not0001)
-     FDE:CE                    0.524          myRST
+    ROC:O                 37   0.000   1.622  Interfaces/INST_ZestSC1_Host/ROC_1 (RST)
+     LUT4:I3->O            1   0.479   0.000  counter_and0000_wg_lut(8) (counter_and0000_wg_lut(8))
+     MUXCY:S->O           34   0.625   1.585  counter_and0000_wg_cy(8) (counter_and0000)
+     FDRE:R                    0.892          counter_0
     ----------------------------------------
-    Total                      3.843ns (2.032ns logic, 1.811ns route)
-                                       (52.9% logic, 47.1% route)
+    Total                      5.203ns (1.996ns logic, 3.207ns route)
+                                       (38.4% logic, 61.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'USB_StreamCLK'
@@ -8073,7 +8142,7 @@ Offset:              6.249ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'USB_RegCLK'
-  Total number of paths / destination ports: 6 / 6
+  Total number of paths / destination ports: 8 / 8
 -------------------------------------------------------------------------
 Offset:              7.466ns (Levels of Logic = 2)
   Source:            Interfaces/INST_ZestSC1_Host/IntCounter_2 (FF)
@@ -8135,15 +8204,15 @@ Delay:               9.179ns (Levels of Logic = 4)
 =========================================================================
 
 
-Total REAL time to Xst completion: 325.00 secs
-Total CPU time to Xst completion: 322.44 secs
+Total REAL time to Xst completion: 345.00 secs
+Total CPU time to Xst completion: 344.22 secs
  
 --> 
 
 
-Total memory usage is 1602740 kilobytes
+Total memory usage is 1608176 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 3181 (   0 filtered)
+Number of warnings : 3191 (   0 filtered)
 Number of infos    :  255 (   0 filtered)
 

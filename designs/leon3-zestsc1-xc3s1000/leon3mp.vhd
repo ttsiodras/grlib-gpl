@@ -61,7 +61,8 @@ entity leon3mp is
     iu_error : out std_ulogic;
     dsuact   : out std_ulogic;
     dsu_rx   : out std_ulogic;
-    dsu_tx   : in  std_ulogic
+    dsu_tx   : in  std_ulogic;
+    IO : inout std_logic_vector(46 downto 0)
   );
 end;
 
@@ -120,6 +121,8 @@ architecture rtl of leon3mp is
   signal rxd1 : std_logic;
   signal txd1 : std_logic;
 
+  signal counter_dsu : integer := 0;
+  signal heartbeat_led_dsu : std_logic := '1';
 begin
 
 ----------------------------------------------------------------------
@@ -183,6 +186,22 @@ begin
   nodsu : if CFG_DSU = 0 generate 
     dsuo.tstop <= '0'; dsuo.active <= '0';
   end generate;
+
+  -- To verify that the clock shenanigans actually work on my board,
+  -- I hooked this up to LED6 (i.e. the 2nd from the right) and
+  -- confirmed that the clock driving the LEON3 and the DSU and all
+  -- the rest is indeed a 24MHz clock.
+  process(clkm)
+  begin
+      if rising_edge(clkm) then
+        counter_dsu <= counter_dsu + 1;
+        if counter_dsu = 24000000 then
+            counter_dsu <= 0;
+            IO(45) <= heartbeat_led_dsu;
+            heartbeat_led_dsu <= not heartbeat_led_dsu;
+        end if;
+      end if;
+  end process;
 
   -- Debug UART
   dcomgen : if CFG_AHB_UART = 1 generate

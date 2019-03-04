@@ -83,54 +83,17 @@ WARNING:ConstraintSystem - The Offset constraint <net "USB_StreamData<*>" OFFSET
 Done...
 
 Checking expanded design ...
-WARNING:NgdBuild:452 - logical net 'N4399' has no driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(38)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(39)' has no legal driver
+WARNING:NgdBuild:452 - logical net 'N4404' has no driver
 WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(0)' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(1)' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(2)' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(3)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(4)' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(4)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(5)' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(5)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(6)' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(6)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(7)' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(7)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(8)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(9)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(10)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(11)' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'IO_CLK_N' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(12)' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'IO_CLK_P' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(13)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(14)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(20)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(15)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(21)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(16)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(22)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(17)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(23)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(18)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(24)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(19)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(30)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(25)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(26)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(31)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(32)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(27)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(33)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(28)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(34)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(29)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(40)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(35)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(36)' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'IO(37)' has no legal driver
 
 Partition Implementation Status
 -------------------------------
@@ -141,9 +104,9 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:  53
+  Number of warnings:  16
 
-Total memory usage is 420884 kilobytes
+Total memory usage is 421104 kilobytes
 
 Writing NGD file "TheBigLeonski.ngd" ...
 Total REAL time to NGDBUILD completion:  6 sec

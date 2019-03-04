@@ -63,7 +63,8 @@ architecture arch of TheBigLeonski is
         dsuact : out std_ulogic;
 
         dsu_rx : out std_ulogic; -- UART1 tx data
-        dsu_tx : in  std_ulogic  -- UART1 rx data
+        dsu_tx : in  std_ulogic; -- UART1 rx data
+        IO : inout std_logic_vector(46 downto 0)
     );
     end component;
 
@@ -212,6 +213,8 @@ architecture arch of TheBigLeonski is
     signal serial_info_sent_from_PC : std_logic;
     signal serial_info_sent_from_PC_OBUFD : std_logic;
 
+    signal heartbeat : std_logic := '1';
+    signal counter : integer  := 0;
 begin
     -- Tie unused signals.
     User_Signals <= "ZZZZZZZZ";
@@ -273,12 +276,29 @@ begin
     IO(42) <= serial_info_sent_from_PC_OBUFD;
     IO(43) <= myRST_OBUFD;
     IO(44) <= LEDs(5);
-    IO(45) <= LEDs(6);
-    IO(46) <= LEDs(7);
+    -- IO(45) <= LEDs(6);
+    -- IO(46) <= LEDs(7);
+    IO(46) <= heartbeat;
 
     process (RST, CLK, dsu_rx, iu_error, dsuact, Addr, WE)
     begin
         if (RST /= '1' and CLK'event and CLK='1') then
+            -- To verify that the clock outside the LEON actually works on my board,
+            -- I hooked this heartbeat up to LED7 (i.e. the 1st from the right) and
+            -- confirmed that this clock is indeed a 48MHz one.
+            counter <= counter + 1;
+            if counter = 48000000 then
+                counter <= 0;
+                heartbeat <= not heartbeat;
+            end if;
+
+            -- Programmatically reset the board. This proved to be absolutely 
+            -- essential, since the LEON3/DSU clock is NOT WORKING until
+            -- I send a reset through this. To be clear - I verified this
+            -- via the heartbeat_led_dsu inside leon3mp.vhd.
+            -- 
+            -- Sadly, even after this reset - with both heartbeats beating
+            -- loud and clear, the DSU/AHBUART is still not listening to GRMON.
             if (WE='1') then
                 case Addr is
                     when X"2000" => myRST <= '1';
@@ -343,7 +363,8 @@ begin
             iu_error => iu_error,
             dsuact => dsuact,
             dsu_rx => dsu_rx,
-            dsu_tx => dsu_tx
+            dsu_tx => dsu_tx,
+            IO => IO
         );
 
     Interfaces : ZestSC1_Interfaces
