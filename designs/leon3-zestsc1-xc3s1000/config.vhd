@@ -79,7 +79,7 @@ package config is
   constant CFG_CACHE_FT_EN : integer := 0;
   constant CFG_CACHE_ERRINJ : integer := 0;
   constant CFG_LEON3_NETLIST: integer := 0;
-  constant CFG_DISAS : integer := 0 + 0;
+  constant CFG_DISAS : integer := 1 + 0;
   constant CFG_PCLOW : integer := 2;
   constant CFG_STAT_ENABLE : integer := 0;
   constant CFG_STAT_CNT : integer := 1;
