@@ -47,7 +47,7 @@ the generated `make.ghdl` is missing their processing.
 
 After a lot of huffing and puffing, I managed to fix this - by patching the
 `make.ghdl` file that Jiri's scripts create, to delegate the `unisim` parts to a
-[smaller Makefile of my own](designs/leon3-minimal/make.unisim).
+[smaller Makefile of my own](https://github.com/ttsiodras/grlib-gpl/blob/7cdc7edb29f878da9d754847488a4e0431acd7eb/designs/leon3-minimal/make.unisim).
 That one processes VHDL files from the ISE's `src` folder, as well as the
 `libraries` folder of GHDL (which was added as a submodule to this repo).
 
@@ -214,7 +214,7 @@ I asked for (via `CFG_CLKMUL/DIV`):
        Minimum output required time after clock:   6.676ns
 
 I also gave my code on the PC the ability to
-[reset the board](designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd#284)
+[reset the board](https://github.com/ttsiodras/grlib-gpl/blob/master/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd#L304)
 over the USB bus - and verified the commands get there, by hooking this
 up to one of the board LEDs - as I did for the UART TX, which can be
 seen flashing the moment grmon tries to connect over UART in the

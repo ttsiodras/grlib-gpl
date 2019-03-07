@@ -42,7 +42,7 @@ INFO:ConstraintSystem:178 - TNM 'Interfaces_INST_ZestSC1_Host_RegCLKFB', used in
    TNM groups and period specifications were generated at the DCM output(s): 
    CLKFX: <TIMESPEC TS_LeonTheProfessional_clkgen0_xc3s_v_clk0B = PERIOD
    "LeonTheProfessional_clkgen0_xc3s_v_clk0B"
-   TS_Interfaces_INST_ZestSC1_Host_RegCLKFB / 0.5 HIGH 50%>
+   TS_Interfaces_INST_ZestSC1_Host_RegCLKFB / 0.714285714 HIGH 50%>
 
 WARNING:ConstraintSystem - The Offset constraint <net "USB_StreamFlags_n<0>"
    OFFSET = IN 7 ns BEFORE USB_StreamCLK;> [leon3mp.ucf(61)], is specified
@@ -87,10 +87,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:  13
 
-Total memory usage is 421260 kilobytes
+Total memory usage is 420872 kilobytes
 
 Writing NGD file "TheBigLeonski.ngd" ...
 Total REAL time to NGDBUILD completion:  6 sec
-Total CPU time to NGDBUILD completion:   6 sec
+Total CPU time to NGDBUILD completion:   5 sec
 
 Writing NGDBUILD log file "TheBigLeonski.bld"...

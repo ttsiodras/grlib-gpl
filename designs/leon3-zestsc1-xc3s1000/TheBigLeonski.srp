@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 
@@ -1130,8 +1130,8 @@ Analyzing hierarchy for entity <ZestSC1_Interfaces> in library <work> (architect
 
 Analyzing hierarchy for entity <clkgen> in library <techmap> (architecture <struct>) with generics.
 	clk2xen = 0
-	clk_div = 4
-	clk_mul = 2
+	clk_div = 7
+	clk_mul = 5
 	clk_odiv = 1
 	clkb_odiv = 0
 	clkc_odiv = 0
@@ -1328,8 +1328,8 @@ Analyzing hierarchy for entity <ZestSC1_SRAM> in library <work> (architecture <a
 
 Analyzing hierarchy for entity <clkgen_spartan3> in library <techmap> (architecture <struct>) with generics.
 	clk2xen = 0
-	clk_div = 4
-	clk_mul = 2
+	clk_div = 7
+	clk_mul = 5
 	clksel = 0
 	freq = 48000
 	noclkfb = 0
@@ -1852,8 +1852,8 @@ Entity <leon3mp> analyzed. Unit <leon3mp> generated.
 
 Analyzing generic Entity <clkgen> in library <techmap> (Architecture <struct>).
 	clk2xen = 0
-	clk_div = 4
-	clk_mul = 2
+	clk_div = 7
+	clk_mul = 5
 	clk_odiv = 1
 	clkb_odiv = 0
 	clkc_odiv = 0
@@ -1869,8 +1869,8 @@ Entity <clkgen> analyzed. Unit <clkgen> generated.
 
 Analyzing generic Entity <clkgen_spartan3> in library <techmap> (Architecture <struct>).
 	clk2xen = 0
-	clk_div = 4
-	clk_mul = 2
+	clk_div = 7
+	clk_mul = 5
 	clksel = 0
 	freq = 48000
 	noclkfb = 0
@@ -1889,8 +1889,8 @@ WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/lib/techmap/virtex/clkgen_virte
 WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/lib/techmap/virtex/clkgen_virtex.vhd" line 601: Unconnected output port 'STATUS' of component 'DCM'.
 WARNING:Xst:2211 - "/home/ttsiod/Github/grlib-gpl/lib/techmap/virtex/clkgen_virtex.vhd" line 601: Instantiating black box module <DCM>.
     Set user-defined property "CLKDV_DIVIDE =  2.0000000000000000" for instance <dll0> in unit <clkgen_spartan3>.
-    Set user-defined property "CLKFX_DIVIDE =  4" for instance <dll0> in unit <clkgen_spartan3>.
-    Set user-defined property "CLKFX_MULTIPLY =  2" for instance <dll0> in unit <clkgen_spartan3>.
+    Set user-defined property "CLKFX_DIVIDE =  7" for instance <dll0> in unit <clkgen_spartan3>.
+    Set user-defined property "CLKFX_MULTIPLY =  5" for instance <dll0> in unit <clkgen_spartan3>.
     Set user-defined property "CLKIN_DIVIDE_BY_2 =  FALSE" for instance <dll0> in unit <clkgen_spartan3>.
     Set user-defined property "CLKIN_PERIOD =  10.0000000000000000" for instance <dll0> in unit <clkgen_spartan3>.
     Set user-defined property "CLKOUT_PHASE_SHIFT =  NONE" for instance <dll0> in unit <clkgen_spartan3>.
@@ -7816,8 +7816,7 @@ Replicating register LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ner
 Replicating register LeonTheProfessional/dcomgen.dcom0/dcom_uart0/r.tshift_0 to handle IOB=TRUE attribute
 Replicating register LeonTheProfessional/l3.dsugen.dsu0/x0/r.act to handle IOB=TRUE attribute
 
-FlipFlop LeonTheProfessional/ahb0/r.cfgsel has been replicated 1 time(s)
-FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/rst has been replicated 1 time(s)
+FlipFlop LeonTheProfessional/ahb0/r.hslave_0 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.cnt_1 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_20 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_21 has been replicated 1 time(s)
@@ -7827,22 +7826,14 @@ FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_30 has b
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_31 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_19 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.invop2 has been replicated 1 time(s)
-FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp2 has been replicated 1 time(s)
-FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_19 has been replicated 1 time(s)
-FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_20 has been replicated 2 time(s)
+FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_20 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_21 has been replicated 2 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_22 has been replicated 2 time(s)
-FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_24 has been replicated 1 time(s)
-FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_30 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.result_0 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.result_1 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.result_2 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.result_3 has been replicated 1 time(s)
-FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.rstate_3 has been replicated 1 time(s)
-FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/rm.state_0 has been replicated 1 time(s)
-FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/rm.state_1 has been replicated 1 time(s)
-FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/rm.state_2 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -7883,8 +7874,8 @@ Unit <TheBigLeonski> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 2468
- Flip-Flops                                            : 2468
+# Registers                                            : 2458
+ Flip-Flops                                            : 2458
 # Shift Registers                                      : 30
  2-bit shift register                                  : 23
  3-bit shift register                                  : 6
@@ -7916,37 +7907,37 @@ Design Statistics
 # IOs                              : 161
 
 Cell Usage :
-# BELS                             : 10722
+# BELS                             : 10706
 #      GND                         : 25
 #      INV                         : 34
 #      LUT1                        : 164
-#      LUT2                        : 758
-#      LUT2_D                      : 52
-#      LUT2_L                      : 63
-#      LUT3                        : 1609
-#      LUT3_D                      : 134
-#      LUT3_L                      : 129
-#      LUT4                        : 5208
-#      LUT4_D                      : 309
-#      LUT4_L                      : 727
+#      LUT2                        : 743
+#      LUT2_D                      : 55
+#      LUT2_L                      : 72
+#      LUT3                        : 1634
+#      LUT3_D                      : 127
+#      LUT3_L                      : 114
+#      LUT4                        : 5315
+#      LUT4_D                      : 264
+#      LUT4_L                      : 632
 #      MUXCY                       : 487
-#      MUXF5                       : 581
+#      MUXF5                       : 598
 #      MUXF6                       : 31
 #      MUXF7                       : 20
 #      VCC                         : 1
 #      XORCY                       : 390
-# FlipFlops/Latches                : 2499
-#      FD                          : 235
+# FlipFlops/Latches                : 2489
+#      FD                          : 234
 #      FDC                         : 8
 #      FDCE                        : 28
-#      FDE                         : 1680
+#      FDE                         : 1674
 #      FDPE                        : 2
 #      FDR                         : 82
-#      FDRE                        : 155
+#      FDRE                        : 153
 #      FDRS                        : 84
 #      FDRSE                       : 3
 #      FDS                         : 162
-#      FDSE                        : 59
+#      FDSE                        : 58
 #      OFDDRCPE                    : 1
 # RAMS                             : 25
 #      RAM16X1D                    : 1
@@ -7975,10 +7966,10 @@ Device utilization summary:
 
 Selected Device : 3s1000ft256-5 
 
- Number of Slices:                     4898  out of   7680    63%  
- Number of Slice Flip Flops:           2477  out of  15360    16%  
- Number of 4 input LUTs:               9219  out of  15360    60%  
-    Number used as logic:              9187
+ Number of Slices:                     4882  out of   7680    63%  
+ Number of Slice Flip Flops:           2467  out of  15360    16%  
+ Number of 4 input LUTs:               9186  out of  15360    59%  
+    Number used as logic:              9154
     Number used as Shift registers:      30
     Number used as RAMs:                  2
  Number of IOs:                         161
@@ -8013,7 +8004,7 @@ Clock Signal                       | Clock buffer(FF name)                      
 USB_RegCLK                         | Interfaces/INST_ZestSC1_Host/RegDCM:CLK0                                              | 42    |
 USB_StreamCLK                      | Interfaces/INST_ZestSC1_Host/StreamDCM:CLK0                                           | 45    |
 USB_RegCLK                         | Interfaces/INST_ZestSC1_Host/RegDCM:CLK0+Interfaces/INST_SRAM/DCM_INST:CLK0           | 2     |
-USB_RegCLK                         | Interfaces/INST_ZestSC1_Host/RegDCM:CLK0+LeonTheProfessional/clkgen0/xc3s.v/dll0:CLKFX| 2467  |
+USB_RegCLK                         | Interfaces/INST_ZestSC1_Host/RegDCM:CLK0+LeonTheProfessional/clkgen0/xc3s.v/dll0:CLKFX| 2457  |
 -----------------------------------+---------------------------------------------------------------------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -8031,10 +8022,10 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 8.411ns (Maximum Frequency: 118.893MHz)
-   Minimum input arrival time before clock: 6.249ns
-   Maximum output required time after clock: 8.965ns
-   Maximum combinational path delay: 9.179ns
+   Minimum period: 12.725ns (Maximum Frequency: 78.583MHz)
+   Minimum input arrival time before clock: 6.313ns
+   Maximum output required time after clock: 9.029ns
+   Maximum combinational path delay: 9.243ns
 
 Timing Detail:
 --------------
@@ -8042,61 +8033,81 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'USB_RegCLK'
-  Clock period: 8.411ns (frequency: 118.893MHz)
-  Total number of paths / destination ports: 5168114 / 5823
+  Clock period: 12.725ns (frequency: 78.583MHz)
+  Total number of paths / destination ports: 5270876 / 5801
 -------------------------------------------------------------------------
-Delay:               16.822ns (Levels of Logic = 11)
-  Source:            LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.annul (FF)
-  Destination:       LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.cmem0/ime.im0[0].itags0/xc2v.x0/a8.x[0].r0/ime.im0[0].itags0/xc2v.x0/a8.x[0].r0 (RAM)
-  Source Clock:      USB_RegCLK rising 0.5X
-  Destination Clock: USB_RegCLK rising 0.5X
+Delay:               17.816ns (Levels of Logic = 31)
+  Source:            LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1 (FF)
+  Destination:       LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.faddr_7 (FF)
+  Source Clock:      USB_RegCLK rising 0.7X
+  Destination Clock: USB_RegCLK rising 0.7X
 
-  Data Path: LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.annul to LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.cmem0/ime.im0[0].itags0/xc2v.x0/a8.x[0].r0/ime.im0[0].itags0/xc2v.x0/a8.x[0].r0
+  Data Path: LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1 to LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.faddr_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             46   0.626   1.702  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.annul (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.annul)
-     LUT3_D:I2->O         14   0.479   1.304  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/v_w_s_s_mux00043 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dmode_mux0001132)
-     LUT3:I0->O           14   0.479   1.032  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/v_x_annul_all_mux000418 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/rin_x_annul_all)
-     LUT4:I3->O           12   0.479   0.973  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/ici_flush_or00001 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/ici_flush_or0000)
-     LUT4:I3->O            3   0.479   0.794  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dci_nullify12 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dci_nullify12)
-     LUT4:I3->O            6   0.479   0.853  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dci_nullify38 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dci_nullify38)
-     MUXF5:S->O            1   0.540   0.740  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dci_nullify87_SW3 (N1962)
-     LUT4_D:I2->O         12   0.479   1.009  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_diag_op_not000111 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/flush0_and0002)
-     LUT4_D:I2->O          2   0.479   0.804  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r_flush_or0000171 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r_flush_or0000171)
-     LUT4:I2->O           11   0.479   1.031  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r_flush_or0000197_1 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r_flush_or0000197)
-     LUT3:I2->O            1   0.479   0.681  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.cmem0/_mux00191 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.cmem0/itdatain(0)(8))
-     begin scope: 'LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.cmem0/ime.im0[0].itags0/xc2v.x0/a8.x[0].r0'
-     RAMB16:DIB8               0.421          ime.im0[0].itags0/xc2v.x0/a8.x[0].r0
+     FDE:C->Q            135   0.626   2.136  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1)
+     LUT3:I2->O            8   0.479   0.921  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/ex_op1_mux0000(0)1 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/divi_op1(0))
+     MUXCY:DI->O           1   0.774   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(1) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(1))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(2) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(2))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(3) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(3))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(4) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(4))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(5) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(5))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(6) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(6))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(7) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(7))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(8) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(8))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(9) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(9))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(10) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(10))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(11) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(11))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(12) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(12))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(13) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(13))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(14) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(14))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(15) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(15))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(16) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(16))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(17) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(17))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(18) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(18))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(19) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(19))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(20) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(20))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(21) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(21))
+     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(22) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(22))
+     XORCY:CI->O           3   0.786   0.830  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_xor(23) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/dci_eaddress(22))
+     LUT3:I2->O            1   0.479   0.704  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000125 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000125)
+     LUT4:I3->O            1   0.479   0.704  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000137 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000137)
+     LUT4:I3->O            8   0.479   1.091  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000326 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000)
+     LUT4:I1->O           16   0.479   1.051  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_diag_op_not000111 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/flush0_and0002)
+     MUXF5:S->O            1   0.540   0.704  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_or0000129_SW0 (N1931)
+     LUT4_D:I3->O         10   0.479   0.987  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_or0000141 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_or0000141)
+     LUT4:I3->O            8   0.479   0.921  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_not00011 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_not0001)
+     FDRE:CE                   0.524          LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.faddr_0
     ----------------------------------------
-    Total                     16.822ns (5.898ns logic, 10.924ns route)
-                                       (35.1% logic, 64.9% route)
+    Total                     17.816ns (7.768ns logic, 10.047ns route)
+                                       (43.6% logic, 56.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'USB_StreamCLK'
-  Clock period: 7.852ns (frequency: 127.358MHz)
+  Clock period: 8.196ns (frequency: 122.012MHz)
   Total number of paths / destination ports: 642 / 86
 -------------------------------------------------------------------------
-Delay:               7.852ns (Levels of Logic = 5)
-  Source:            Interfaces/INST_ZestSC1_Host/DataOutRegFull (FF)
+Delay:               8.196ns (Levels of Logic = 5)
+  Source:            Interfaces/INST_ZestSC1_Host/FIFOOutReadCount_3 (FF)
   Destination:       Interfaces/INST_ZestSC1_Host/Granted (FF)
   Source Clock:      USB_StreamCLK rising
   Destination Clock: USB_StreamCLK rising
 
-  Data Path: Interfaces/INST_ZestSC1_Host/DataOutRegFull to Interfaces/INST_ZestSC1_Host/Granted
+  Data Path: Interfaces/INST_ZestSC1_Host/FIFOOutReadCount_3 to Interfaces/INST_ZestSC1_Host/Granted
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             5   0.626   1.078  Interfaces/INST_ZestSC1_Host/DataOutRegFull (Interfaces/INST_ZestSC1_Host/DataOutRegFull)
-     LUT3:I0->O            1   0.479   0.704  Interfaces/INST_ZestSC1_Host/LastDir_not00011_SW0 (N810)
-     LUT4_D:I3->LO         1   0.479   0.123  Interfaces/INST_ZestSC1_Host/LastDir_not00011 (N3915)
-     LUT4:I3->O           13   0.479   1.017  Interfaces/INST_ZestSC1_Host/GrantPeriod_not00011 (Interfaces/INST_ZestSC1_Host/GrantPeriod_not0001)
-     LUT4_D:I3->O          1   0.479   0.704  Interfaces/INST_ZestSC1_Host/Granted_not0001165 (N4)
-     LUT4:I3->O            1   0.479   0.681  Interfaces/INST_ZestSC1_Host/Granted_not0001 (Interfaces/INST_ZestSC1_Host/Granted_not0001)
+     FDCE:C->Q             5   0.626   1.078  Interfaces/INST_ZestSC1_Host/FIFOOutReadCount_3 (Interfaces/INST_ZestSC1_Host/FIFOOutReadCount_3)
+     LUT3:I0->O            1   0.479   0.740  Interfaces/INST_ZestSC1_Host/LastDir_not00011_SW0 (N562)
+     LUT4_D:I2->LO         1   0.479   0.123  Interfaces/INST_ZestSC1_Host/LastDir_not00011 (N4132)
+     LUT4:I3->O           13   0.479   1.289  Interfaces/INST_ZestSC1_Host/GrantPeriod_not00011 (Interfaces/INST_ZestSC1_Host/GrantPeriod_not0001)
+     LUT2_D:I0->O          1   0.479   0.740  Interfaces/INST_ZestSC1_Host/Granted_not0001165 (N4)
+     LUT4:I2->O            1   0.479   0.681  Interfaces/INST_ZestSC1_Host/Granted_not0001 (Interfaces/INST_ZestSC1_Host/Granted_not0001)
      FDCE:CE                   0.524          Interfaces/INST_ZestSC1_Host/Granted
     ----------------------------------------
-    Total                      7.852ns (3.545ns logic, 4.307ns route)
-                                       (45.1% logic, 54.9% route)
+    Total                      8.196ns (3.545ns logic, 4.651ns route)
+                                       (43.3% logic, 56.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'USB_RegCLK'
@@ -8123,7 +8134,7 @@ Offset:              5.203ns (Levels of Logic = 2)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'USB_StreamCLK'
   Total number of paths / destination ports: 27 / 22
 -------------------------------------------------------------------------
-Offset:              6.249ns (Levels of Logic = 4)
+Offset:              6.313ns (Levels of Logic = 4)
   Source:            USB_StreamFX2Rdy (PAD)
   Destination:       Interfaces/INST_ZestSC1_Host/FX2FIFOEmpty (FF)
   Destination Clock: USB_StreamCLK rising
@@ -8133,13 +8144,13 @@ Offset:              6.249ns (Levels of Logic = 4)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             6   0.715   1.148  USB_StreamFX2Rdy_IBUF (USB_StreamFX2Rdy_IBUF)
-     LUT2_D:I0->O          1   0.479   0.704  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n_SW0 (N589)
+     LUT2:I0->O            2   0.479   0.768  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n_SW0 (N305)
      LUT4:I3->O            2   0.479   1.040  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n (USB_StreamSLRD_n_OBUF)
      LUT3:I0->O            1   0.479   0.681  Interfaces/INST_ZestSC1_Host/FX2FIFOEmpty_not00011 (Interfaces/INST_ZestSC1_Host/FX2FIFOEmpty_not0001)
      FDPE:CE                   0.524          Interfaces/INST_ZestSC1_Host/FX2FIFOEmpty
     ----------------------------------------
-    Total                      6.249ns (2.676ns logic, 3.573ns route)
-                                       (42.8% logic, 57.2% route)
+    Total                      6.313ns (2.676ns logic, 3.637ns route)
+                                       (42.4% logic, 57.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'USB_RegCLK'
@@ -8165,7 +8176,7 @@ Offset:              7.466ns (Levels of Logic = 2)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'USB_StreamCLK'
   Total number of paths / destination ports: 57 / 20
 -------------------------------------------------------------------------
-Offset:              8.965ns (Levels of Logic = 3)
+Offset:              9.029ns (Levels of Logic = 3)
   Source:            Interfaces/INST_ZestSC1_Host/ReadCycle (FF)
   Destination:       USB_StreamSLRD_n (PAD)
   Source Clock:      USB_StreamCLK rising
@@ -8175,18 +8186,18 @@ Offset:              8.965ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDC:C->Q              6   0.626   1.023  Interfaces/INST_ZestSC1_Host/ReadCycle (Interfaces/INST_ZestSC1_Host/ReadCycle)
-     LUT2_D:I1->O          1   0.479   0.704  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n_SW0 (N589)
+     LUT2:I1->O            2   0.479   0.768  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n_SW0 (N305)
      LUT4:I3->O            2   0.479   0.745  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n (USB_StreamSLRD_n_OBUF)
      OBUF:I->O                 4.909          USB_StreamSLRD_n_OBUF (USB_StreamSLRD_n)
     ----------------------------------------
-    Total                      8.965ns (6.493ns logic, 2.472ns route)
-                                       (72.4% logic, 27.6% route)
+    Total                      9.029ns (6.493ns logic, 2.536ns route)
+                                       (71.9% logic, 28.1% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 26 / 10
 -------------------------------------------------------------------------
-Delay:               9.179ns (Levels of Logic = 4)
+Delay:               9.243ns (Levels of Logic = 4)
   Source:            USB_StreamFX2Rdy (PAD)
   Destination:       USB_StreamSLRD_n (PAD)
 
@@ -8195,23 +8206,23 @@ Delay:               9.179ns (Levels of Logic = 4)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             6   0.715   1.148  USB_StreamFX2Rdy_IBUF (USB_StreamFX2Rdy_IBUF)
-     LUT2_D:I0->O          1   0.479   0.704  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n_SW0 (N589)
+     LUT2:I0->O            2   0.479   0.768  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n_SW0 (N305)
      LUT4:I3->O            2   0.479   0.745  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n (USB_StreamSLRD_n_OBUF)
      OBUF:I->O                 4.909          USB_StreamSLRD_n_OBUF (USB_StreamSLRD_n)
     ----------------------------------------
-    Total                      9.179ns (6.582ns logic, 2.597ns route)
-                                       (71.7% logic, 28.3% route)
+    Total                      9.243ns (6.582ns logic, 2.661ns route)
+                                       (71.2% logic, 28.8% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 337.00 secs
-Total CPU time to Xst completion: 336.02 secs
+Total REAL time to Xst completion: 380.00 secs
+Total CPU time to Xst completion: 377.79 secs
  
 --> 
 
 
-Total memory usage is 1608020 kilobytes
+Total memory usage is 1606480 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 3192 (   0 filtered)

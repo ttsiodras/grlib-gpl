@@ -8,23 +8,23 @@ Target Device  : xc3s1000
 Target Package : ft256
 Target Speed   : -5
 Mapper Version : spartan3 -- $Revision: 1.55 $
-Mapped Date    : Thu Mar  7 21:46:15 2019
+Mapped Date    : Thu Mar  7 22:18:40 2019
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings: 2563
+Number of warnings: 2552
 Logic Utilization:
-  Number of Slice Flip Flops:         2,476 out of  15,360   16%
-  Number of 4 input LUTs:             9,139 out of  15,360   59%
+  Number of Slice Flip Flops:         2,466 out of  15,360   16%
+  Number of 4 input LUTs:             9,109 out of  15,360   59%
 Logic Distribution:
-  Number of occupied Slices:          5,330 out of   7,680   69%
-    Number of Slices containing only related logic:   5,330 out of   5,330 100%
-    Number of Slices containing unrelated logic:          0 out of   5,330   0%
+  Number of occupied Slices:          5,297 out of   7,680   68%
+    Number of Slices containing only related logic:   5,297 out of   5,297 100%
+    Number of Slices containing unrelated logic:          0 out of   5,297   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       9,305 out of  15,360   60%
-    Number used as logic:             9,107
-    Number used as a route-thru:        166
+  Total Number of 4 input LUTs:       9,276 out of  15,360   60%
+    Number used as logic:             9,077
+    Number used as a route-thru:        167
     Number used for Dual Port RAMs:       2
       (Two LUTs used per Dual Port RAM)
     Number used as Shift registers:      30
@@ -39,11 +39,11 @@ Logic Distribution:
   Number of BUFGMUXs:                     5 out of       8   62%
   Number of DCMs:                         4 out of       4  100%
 
-Average Fanout of Non-Clock Nets:                3.58
+Average Fanout of Non-Clock Nets:                3.59
 
-Peak Memory Usage:  605 MB
-Total REAL time to MAP completion:  12 secs 
-Total CPU time to MAP completion:   11 secs 
+Peak Memory Usage:  604 MB
+Total REAL time to MAP completion:  10 secs 
+Total CPU time to MAP completion:   10 secs 
 
 NOTES:
 
@@ -3795,10 +3795,6 @@ WARNING:Pack:2780 - The register
    IOB=TRUE, but it did not join an IO component because it is not connected to
    any IO element.
 WARNING:Pack:2780 - The register
-   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1_1" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp2_1" has the
    property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
@@ -4492,6 +4488,9 @@ WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.pc_5" has the
    property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/ahb0/r.hslave_0_1" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
 WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.pc_6" has the
    property IOB=TRUE, but it did not join an IO component because it is not
@@ -4617,10 +4616,6 @@ WARNING:Pack:2780 - The register
    property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
 WARNING:Pack:2780 - The register
-   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/rm.state_0_1" has
-   the property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/dsur.tlim_0" has the
    property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
@@ -4649,16 +4644,8 @@ WARNING:Pack:2780 - The register
    property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
 WARNING:Pack:2780 - The register
-   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/rm.state_1_1" has
-   the property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.rd_7" has the
    property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register
-   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/rm.state_2_1" has
-   the property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
 WARNING:Pack:2780 - The register
    "LeonTheProfessional/ahbramgen.ahbram0/r.size_0" has the property IOB=TRUE,
@@ -5549,11 +5536,11 @@ WARNING:Pack:2780 - The register
    property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
 WARNING:Pack:2780 - The register
-   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_30_1" has the
+   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_22_1" has the
    property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
 WARNING:Pack:2780 - The register
-   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_22_1" has the
+   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_30_1" has the
    property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
 WARNING:Pack:2780 - The register
@@ -5815,9 +5802,6 @@ WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.faddr_7"
    has the property IOB=TRUE, but it did not join an IO component because it is
    not connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/ahb0/r.cfgsel_1" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
 WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.dsugen.dsu0/x0/tr.haddr_10" has the property
    IOB=TRUE, but it did not join an IO component because it is not connected to
@@ -6683,10 +6667,6 @@ WARNING:Pack:2780 - The register
    connected to any IO element.
 WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.div0/r.zcorr" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register
-   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.rstate_3_1" has the
    property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
 WARNING:Pack:2780 - The register
@@ -8895,10 +8875,6 @@ WARNING:Pack:2780 - The register
    the property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
 WARNING:Pack:2780 - The register
-   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_20_2" has
-   the property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_21_1" has
    the property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
@@ -8907,23 +8883,11 @@ WARNING:Pack:2780 - The register
    the property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
 WARNING:Pack:2780 - The register
-   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_30_1" has
-   the property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_22_1" has
    the property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
 WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_22_2" has
-   the property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register
-   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_24_1" has
-   the property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register
-   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_19_1" has
    the property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
 WARNING:Pack:2780 - The register
@@ -8997,10 +8961,6 @@ WARNING:Pack:2780 - The register "Interfaces/INST_ZestSC1_Host/ReadCycle" has
 WARNING:Pack:2780 - The register "Interfaces/INST_ZestSC1_Host/RegLastCS" has
    the property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
-WARNING:Pack:2780 - The register
-   "LeonTheProfessional/l3.cpu[0].u0/leon3x0/rst_1" has the property IOB=TRUE,
-   but it did not join an IO component because it is not connected to any IO
-   element.
 WARNING:Pack:2780 - The register "Interfaces/INST_ZestSC1_Host/RegLastWR" has
    the property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
@@ -9870,12 +9830,6 @@ WARNING:Pack:266 - The function generator
    failed to merge with F5 multiplexer
    LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/ex_result3_mux0000(19)155
    _SW1.  There is a conflict for the FXMUX.  The design will exhibit suboptimal
-   timing.
-WARNING:Pack:266 - The function generator
-   LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/de_raddr1_7_mux0000_SW0
-   failed to merge with F5 multiplexer
-   LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/de_raddr1_7_mux0000. 
-   There is a conflict for the FXMUX.  The design will exhibit suboptimal
    timing.
 WARNING:Pack:266 - The function generator
    LeonTheProfessional/gpt.timer0/I60_cy(4)114 failed to merge with F5
