@@ -14,24 +14,6 @@ Done.
 Annotating constraints to design from ucf file "leon3mp.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
-INFO:ConstraintSystem:59 - Constraint <net "IO<0>" LOC = "T12";>
-   [leon3mp.ucf(261)]: NET "IO<0>" not found.  Please verify that:
-   1. The specified design element actually exists in the original design.
-   2. The specified object is spelled correctly in the constraint source file.
-
-WARNING:ConstraintSystem - A target design object for the Locate constraint
-   '<net "IO<0>" LOC = "T12";> [leon3mp.ucf(261)]' could not be found and so the
-   Locate constraint will be removed.
-
-INFO:ConstraintSystem:59 - Constraint <net "IO<2>" LOC = "P16";>
-   [leon3mp.ucf(263)]: NET "IO<2>" not found.  Please verify that:
-   1. The specified design element actually exists in the original design.
-   2. The specified object is spelled correctly in the constraint source file.
-
-WARNING:ConstraintSystem - A target design object for the Locate constraint
-   '<net "IO<2>" LOC = "P16";> [leon3mp.ucf(263)]' could not be found and so the
-   Locate constraint will be removed.
-
 INFO:ConstraintSystem:178 - TNM 'USB_StreamCLK', used in period specification
    'TS_StreamCLK', was traced into DCM instance
    Interfaces/INST_ZestSC1_Host/StreamDCM. The following new TNM groups and
@@ -83,7 +65,6 @@ WARNING:ConstraintSystem - The Offset constraint <net "USB_StreamData<*>" OFFSET
 Done...
 
 Checking expanded design ...
-WARNING:NgdBuild:452 - logical net 'N4404' has no driver
 WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(0)' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(1)' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'User_Signals(2)' has no legal driver
@@ -104,9 +85,9 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:  16
+  Number of warnings:  13
 
-Total memory usage is 421104 kilobytes
+Total memory usage is 421260 kilobytes
 
 Writing NGD file "TheBigLeonski.ngd" ...
 Total REAL time to NGDBUILD completion:  6 sec

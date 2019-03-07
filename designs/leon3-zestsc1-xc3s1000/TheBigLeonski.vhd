@@ -260,7 +260,7 @@ begin
     IO(39) <= 'Z';
     IO(40) <= 'Z';
 
-    LEDs(0) <= std_logic(dsu_rx);
+    -- LEDs(0) <= std_logic(dsu_rx);
     LEDs(1) <= std_logic(iu_error);
     LEDs(2) <= std_logic(dsuact);
     -- LEDs(3) <= serial_info_sent_from_PC_OBUFD; -- done directly at IO(42) below

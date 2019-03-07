@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 
@@ -1119,7 +1119,7 @@ Analyzing hierarchy for entity <TheBigLeonski> in library <work> (architecture <
 Analyzing hierarchy for entity <leon3mp> in library <work> (architecture <rtl>) with generics.
 	clktech = 11
 	dbguart = 0
-	disas = 0
+	disas = 1
 	fabtech = 11
 	memtech = 11
 	padtech = 11
@@ -1191,7 +1191,7 @@ Analyzing hierarchy for entity <leon3s> in library <gaisler> (architecture <rtl>
 	cached = 0
 	cp = 0
 	dcen = 1
-	disas = 0
+	disas = 1
 	dlinesize = 8
 	dlram = 0
 	dlramsize = 1
@@ -1347,7 +1347,7 @@ Analyzing hierarchy for entity <leon3x> in library <gaisler> (architecture <rtl>
 	cmft = 0
 	cp = 0
 	dcen = 1
-	disas = 0
+	disas = 1
 	dlinesize = 8
 	dlram = 0
 	dlramsize = 1
@@ -1471,7 +1471,7 @@ Analyzing hierarchy for entity <proc3> in library <gaisler> (architecture <rtl>)
 	clk2x = 0
 	cp = 0
 	dcen = 1
-	disas = 0
+	disas = 1
 	dlinesize = 8
 	dlram = 0
 	dlramsize = 1
@@ -1568,7 +1568,7 @@ Analyzing hierarchy for entity <iu3> in library <gaisler> (architecture <rtl>) w
 	bp = 0
 	clk2x = 0
 	cp = 0
-	disas = 0
+	disas = 1
 	dsets = 1
 	dsu = 1
 	fabtech = 11
@@ -1806,11 +1806,11 @@ Analyzing Entity <TheBigLeonski> in library <work> (Architecture <arch>).
     Set user-defined property "DRIVE =  12" for instance <myRST_obuf> in unit <TheBigLeonski>.
     Set user-defined property "IOSTANDARD =  DEFAULT" for instance <myRST_obuf> in unit <TheBigLeonski>.
     Set user-defined property "SLEW =  SLOW" for instance <myRST_obuf> in unit <TheBigLeonski>.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 359: Unconnected output port 'User_StreamDataIn' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 359: Unconnected output port 'User_StreamDataInWE' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 359: Unconnected output port 'User_StreamDataOutBusy' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 359: Unconnected output port 'User_SRAM_DR_VALID' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 359: Unconnected output port 'User_SRAM_DR' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 370: Unconnected output port 'User_StreamDataIn' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 370: Unconnected output port 'User_StreamDataInWE' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 370: Unconnected output port 'User_StreamDataOutBusy' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 370: Unconnected output port 'User_SRAM_DR_VALID' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 370: Unconnected output port 'User_SRAM_DR' of component 'ZestSC1_Interfaces'.
 INFO:Xst:2679 - Register <SRAMDataOut> in unit <TheBigLeonski> has a constant value of 000000000000000000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <USB_DataOutWE> in unit <TheBigLeonski> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <USB_DataOut> in unit <TheBigLeonski> has a constant value of 0000000000000000 during circuit operation. The register is replaced by logic.
@@ -1820,7 +1820,7 @@ Entity <TheBigLeonski> analyzed. Unit <TheBigLeonski> generated.
 Analyzing generic Entity <leon3mp> in library <work> (Architecture <rtl>).
 	clktech = 11
 	dbguart = 0
-	disas = 0
+	disas = 1
 	fabtech = 11
 	memtech = 11
 	padtech = 11
@@ -1845,9 +1845,9 @@ WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/
 WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected input port 'testsig' of component 'ahbctrl' is tied to default value.
 WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 174: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
 WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 183: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 212: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 230: Unconnected input port 'cpurun' of component 'irqmp' is tied to default value.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 242: Unconnected output port 'gpto' of component 'gptimer'.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 216: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 234: Unconnected input port 'cpurun' of component 'irqmp' is tied to default value.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 246: Unconnected output port 'gpto' of component 'gptimer'.
 Entity <leon3mp> analyzed. Unit <leon3mp> generated.
 
 Analyzing generic Entity <clkgen> in library <techmap> (Architecture <struct>).
@@ -1984,7 +1984,7 @@ Analyzing generic Entity <leon3s> in library <gaisler> (Architecture <rtl>).
 	cached = 0
 	cp = 0
 	dcen = 1
-	disas = 0
+	disas = 1
 	dlinesize = 8
 	dlram = 0
 	dlramsize = 1
@@ -2042,7 +2042,7 @@ Analyzing generic Entity <leon3x> in library <gaisler> (Architecture <rtl>).
 	cmft = 0
 	cp = 0
 	dcen = 1
-	disas = 0
+	disas = 1
 	dlinesize = 8
 	dlram = 0
 	dlramsize = 1
@@ -2102,7 +2102,7 @@ Analyzing generic Entity <proc3> in library <gaisler> (Architecture <rtl>).
 	clk2x = 0
 	cp = 0
 	dcen = 1
-	disas = 0
+	disas = 1
 	dlinesize = 8
 	dlram = 0
 	dlramsize = 1
@@ -2162,7 +2162,7 @@ Analyzing generic Entity <iu3> in library <gaisler> (Architecture <rtl>).
 	bp = 0
 	clk2x = 0
 	cp = 0
-	disas = 0
+	disas = 1
 	dsets = 1
 	dsu = 1
 	fabtech = 11
@@ -7105,8 +7105,8 @@ WARNING:Xst:653 - Signal <ahbmo(10).haddr> is used but never assigned. This sour
     Found 1-bit tristate buffer for signal <IO(2)>.
     Found 1-bit tristate buffer for signal <IO(1)>.
     Found 1-bit tristate buffer for signal <IO(0)>.
-    Found 32-bit up counter for signal <counter2>.
-    Found 1-bit register for signal <heartbeat>.
+    Found 32-bit up counter for signal <counter_dsu>.
+    Found 1-bit register for signal <heartbeat_led_dsu>.
     Summary:
 	inferred   1 Counter(s).
 	inferred   2 D-type flip-flop(s).
@@ -7142,6 +7142,7 @@ WARNING:Xst:646 - Signal <RE> is assigned but never used. This unconnected signa
 WARNING:Xst:646 - Signal <LEDs<7:6>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <LEDs<4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <LEDs<3>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <LEDs<0>> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:646 - Signal <Interrupt> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <DataOut> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
 WARNING:Xst:646 - Signal <DataIn> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -7726,7 +7727,6 @@ WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu
 WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/a0/r.retry2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/dcomgen.dcom0/ahbmst0/r.retry> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <LeonTheProfessional/ahb0/r.hmasterlockd> of sequential type is unconnected in block <TheBigLeonski>.
-WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.wb.lock2> of sequential type is unconnected in block <TheBigLeonski>.
 WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_7> of sequential type is unconnected in block <TheBigLeonski>.
 WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_6> of sequential type is unconnected in block <TheBigLeonski>.
 WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_5> of sequential type is unconnected in block <TheBigLeonski>.
@@ -7736,6 +7736,7 @@ WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/
 WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_1> of sequential type is unconnected in block <TheBigLeonski>.
 WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.efaddr_0> of sequential type is unconnected in block <TheBigLeonski>.
 WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.pcheld> of sequential type is unconnected in block <TheBigLeonski>.
+WARNING:Xst:2677 - Node <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.wb.lock2> of sequential type is unconnected in block <TheBigLeonski>.
 INFO:Xst:2399 - RAMs <Interfaces/INST_ZestSC1_Host/Mram_FIFOOut16>, <Interfaces/INST_ZestSC1_Host/Mram_FIFOOut15> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <Interfaces/INST_ZestSC1_Host/Mram_FIFOOut16>, <Interfaces/INST_ZestSC1_Host/Mram_FIFOOut13> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <Interfaces/INST_ZestSC1_Host/Mram_FIFOOut16>, <Interfaces/INST_ZestSC1_Host/Mram_FIFOOut12> are equivalent, second RAM is removed
@@ -7811,8 +7812,8 @@ INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.rf0/
 INFO:Xst:2261 - The FF/Latch <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_19> in Unit <TheBigLeonski> is equivalent to the following FF/Latch, which will be removed : <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/mm.xsigned> 
 Replicating register myRST to handle IOB=TRUE attribute
 Replicating register heartbeat to handle IOB=TRUE attribute
-Replicating register LeonTheProfessional/dcomgen.dcom0/dcom_uart0/r.tshift_0 to handle IOB=TRUE attribute
 Replicating register LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.nerror to handle IOB=TRUE attribute
+Replicating register LeonTheProfessional/dcomgen.dcom0/dcom_uart0/r.tshift_0 to handle IOB=TRUE attribute
 Replicating register LeonTheProfessional/l3.dsugen.dsu0/x0/r.act to handle IOB=TRUE attribute
 
 FlipFlop LeonTheProfessional/ahb0/r.cfgsel has been replicated 1 time(s)
@@ -7955,11 +7956,11 @@ Cell Usage :
 #      SRL16E                      : 29
 # Clock Buffers                    : 5
 #      BUFG                        : 5
-# IO Buffers                       : 149
+# IO Buffers                       : 150
 #      IBUF                        : 24
 #      IBUFG                       : 2
 #      IOBUF                       : 1
-#      OBUF                        : 43
+#      OBUF                        : 44
 #      OBUFT                       : 79
 # DCMs                             : 4
 #      DCM                         : 4
@@ -8022,7 +8023,7 @@ Control Signal                                                                  
 -------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------+
 RST(Interfaces/INST_ZestSC1_Host/ROC_1:O)                                                                          | NONE(Interfaces/INST_ZestSC1_Host/DataOutRegFull)                                                       | 32    |
 myRST_1(myRST_1:Q)                                                                                                 | NONE(LeonTheProfessional/rst0/r_0)                                                                      | 6     |
-DataOut(0)(XST_GND:G)                                                                                              | NONE(Interfaces/INST_SRAM/OFDDRCPE_CLK_SRAM)                                                            | 5     |
+IO_0_OBUF(XST_GND:G)                                                                                               | NONE(Interfaces/INST_SRAM/OFDDRCPE_CLK_SRAM)                                                            | 5     |
 LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/holdnx(LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/holdnx1:O)| NONE(LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/mgen.mul0/xm1616.m1616/pipe2.arch0.dwm/Mmult_prod)| 1     |
 -------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------+
 
@@ -8183,7 +8184,7 @@ Offset:              8.965ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 28 / 12
+  Total number of paths / destination ports: 26 / 10
 -------------------------------------------------------------------------
 Delay:               9.179ns (Levels of Logic = 4)
   Source:            USB_StreamFX2Rdy (PAD)
@@ -8204,15 +8205,15 @@ Delay:               9.179ns (Levels of Logic = 4)
 =========================================================================
 
 
-Total REAL time to Xst completion: 345.00 secs
-Total CPU time to Xst completion: 344.22 secs
+Total REAL time to Xst completion: 337.00 secs
+Total CPU time to Xst completion: 336.02 secs
  
 --> 
 
 
-Total memory usage is 1608176 kilobytes
+Total memory usage is 1608020 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 3191 (   0 filtered)
+Number of warnings : 3192 (   0 filtered)
 Number of infos    :  255 (   0 filtered)
 

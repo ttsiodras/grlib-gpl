@@ -259,3 +259,15 @@ We therefore *are* able to speak to the DSU, it's just that grmon doesn't say th
 (facepalm)
 
 Could it be that the change to grmon3 introduced some sort of regression that doesn't allow grmon to interoperate well over UART?
+
+**UPDATE**: IT WORKS!!! IT WORKS!!!
+
+It would have worked from the get-go, had it not been for my desire to debug the UART traffic via LEDs - for some reason that currently eludes me, using the UART RX signal sent from the Leon3 back into BOTH the UART **and** a LED, messed things up. The moment I removed this connection, grmon saw my design.
+
+Oh my God - I "compiled" my own CPU!
+
+The neighbours probably got worried from my scream of pure Joy...
+
+Victory!  :-)
+
+[![Video of victory](contrib/image.jpg "Video of victory.")](https://drive.google.com/open?id=13J2ZKE6PlnomnE3vvsbwIWQYlRcjLYpY)

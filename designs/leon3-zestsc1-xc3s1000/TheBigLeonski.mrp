@@ -8,7 +8,7 @@ Target Device  : xc3s1000
 Target Package : ft256
 Target Speed   : -5
 Mapper Version : spartan3 -- $Revision: 1.55 $
-Mapped Date    : Mon Mar  4 21:28:43 2019
+Mapped Date    : Thu Mar  7 21:46:15 2019
 
 Design Summary
 --------------
@@ -18,9 +18,9 @@ Logic Utilization:
   Number of Slice Flip Flops:         2,476 out of  15,360   16%
   Number of 4 input LUTs:             9,139 out of  15,360   59%
 Logic Distribution:
-  Number of occupied Slices:          5,331 out of   7,680   69%
-    Number of Slices containing only related logic:   5,331 out of   5,331 100%
-    Number of Slices containing unrelated logic:          0 out of   5,331   0%
+  Number of occupied Slices:          5,330 out of   7,680   69%
+    Number of Slices containing only related logic:   5,330 out of   5,330 100%
+    Number of Slices containing unrelated logic:          0 out of   5,330   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
   Total Number of 4 input LUTs:       9,305 out of  15,360   60%
     Number used as logic:             9,107
@@ -32,7 +32,7 @@ Logic Distribution:
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
-  Number of bonded IOBs:                105 out of     173   60%
+  Number of bonded IOBs:                106 out of     173   61%
     IOB Flip Flops:                      24
   Number of RAMB16s:                     24 out of      24  100%
   Number of MULT18X18s:                   1 out of      24    4%
@@ -43,7 +43,7 @@ Average Fanout of Non-Clock Nets:                3.58
 
 Peak Memory Usage:  605 MB
 Total REAL time to MAP completion:  12 secs 
-Total CPU time to MAP completion:   12 secs 
+Total CPU time to MAP completion:   11 secs 
 
 NOTES:
 
@@ -536,6 +536,72 @@ WARNING:Pack:2780 - The register
    connected to any IO element.
 WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/ir.addr_29" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_10" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_11" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_12" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_20" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_13" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_21" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_14" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_22" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_30" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_15" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_23" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_31" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_16" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_24" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_17" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_25" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_18" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_26" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_19" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_27" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_28" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_29" has the
    property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
 WARNING:Pack:2780 - The register "LeonTheProfessional/apb0/apbx/r.p(0).prdata_0"
@@ -2279,8 +2345,38 @@ WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/ir.addr_9" has the
    property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_0" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_1" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_2" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_3" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_4" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_5" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
 WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.f.branch" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_6" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_7" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_8" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/counter_dsu_9" has the
    property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
 WARNING:Pack:2780 - The register
@@ -5433,36 +5529,6 @@ WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.pc_29" has the
    property IOB=TRUE, but it did not join an IO component because it is not
    connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_0" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_1" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_2" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_3" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_4" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_5" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_6" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_7" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_8" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_9" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
 WARNING:Pack:2780 - The register "LeonTheProfessional/ahbramgen.ahbram0/r.hsel"
    has the property IOB=TRUE, but it did not join an IO component because it is
    not connected to any IO element.
@@ -6715,9 +6781,6 @@ WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.dsugen.dsu0/x0/tr.tbreg1.mask_29" has the property
    IOB=TRUE, but it did not join an IO component because it is not connected to
    any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/heartbeat" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
 WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.dsugen.dsu0/x0/tr.tbreg1.read" has the property
    IOB=TRUE, but it did not join an IO component because it is not connected to
@@ -9117,6 +9180,9 @@ WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.dsugen.dsu0/x0/r.slv.hrdata_29" has the property
    IOB=TRUE, but it did not join an IO component because it is not connected to
    any IO element.
+WARNING:Pack:2780 - The register "LeonTheProfessional/heartbeat_led_dsu" has the
+   property IOB=TRUE, but it did not join an IO component because it is not
+   connected to any IO element.
 WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.dsugen.dsu0/x0/tr.tbreg1.addr_2" has the property
    IOB=TRUE, but it did not join an IO component because it is not connected to
@@ -9415,75 +9481,9 @@ WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/icache0/r.istate_3"
    has the property IOB=TRUE, but it did not join an IO component because it is
    not connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_10" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_11" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_12" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_20" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_13" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_21" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_14" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_22" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_30" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_15" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_23" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_31" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
 WARNING:Pack:2780 - The register "LeonTheProfessional/l3.dsugen.dsu0/x0/r.act_1"
    has the property IOB=TRUE, but it did not join an IO component because it is
    not connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_16" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_24" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_17" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_25" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_18" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_26" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_19" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_27" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_28" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
-WARNING:Pack:2780 - The register "LeonTheProfessional/counter2_29" has the
-   property IOB=TRUE, but it did not join an IO component because it is not
-   connected to any IO element.
 WARNING:Pack:2780 - The register
    "LeonTheProfessional/l3.dsugen.dsu0/x0/tr.ahbactive" has the property
    IOB=TRUE, but it did not join an IO component because it is not connected to
@@ -9948,14 +9948,14 @@ WARNING:PhysDesignRules:1054 - The DCM comp
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network N4404 has no load.
-INFO:LIT:395 - The above info message is repeated 12 more times for the
+INFO:LIT:243 - Logical network User_Signals(0)_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 11 more times for the
    following (max. 5 shown):
-   User_Signals(0)_IBUF,
    User_Signals(1)_IBUF,
    User_Signals(2)_IBUF,
    User_Signals(3)_IBUF,
-   User_Signals(4)_IBUF
+   User_Signals(4)_IBUF,
+   User_Signals(5)_IBUF
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:PhysDesignRules:772 - To achieve optimal frequency synthesis performance
@@ -10161,7 +10161,9 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IO(0)                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
 | IO(1)                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST | OFF1         |          |          |
+| IO(2)                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST | OFF1         |          |          |
 | IO(3)                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 | IO(41)                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST | OFF1         |          |          |
 | IO(42)                             | IOB              | BIDIR     | LVCMOS33             |       | 12       | FAST |              |          |          |
@@ -10171,7 +10173,6 @@ Section 6 - IOB Properties
 | IO(46)                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST | OFF1         |          |          |
 | IO_CLK_N                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 | IO_CLK_P                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
-| N4406                              | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW | OFF1         |          |          |
 | S_A(0)                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
 | S_A(1)                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
 | S_A(2)                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
