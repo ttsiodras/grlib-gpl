@@ -190,12 +190,12 @@ begin
   -- To verify that the clock shenanigans actually work on my board,
   -- I hooked this up to LED6 (i.e. the 2nd from the right) and
   -- confirmed that the clock driving the LEON3 and the DSU and all
-  -- the rest is indeed a 24MHz clock.
+  -- the rest is indeed a 34MHz clock.
   process(clkm)
   begin
       if rising_edge(clkm) then
         counter_dsu <= counter_dsu + 1;
-        if counter_dsu = 24000000 then
+        if counter_dsu = 34000000 then
             counter_dsu <= 0;
             IO(45) <= heartbeat_led_dsu;
             heartbeat_led_dsu <= not heartbeat_led_dsu;
