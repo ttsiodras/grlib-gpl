@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 
@@ -1313,7 +1313,7 @@ Analyzing hierarchy for entity <gptimer> in library <gaisler> (architecture <rtl
 	wdogwin = 0
 
 Analyzing hierarchy for entity <ahbram> in library <gaisler> (architecture <rtl>) with generics.
-	haddr = 2560
+	haddr = 1024
 	hindex = 3
 	hmask = 4095
 	kbytes = 16
@@ -1806,11 +1806,11 @@ Analyzing Entity <TheBigLeonski> in library <work> (Architecture <arch>).
     Set user-defined property "DRIVE =  12" for instance <myRST_obuf> in unit <TheBigLeonski>.
     Set user-defined property "IOSTANDARD =  DEFAULT" for instance <myRST_obuf> in unit <TheBigLeonski>.
     Set user-defined property "SLEW =  SLOW" for instance <myRST_obuf> in unit <TheBigLeonski>.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 370: Unconnected output port 'User_StreamDataIn' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 370: Unconnected output port 'User_StreamDataInWE' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 370: Unconnected output port 'User_StreamDataOutBusy' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 370: Unconnected output port 'User_SRAM_DR_VALID' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 370: Unconnected output port 'User_SRAM_DR' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 397: Unconnected output port 'User_StreamDataIn' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 397: Unconnected output port 'User_StreamDataInWE' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 397: Unconnected output port 'User_StreamDataOutBusy' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 397: Unconnected output port 'User_SRAM_DR_VALID' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 397: Unconnected output port 'User_SRAM_DR' of component 'ZestSC1_Interfaces'.
 INFO:Xst:2679 - Register <SRAMDataOut> in unit <TheBigLeonski> has a constant value of 000000000000000000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <USB_DataOutWE> in unit <TheBigLeonski> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <USB_DataOut> in unit <TheBigLeonski> has a constant value of 0000000000000000 during circuit operation. The register is replaced by logic.
@@ -1826,28 +1826,28 @@ Analyzing generic Entity <leon3mp> in library <work> (Architecture <rtl>).
 	padtech = 11
 	pclow = 2
 	use_ahbram_sim = 0
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clkn' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clk2x' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'sdclk' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'pciclk' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clk4x' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clk1xu' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clk2xu' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clkb' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clkc' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 138: Unconnected output port 'clk8x' of component 'clkgen'.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 142: Unconnected input port 'testrst' of component 'rstgen' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 142: Unconnected input port 'testen' of component 'rstgen' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected input port 'testen' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected input port 'testrst' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected input port 'scanen' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected input port 'testoen' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected input port 'testsig' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 174: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 183: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 216: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 234: Unconnected input port 'cpurun' of component 'irqmp' is tied to default value.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 246: Unconnected output port 'gpto' of component 'gptimer'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clkn' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clk2x' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'sdclk' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'pciclk' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clk4x' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clk1xu' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clk2xu' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clkb' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clkc' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clk8x' of component 'clkgen'.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 152: Unconnected input port 'testrst' of component 'rstgen' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 152: Unconnected input port 'testen' of component 'rstgen' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 160: Unconnected input port 'testen' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 160: Unconnected input port 'testrst' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 160: Unconnected input port 'scanen' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 160: Unconnected input port 'testoen' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 160: Unconnected input port 'testsig' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 184: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 193: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 226: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 238: Unconnected input port 'cpurun' of component 'irqmp' is tied to default value.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 250: Unconnected output port 'gpto' of component 'gptimer'.
 Entity <leon3mp> analyzed. Unit <leon3mp> generated.
 
 Analyzing generic Entity <clkgen> in library <techmap> (Architecture <struct>).
@@ -2751,7 +2751,7 @@ INFO:Xst:2679 - Register <r2.setdel> in unit <gptimer> has a constant value of 0
 Entity <gptimer> analyzed. Unit <gptimer> generated.
 
 Analyzing generic Entity <ahbram> in library <gaisler> (Architecture <rtl>).
-	haddr = 2560
+	haddr = 1024
 	hindex = 3
 	hmask = 4095
 	kbytes = 16
@@ -7581,7 +7581,7 @@ WARNING:Xst:1426 - The value init of the FF/Latch LeonTheProfessional/l3.dsugen.
    You should achieve better results by setting this init to 1.
 WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_1> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_0> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_30> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_29> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_27> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_26> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatas_25> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
@@ -7911,15 +7911,15 @@ Cell Usage :
 #      GND                         : 25
 #      INV                         : 34
 #      LUT1                        : 164
-#      LUT2                        : 743
-#      LUT2_D                      : 55
-#      LUT2_L                      : 72
-#      LUT3                        : 1634
-#      LUT3_D                      : 127
-#      LUT3_L                      : 114
-#      LUT4                        : 5315
-#      LUT4_D                      : 264
-#      LUT4_L                      : 632
+#      LUT2                        : 741
+#      LUT2_D                      : 54
+#      LUT2_L                      : 77
+#      LUT3                        : 1632
+#      LUT3_D                      : 126
+#      LUT3_L                      : 116
+#      LUT4                        : 5322
+#      LUT4_D                      : 265
+#      LUT4_L                      : 623
 #      MUXCY                       : 487
 #      MUXF5                       : 598
 #      MUXF6                       : 31
@@ -8022,7 +8022,7 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 12.725ns (Maximum Frequency: 78.583MHz)
+   Minimum period: 12.686ns (Maximum Frequency: 78.828MHz)
    Minimum input arrival time before clock: 6.313ns
    Maximum output required time after clock: 9.029ns
    Maximum combinational path delay: 9.243ns
@@ -8033,10 +8033,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'USB_RegCLK'
-  Clock period: 12.725ns (frequency: 78.583MHz)
-  Total number of paths / destination ports: 5270876 / 5801
+  Clock period: 12.686ns (frequency: 78.828MHz)
+  Total number of paths / destination ports: 5270878 / 5801
 -------------------------------------------------------------------------
-Delay:               17.816ns (Levels of Logic = 31)
+Delay:               17.760ns (Levels of Logic = 28)
   Source:            LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1 (FF)
   Destination:       LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.faddr_7 (FF)
   Source Clock:      USB_RegCLK rising 0.7X
@@ -8067,21 +8067,18 @@ Delay:               17.816ns (Levels of Logic = 31)
      MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(17) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(17))
      MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(18) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(18))
      MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(19) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(19))
-     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(20) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(20))
-     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(21) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(21))
-     MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(22) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(22))
-     XORCY:CI->O           3   0.786   0.830  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_xor(23) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/dci_eaddress(22))
-     LUT3:I2->O            1   0.479   0.704  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000125 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000125)
-     LUT4:I3->O            1   0.479   0.704  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000137 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000137)
-     LUT4:I3->O            8   0.479   1.091  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000326 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000)
+     XORCY:CI->O           3   0.786   0.794  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_xor(20) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/dci_eaddress(19))
+     LUT4:I3->O            1   0.479   0.704  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000227 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000227)
+     LUT4:I3->O            1   0.479   0.851  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000257 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000257)
+     LUT4:I1->O            8   0.479   1.091  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000326 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000)
      LUT4:I1->O           16   0.479   1.051  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_diag_op_not000111 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/flush0_and0002)
      MUXF5:S->O            1   0.540   0.704  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_or0000129_SW0 (N1931)
      LUT4_D:I3->O         10   0.479   0.987  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_or0000141 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_or0000141)
      LUT4:I3->O            8   0.479   0.921  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_not00011 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_not0001)
      FDRE:CE                   0.524          LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.faddr_0
     ----------------------------------------
-    Total                     17.816ns (7.768ns logic, 10.047ns route)
-                                       (43.6% logic, 56.4% route)
+    Total                     17.760ns (7.602ns logic, 10.158ns route)
+                                       (42.8% logic, 57.2% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'USB_StreamCLK'
@@ -8216,13 +8213,13 @@ Delay:               9.243ns (Levels of Logic = 4)
 =========================================================================
 
 
-Total REAL time to Xst completion: 380.00 secs
-Total CPU time to Xst completion: 377.79 secs
+Total REAL time to Xst completion: 394.00 secs
+Total CPU time to Xst completion: 391.60 secs
  
 --> 
 
 
-Total memory usage is 1606480 kilobytes
+Total memory usage is 1607876 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 3192 (   0 filtered)

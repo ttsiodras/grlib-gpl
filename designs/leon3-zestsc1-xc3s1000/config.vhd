@@ -133,7 +133,7 @@ package config is
 -- AHB RAM
   constant CFG_AHBRAMEN : integer := 1;
   constant CFG_AHBRSZ : integer := 16;
-  constant CFG_AHBRADDR : integer := 16#A00#;
+  constant CFG_AHBRADDR : integer := 16#400#;
   constant CFG_AHBRPIPE : integer := 0;
 -- UART 1
   constant CFG_UART1_ENABLE : integer := 1;
