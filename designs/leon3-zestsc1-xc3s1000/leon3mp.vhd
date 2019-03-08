@@ -1,5 +1,9 @@
 -----------------------------------------------------------------------------
---  LEON3 Demonstration design
+--  I adapted this code for my ZestSC1 board, based on the LEON3 design
+--  for the leon3-digilent-xc3s1000.
+--
+--  Original Copyright is:
+--
 --  Copyright (C) 2004 Jiri Gaisler, Gaisler Research
 ------------------------------------------------------------------------------
 --  This file is a part of the GRLIB VHDL IP LIBRARY
@@ -70,7 +74,7 @@ architecture rtl of leon3mp is
 
    constant blength : integer := 12;
    constant fifodepth : integer := 8;
-   constant maxahbm : integer := CFG_NCPU+CFG_AHB_UART+CFG_AHB_JTAG;
+   constant maxahbm : integer := CFG_NCPU+CFG_AHB_UART; -- A truly "Spartan" set of AHB masters :-)
    
    signal vcc, gnd   : std_logic_vector(4 downto 0);
    signal memi  : memory_in_type;
@@ -109,8 +113,11 @@ architecture rtl of leon3mp is
    signal lclk : std_ulogic;
    signal tck, tckn, tms, tdi, tdo : std_ulogic;
    
-   constant BOARD_FREQ : integer := 48000;   -- input frequency in KHz
-   constant CPU_FREQ : integer := BOARD_FREQ * CFG_CLKMUL / CFG_CLKDIV;  -- cpu frequency in KHz
+   -- my ZestSC1 board's frequency in KHz
+   constant BOARD_FREQ : integer := 48000;
+   -- cpu frequency in KHz will be 34000 - as per my S/P/R results,
+   -- my design can easily reach this speed.
+   constant CPU_FREQ : integer := BOARD_FREQ * CFG_CLKMUL / CFG_CLKDIV;
    constant IOAEN : integer := 0;
    
    attribute keep : boolean;
@@ -121,6 +128,9 @@ architecture rtl of leon3mp is
   signal rxd1 : std_logic;
   signal txd1 : std_logic;
 
+  -- A "heartbeat" LED for the DSU - I used it to make sure the
+  -- locally instantiated clock here beats indeed at 34MHz
+  -- (search below for 34000000 to see the logic)
   signal counter_dsu : integer := 0;
   signal heartbeat_led_dsu : std_logic := '1';
 begin
@@ -216,12 +226,6 @@ begin
   utx_pad : outpad generic map (tech => padtech) port map (dsu_rx, txd1);
   txd1 <= duo.txd;
   
-  -- ahbjtaggen0 :if CFG_AHB_JTAG = 1 generate
-  --   ahbjtag0 : ahbjtag generic map(tech => fabtech, hindex => CFG_NCPU+CFG_AHB_UART+CFG_AHB_JTAG)
-  --     port map(rstn, clkm, tck, tms, tdi, tdo, ahbmi, ahbmo(CFG_NCPU+CFG_AHB_UART+CFG_AHB_JTAG),
-  --              open, open, open, open, open, open, open, gnd(0));
-  -- end generate;
-
 ----------------------------------------------------------------------
 ---  APB Bridge and various periherals -------------------------------
 ----------------------------------------------------------------------
@@ -295,7 +299,7 @@ begin
 -- pragma translate_off
   x : report_design
   generic map (
-   msg1 => "LEON3 Digilent XC3S1000 Demonstration design",
+   msg1 => "ZestSC1 Orange Tree XC3S1000 Demonstration design",
    fabtech => tech_table(fabtech), memtech => tech_table(memtech),
    mdel => 1
   );

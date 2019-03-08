@@ -1,7 +1,11 @@
 
 
 -----------------------------------------------------------------------------
--- LEON3 Demonstration design test bench configuration
+-- My customizations for my ZestSC1 board - based on the original design
+-- for the leon3-digilent-xc3s1000.
+--
+-- Original Copyright:
+-- 
 -- Copyright (C) 2009 Aeroflex Gaisler
 ------------------------------------------------------------------------------
 
@@ -17,8 +21,14 @@ package config is
   constant CFG_TRANSTECH : integer := TT_XGTP0;
   constant CFG_NOASYNC : integer := 0;
   constant CFG_SCAN : integer := 0;
+
 -- Clock generator
   constant CFG_CLKTECH : integer := spartan3;
+
+  -- cpu frequency in KHz will be 34000 - as per my S/P/R results,
+  -- my design can easily reach this speed.
+  --
+  -- 48*5/7 ~= 34
   constant CFG_CLKMUL : integer := (5);
   constant CFG_CLKDIV : integer := (7);
   constant CFG_OCLKDIV : integer := 1;

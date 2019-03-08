@@ -1,6 +1,5 @@
 ------------------------------------------------------------------
--- This is the top-level of my simple "direct-to-VHDL" translation
--- of a Mandelbrot fractal computing engine.
+-- This is the top-level of my Leon3 implementation in my ZestSC1
 ------------------------------------------------------------------
 
 library IEEE;
@@ -53,22 +52,29 @@ end TheBigLeonski;
 
 architecture arch of TheBigLeonski is
 
-    -- We instantiate our Leon3
+    -- Instantiate our Leon3 here.
     component leon3mp
       port (
-        resetn : in  std_ulogic;
-        clk : in  std_ulogic; 	-- 48 MHz main clock
+        resetn   : in  std_ulogic;
+        clk      : in  std_ulogic; 	-- 48 MHz main clock
         iu_error : out std_ulogic;
 
-        dsuact : out std_ulogic;
+        dsuact   : out std_ulogic; -- debug signal connectd to a LED
 
-        dsu_rx : out std_ulogic; -- UART1 tx data
-        dsu_tx : in  std_ulogic; -- UART1 rx data
-        IO : inout std_logic_vector(46 downto 0)
+        dsu_rx   : out std_ulogic; -- UART1 tx data
+        dsu_tx   : in  std_ulogic; -- UART1 rx data
+        IO       : inout std_logic_vector(46 downto 0)  -- to allow access to
+                                                        -- one of the LEDs;
+                                                        -- and monitor the DSU
+                                                        -- clock heartbeat
     );
     end component;
 
-    -- We instantiate the ZestSC1 stuff.
+
+    -- We instantiate the ZestSC1 interfaces - we need the USB
+    -- functionality for custom reset whenever we want (and probably
+    -- for a lot more things in the future)
+
     component ZestSC1_Interfaces
         port (
             -----------------------------------------------
@@ -134,10 +140,9 @@ architecture arch of TheBigLeonski is
             -- Register interface
             ---------------------
 
-            -- This is used to send:
+            -- This is used to send just one thing for now:
             --
-            --  the topx, topy (in complex plane, so fixed point coordinates)
-            --  the stepx, stepy (to move for each pixel - also fixed point)
+            -- A custom reset signal whenever we want
             User_RegAddr : out std_logic_vector(15 downto 0);
             User_RegDataIn : out std_logic_vector(7 downto 0);
             User_RegDataOut : in std_logic_vector(7 downto 0);
@@ -198,21 +203,27 @@ architecture arch of TheBigLeonski is
     -- Interrupt signal
     signal Interrupt : std_logic;
 
-    -- Will reset the CPU over the USB bus
+    -- This is how we reset the Leon3 CPU over the USB bus
     signal myRST : std_logic := '1';
+    -- I needed a BUFD version to drive both the reset and a LED
     signal myRST_OBUFD : std_logic := '1';
 
-    -- The bridge to Leon - hopefully, GRMON will speak over it
-    signal dsu_rx : std_ulogic; -- UART1 tx data
-    signal dsu_tx : std_ulogic; -- UART1 rx data
+    -- The UART bridge to Leon - GRMON speaks over it
+    -- via a USB-TTL (connected signals: TX, RX, GND)
+    signal dsu_rx : std_ulogic;
+    signal dsu_tx : std_ulogic;
+
+    -- indicator LED to know if DSU is active
     signal dsuact : std_ulogic;
+    -- indicator LED to see if we are dead :-)
     signal iu_error : std_ulogic;
 
-    -- OBUF used to forward the USB-TTL signal to both a LED 
-    -- and the DSU UART.
+    -- OBUF used to forward the USB-TTL TX sent from the PC
+    -- to both a LED and the DSU UART.
     signal serial_info_sent_from_PC : std_logic;
     signal serial_info_sent_from_PC_OBUFD : std_logic;
 
+    -- Heartbeat LED connected to main clock - verifying 48MHz
     signal heartbeat : std_logic := '1';
     signal counter : integer  := 0;
 begin
@@ -260,16 +271,35 @@ begin
     IO(39) <= 'Z';
     IO(40) <= 'Z';
 
+    -- This costed me the last two days of debugging - I don't understand
+    -- why, but the connection to the LED somehow messed up the reception
+    -- of the UART signal by the PC. I need a logic analyser/scope to see
+    -- what exactly happened to the signal; but all I know is that the
+    -- moment I commented this out, GRMON3 saw my board.
+    --
     -- LEDs(0) <= std_logic(dsu_rx);
+
+    -- LED indicators for two debug signals: IU on the CPU, DSU active
     LEDs(1) <= std_logic(iu_error);
     LEDs(2) <= std_logic(dsuact);
-    -- LEDs(3) <= serial_info_sent_from_PC_OBUFD; -- done directly at IO(42) below
-    -- LEDs(4) <= myRST;
 
+    -- The bridge to the outside world:
+    --
+    -- 1. The USB-TTL signal sent from the PC arrives at the GPIO pin 12
+    --    which is IO(3). We put it in this signal:
     serial_info_sent_from_PC <= IO(3);
+
+    -- 2. At the same time, the DSU TX signal sent from the Leon3
+    --    must reach the USB-TTL via GPIO pin 11 - that is, IO(2):
     IO(2) <= dsu_rx;
+
+    -- 3. And since I wanted to see the TX signal sent from the PC
+    --    on a LED as well, I needed to OBUFD it (ISE reported that 
+    --    I could not have the same signal driving both a LED and
+    --    the LEON3's "receiving"...
     dsu_tx <= std_ulogic(serial_info_sent_from_PC_OBUFD);
 
+    -- The LED connections - notice the use of the OBUFD signals
     IO(0) <= LEDs(0);
     IO(1) <= LEDs(1);
     IO(41) <= LEDs(2);
@@ -283,9 +313,9 @@ begin
     process (RST, CLK, dsu_rx, iu_error, dsuact, Addr, WE)
     begin
         if (RST /= '1' and CLK'event and CLK='1') then
-            -- To verify that the clock outside the LEON actually works on my board,
-            -- I hooked this heartbeat up to LED7 (i.e. the 1st from the right) and
-            -- confirmed that this clock is indeed a 48MHz one.
+            -- To verify that the clock outside the LEON actually works
+            -- at the frequency I expect (48MHz) I hooked a heartbeat LED7
+            -- (i.e. the 1st from the right) and confirmed the speed.
             counter <= counter + 1;
             if counter = 48000000 then
                 counter <= 0;
@@ -295,10 +325,7 @@ begin
             -- Programmatically reset the board. This proved to be absolutely 
             -- essential, since the LEON3/DSU clock is NOT WORKING until
             -- I send a reset through this. To be clear - I verified this
-            -- via the heartbeat_led_dsu inside leon3mp.vhd.
-            -- 
-            -- Sadly, even after this reset - with both heartbeats beating
-            -- loud and clear, the DSU/AHBUART is still not listening to GRMON.
+            -- via the heartbeat_led_dsu I connected inside leon3mp.vhd.
             if (WE='1') then
                 case Addr is
                     when X"2000" => myRST <= '1';
