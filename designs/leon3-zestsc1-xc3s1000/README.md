@@ -1,10 +1,5 @@
 
-Based on Jiri-Gaisler's fork of GRLIB GPL, this is an extremely optimistic
-attempt from a SW developer to create a LEON3 inside his FPGA board (ZestSC1).
-
-Previous (successful) attempts at programming said board are [here](https://github.com/ttsiodras/MandelbrotInVHDL/).
-
-**UPDATE**: Attempt failed - the design can't fit in my FPGA board :-(
+First attempt failed - the design can't fit in my FPGA board :-(
 
 ```
   The Slice Logic Distribution report is not meaningful if the design is
@@ -271,7 +266,8 @@ Victory!  :-)
 
 [![Video of victory](../../contrib/image.jpg "Video of victory.")](https://drive.google.com/open?id=13J2ZKE6PlnomnE3vvsbwIWQYlRcjLYpY)
 
-**UPDATE**: And here's a session on the final version of the design: BlockRAM placed at 0x40000000, and frequency set at 34MHz:
+**UPDATE**: And here's a session on the final version of the design (BlockRAM placed at 0x40000000, and frequency set at 34MHz).
+The relevant code is under the "contrib" folder at the root of the repo.
 
     $ cd contrib
     $ cat example_program.c
