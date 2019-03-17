@@ -61,8 +61,10 @@ architecture arch of TheBigLeonski is
 
         dsuact   : out std_ulogic; -- debug signal connectd to a LED
 
-        dsu_rx   : out std_ulogic; -- UART1 tx data
-        dsu_tx   : in  std_ulogic; -- UART1 rx data
+        dsu_rx   : out std_ulogic; -- DBG UART tx data
+        dsu_tx   : in  std_ulogic; -- DBG UART rx data
+        rx       : out std_ulogic; -- UART1 tx data
+        tx       : in  std_ulogic; -- UART1 rx data
         IO       : inout std_logic_vector(46 downto 0)  -- to allow access to
                                                         -- one of the LEDs;
                                                         -- and monitor the DSU
@@ -213,6 +215,10 @@ architecture arch of TheBigLeonski is
     signal dsu_rx : std_ulogic;
     signal dsu_tx : std_ulogic;
 
+    -- The real UART signals - not used though, since... "grmon -u"
+    signal rx : std_ulogic;
+    signal tx : std_ulogic;
+
     -- indicator LED to know if DSU is active
     signal dsuact : std_ulogic;
     -- indicator LED to see if we are dead :-)
@@ -292,6 +298,11 @@ begin
     -- 2. At the same time, the DSU TX signal sent from the Leon3
     --    must reach the USB-TTL via GPIO pin 11 - that is, IO(2):
     IO(2) <= dsu_rx;
+
+    --    Also, bind the (useless) signals for the real UART
+    --    (useless since we'll be doing "grmon -u")
+    tx <= IO(5);
+    IO(4) <= rx;
 
     -- 3. And since I wanted to see the TX signal sent from the PC
     --    on a LED as well, I needed to OBUFD it (ISE reported that 
@@ -391,6 +402,8 @@ begin
             dsuact => dsuact,
             dsu_rx => dsu_rx,
             dsu_tx => dsu_tx,
+            rx => rx,
+            tx => tx,
             IO => IO
         );
 

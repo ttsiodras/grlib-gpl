@@ -66,6 +66,8 @@ entity leon3mp is
     dsuact   : out std_ulogic;
     dsu_rx   : out std_ulogic;
     dsu_tx   : in  std_ulogic;
+    rx       : out std_ulogic;
+    tx       : in  std_ulogic;
     IO : inout std_logic_vector(46 downto 0)
   );
 end;
@@ -94,7 +96,7 @@ architecture rtl of leon3mp is
    signal cgi   : clkgen_in_type;
    signal cgo   : clkgen_out_type;
    signal u1i, u2i, dui : uart_in_type;
-   signal u2o, duo : uart_out_type;
+   signal u1o, u2o, duo : uart_out_type;
    
    signal irqi : irq_in_vector(0 to CFG_NCPU-1);
    signal irqo : irq_out_vector(0 to CFG_NCPU-1);
@@ -233,6 +235,17 @@ begin
   apb0 : apbctrl				-- AHB/APB bridge
   generic map (hindex => 1, haddr => CFG_APBADDR, nslaves => 16)
   port map (rstn, clkm, ahbsi, ahbso(1), apbi, apbo );
+
+  ua1 : if CFG_UART1_ENABLE /= 0 generate
+    uart1 : apbuart			-- UART 1
+    generic map (pindex => 1, paddr => 1,  pirq => 2, console => dbguart,
+	fifosize => CFG_UART1_FIFO)
+    port map (rstn, clkm, apbi, apbo(1), u1i, u1o);
+    u1i.extclk <= '0';
+    rxd1_pad : inpad generic map (tech => padtech) port map (tx, u1i.rxd); 
+    txd1_pad : outpad generic map (tech => padtech) port map (rx, u1o.txd);
+  end generate;
+  noua0 : if CFG_UART1_ENABLE = 0 generate apbo(1) <= apb_none; end generate;
 
   irqctrl : if CFG_IRQ3_ENABLE /= 0 generate
     irqctrl0 : irqmp			-- interrupt controller

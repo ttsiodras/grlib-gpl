@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-mbair::  Fri Mar 08 17:50:39 2019
+mbair::  Sun Mar 17 09:32:22 2019
 
 par -ol high -w TheBigLeonski.ncd TheBigLeonski.ncd 
 
@@ -10,92 +10,92 @@ Constraints file: TheBigLeonski.pcf.
 Loading device for application Rf_Device from file '3s1000.nph' in environment /home/ttsiod/Xilinx/14.7/ISE_DS/ISE/.
    "TheBigLeonski" is an NCD, version 3.2, device xc3s1000, package ft256, speed -5
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(0)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3731)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3914)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(1)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3733)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3916)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(10)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3735)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3918)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(11)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3737)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3920)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(12)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3739)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3922)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(13)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3741)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3924)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(14)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3743)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3926)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(15)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3745)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3928)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(2)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3747)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3930)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(3)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3749)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3932)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(4)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3751)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3934)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(5)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3753)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3936)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(6)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3755)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3938)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(7)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3757)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3940)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(8)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3759)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3942)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamData(9)" OFFSET = IN 4 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3761)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3944)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamFlags_n(0)" OFFSET = IN 7 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3763)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3946)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
 WARNING:ConstraintSystem - The Offset constraint <COMP "USB_StreamFlags_n(1)" OFFSET = IN 7 ns BEFORE COMP
-   "USB_StreamCLK";> [TheBigLeonski.pcf(3764)], is specified without a duration.  This will result in a lack of hold
+   "USB_StreamCLK";> [TheBigLeonski.pcf(3947)], is specified without a duration.  This will result in a lack of hold
    time checks in timing reports.  If hold time checks are desired a duration value should be specified following the
    'VALID' keyword.
 
@@ -111,13 +111,13 @@ Device Utilization Summary:
 
    Number of BUFGMUXs                        5 out of 8      62%
    Number of DCMs                            4 out of 4     100%
-   Number of External IOBs                 106 out of 173    61%
-      Number of LOCed IOBs                 106 out of 106   100%
+   Number of External IOBs                 108 out of 173    62%
+      Number of LOCed IOBs                 108 out of 108   100%
 
    Number of MULT18X18s                      1 out of 24      4%
    Number of RAMB16s                        24 out of 24    100%
-   Number of Slices                       5300 out of 7680   69%
-      Number of SLICEMs                     60 out of 3840    1%
+   Number of Slices                       5612 out of 7680   73%
+      Number of SLICEMs                     61 out of 3840    1%
 
 
 
@@ -181,8 +181,8 @@ WARNING:Timing:3224 - The clock USB_RegCLK associated with TIMEGRP "S_A_GRP" OFF
    does not clock any registered output components.
 WARNING:Timing:3225 - Timing constraint TIMEGRP "S_A_GRP" OFFSET = OUT 16 ns AFTER COMP "USB_RegCLK"; ignored during
    timing analysis
-Starting initial Timing Analysis.  REAL time: 4 secs 
-Finished initial Timing Analysis.  REAL time: 5 secs 
+Starting initial Timing Analysis.  REAL time: 5 secs 
+Finished initial Timing Analysis.  REAL time: 6 secs 
 
 WARNING:Par:288 - The signal User_Signals(0)_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal User_Signals(1)_IBUF has no load.  PAR will not attempt to route this signal.
@@ -197,45 +197,46 @@ WARNING:Par:288 - The signal IO_CLK_N_IBUF has no load.  PAR will not attempt to
 WARNING:Par:288 - The signal IO_CLK_P_IBUF has no load.  PAR will not attempt to route this signal.
 
 Starting Placer
-Total REAL time at the beginning of Placer: 5 secs 
-Total CPU  time at the beginning of Placer: 5 secs 
+Total REAL time at the beginning of Placer: 6 secs 
+Total CPU  time at the beginning of Placer: 6 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:337f3733) REAL time: 6 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:95fefa96) REAL time: 7 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:337f3733) REAL time: 6 secs 
+Phase 2.7  Design Feasibility Check (Checksum:95fefa96) REAL time: 7 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:337f3733) REAL time: 6 secs 
+Phase 3.31  Local Placement Optimization (Checksum:95fefa96) REAL time: 7 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
-Phase 4.2  Initial Clock and IO Placement (Checksum:e23975c7) REAL time: 7 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:639bd5e4) REAL time: 8 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:e23975c7) REAL time: 7 secs 
+Phase 5.36  Local Placement Optimization (Checksum:639bd5e4) REAL time: 8 secs 
 
 Phase 6.8  Global Placement
-.........................
 ...........................
-..............
-..................................
-.......
-.............
-Phase 6.8  Global Placement (Checksum:3911be84) REAL time: 24 secs 
+...................................................
+...............
+................................................................
+................
+.........
+...................
+Phase 6.8  Global Placement (Checksum:c027a939) REAL time: 32 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:3911be84) REAL time: 24 secs 
+Phase 7.5  Local Placement Optimization (Checksum:c027a939) REAL time: 32 secs 
 
 Phase 8.18  Placement Optimization
-Phase 8.18  Placement Optimization (Checksum:5d1d1aa8) REAL time: 34 secs 
+Phase 8.18  Placement Optimization (Checksum:b3b5c2ab) REAL time: 43 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:5d1d1aa8) REAL time: 34 secs 
+Phase 9.5  Local Placement Optimization (Checksum:b3b5c2ab) REAL time: 43 secs 
 
-Total REAL time to Placer completion: 35 secs 
-Total CPU  time to Placer completion: 35 secs 
+Total REAL time to Placer completion: 44 secs 
+Total CPU  time to Placer completion: 44 secs 
 Writing design to file TheBigLeonski.ncd
 
 
@@ -243,26 +244,26 @@ Writing design to file TheBigLeonski.ncd
 Starting Router
 
 
-Phase  1  : 39320 unrouted;      REAL time: 37 secs 
+Phase  1  : 41308 unrouted;      REAL time: 47 secs 
 
-Phase  2  : 37064 unrouted;      REAL time: 38 secs 
+Phase  2  : 38911 unrouted;      REAL time: 48 secs 
 
-Phase  3  : 12231 unrouted;      REAL time: 44 secs 
+Phase  3  : 12922 unrouted;      REAL time: 53 secs 
 
-Phase  4  : 12231 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 45 secs 
+Phase  4  : 12922 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 54 secs 
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 53 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 3 secs 
 
 Updating file: TheBigLeonski.ncd with current fully routed design.
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 59 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 9 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 10 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 3 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 13 secs 
 
-Total REAL time to Router completion: 1 mins 3 secs 
-Total CPU time to Router completion: 1 mins 3 secs 
+Total REAL time to Router completion: 1 mins 13 secs 
+Total CPU time to Router completion: 1 mins 13 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -281,12 +282,12 @@ Generating Clock Report
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
 |LeonTheProfessional/ |              |      |      |            |             |
-|                clkm |      BUFGMUX4| No   | 1861 |  0.376     |  0.990      |
+|                clkm |      BUFGMUX4| No   | 2003 |  0.393     |  1.004      |
++---------------------+--------------+------+------+------------+-------------+
+|                 CLK |      BUFGMUX0| No   |   28 |  0.268     |  0.939      |
 +---------------------+--------------+------+------+------------+-------------+
 |Interfaces/INST_Zest |              |      |      |            |             |
-|  SC1_Host/StreamCLK |      BUFGMUX3| No   |   36 |  0.184     |  0.860      |
-+---------------------+--------------+------+------+------------+-------------+
-|                 CLK |      BUFGMUX0| No   |   28 |  0.270     |  0.939      |
+|  SC1_Host/StreamCLK |      BUFGMUX3| No   |   36 |  0.193     |  0.860      |
 +---------------------+--------------+------+------+------------+-------------+
 |Interfaces/INST_SRAM |              |      |      |            |             |
 |            /SramClk |      BUFGMUX5| No   |    3 |  0.000     |  0.785      |
@@ -311,90 +312,90 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_LeonTheProfessional_clkgen0_xc3s_v_clk | SETUP       |     0.169ns|    27.831ns|       0|           0
-  0B = PERIOD TIMEGRP         "LeonTheProfe | HOLD        |     0.669ns|            |       0|           0
+  COMP "USB_StreamFlags_n(1)" OFFSET = IN 7 | SETUP       |     2.178ns|     4.822ns|       0|           0
+   ns BEFORE COMP "USB_StreamCLK"           |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_LeonTheProfessional_clkgen0_xc3s_v_clk | SETUP       |     2.642ns|    25.358ns|       0|           0
+  0B = PERIOD TIMEGRP         "LeonTheProfe | HOLD        |     0.670ns|            |       0|           0
   ssional_clkgen0_xc3s_v_clk0B"         TS_ |             |            |            |        |            
   Interfaces_INST_ZestSC1_Host_RegCLKFB / 0 |             |            |            |        |            
   .714285714 HIGH 50%                       |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamFlags_n(1)" OFFSET = IN 7 | SETUP       |     1.489ns|     5.511ns|       0|           0
+  COMP "USB_StreamSLRD_n" OFFSET = OUT 8 ns | MAXDELAY    |     2.707ns|     5.293ns|       0|           0
+   AFTER COMP "USB_StreamCLK"               |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  COMP "USB_StreamFlags_n(0)" OFFSET = IN 7 | SETUP       |     2.881ns|     4.119ns|       0|           0
    ns BEFORE COMP "USB_StreamCLK"           |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamSLRD_n" OFFSET = OUT 8 ns | MAXDELAY    |     2.591ns|     5.409ns|       0|           0
+  COMP "USB_StreamSLOE_n" OFFSET = OUT 8 ns | MAXDELAY    |     2.999ns|     5.001ns|       0|           0
    AFTER COMP "USB_StreamCLK"               |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamFlags_n(0)" OFFSET = IN 7 | SETUP       |     3.074ns|     3.926ns|       0|           0
-   ns BEFORE COMP "USB_StreamCLK"           |             |            |            |        |            
-----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamSLOE_n" OFFSET = OUT 8 ns | MAXDELAY    |     3.333ns|     4.667ns|       0|           0
+  COMP "USB_StreamSLWR_n" OFFSET = OUT 8 ns | MAXDELAY    |     4.038ns|     3.962ns|       0|           0
    AFTER COMP "USB_StreamCLK"               |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamSLWR_n" OFFSET = OUT 8 ns | MAXDELAY    |     3.354ns|     4.646ns|       0|           0
-   AFTER COMP "USB_StreamCLK"               |             |            |            |        |            
-----------------------------------------------------------------------------------------------------------
-  TS_Interfaces_INST_ZestSC1_Host_RegCLKFB  | SETUP       |    11.007ns|     8.993ns|       0|           0
-  = PERIOD TIMEGRP         "Interfaces_INST | HOLD        |     0.744ns|            |       0|           0
+  TS_Interfaces_INST_ZestSC1_Host_RegCLKFB  | SETUP       |    11.893ns|     8.107ns|       0|           0
+  = PERIOD TIMEGRP         "Interfaces_INST | HOLD        |     0.779ns|            |       0|           0
   _ZestSC1_Host_RegCLKFB" TS_RegCLK HIGH 50 |             |            |            |        |            
   %                                         |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(11)" OFFSET = OUT 16 | MAXDELAY    |     9.387ns|     6.613ns|       0|           0
+  COMP "USB_StreamData(13)" OFFSET = OUT 16 | MAXDELAY    |     9.240ns|     6.760ns|       0|           0
    ns AFTER COMP "USB_StreamCLK"            |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(15)" OFFSET = OUT 16 | MAXDELAY    |     9.959ns|     6.041ns|       0|           0
+  COMP "USB_StreamData(11)" OFFSET = OUT 16 | MAXDELAY    |     9.268ns|     6.732ns|       0|           0
    ns AFTER COMP "USB_StreamCLK"            |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(10)" OFFSET = OUT 16 | MAXDELAY    |    10.104ns|     5.896ns|       0|           0
+  COMP "USB_StreamData(14)" OFFSET = OUT 16 | MAXDELAY    |     9.569ns|     6.431ns|       0|           0
    ns AFTER COMP "USB_StreamCLK"            |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(13)" OFFSET = OUT 16 | MAXDELAY    |    10.104ns|     5.896ns|       0|           0
+  COMP "USB_StreamData(10)" OFFSET = OUT 16 | MAXDELAY    |     9.658ns|     6.342ns|       0|           0
    ns AFTER COMP "USB_StreamCLK"            |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(1)" OFFSET = OUT 16  | MAXDELAY    |    10.207ns|     5.793ns|       0|           0
+  COMP "USB_StreamData(7)" OFFSET = OUT 16  | MAXDELAY    |    10.156ns|     5.844ns|       0|           0
   ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(14)" OFFSET = OUT 16 | MAXDELAY    |    10.271ns|     5.729ns|       0|           0
+  COMP "USB_StreamData(9)" OFFSET = OUT 16  | MAXDELAY    |    10.157ns|     5.843ns|       0|           0
+  ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  COMP "USB_StreamData(8)" OFFSET = OUT 16  | MAXDELAY    |    10.350ns|     5.650ns|       0|           0
+  ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  COMP "USB_StreamData(6)" OFFSET = OUT 16  | MAXDELAY    |    10.351ns|     5.649ns|       0|           0
+  ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  COMP "USB_StreamData(15)" OFFSET = OUT 16 | MAXDELAY    |    10.434ns|     5.566ns|       0|           0
    ns AFTER COMP "USB_StreamCLK"            |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(2)" OFFSET = OUT 16  | MAXDELAY    |    10.510ns|     5.490ns|       0|           0
+  COMP "USB_StreamData(4)" OFFSET = OUT 16  | MAXDELAY    |    10.660ns|     5.340ns|       0|           0
   ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(0)" OFFSET = OUT 16  | MAXDELAY    |    10.523ns|     5.477ns|       0|           0
+  COMP "USB_StreamData(5)" OFFSET = OUT 16  | MAXDELAY    |    10.670ns|     5.330ns|       0|           0
   ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(7)" OFFSET = OUT 16  | MAXDELAY    |    10.747ns|     5.253ns|       0|           0
+  COMP "USB_StreamData(1)" OFFSET = OUT 16  | MAXDELAY    |    10.690ns|     5.310ns|       0|           0
   ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(9)" OFFSET = OUT 16  | MAXDELAY    |    10.747ns|     5.253ns|       0|           0
+  COMP "USB_StreamData(0)" OFFSET = OUT 16  | MAXDELAY    |    10.690ns|     5.310ns|       0|           0
   ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(8)" OFFSET = OUT 16  | MAXDELAY    |    10.838ns|     5.162ns|       0|           0
-  ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
-----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(3)" OFFSET = OUT 16  | MAXDELAY    |    11.057ns|     4.943ns|       0|           0
-  ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
-----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(6)" OFFSET = OUT 16  | MAXDELAY    |    11.137ns|     4.863ns|       0|           0
-  ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
-----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(5)" OFFSET = OUT 16  | MAXDELAY    |    11.197ns|     4.803ns|       0|           0
-  ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
-----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(12)" OFFSET = OUT 16 | MAXDELAY    |    11.485ns|     4.515ns|       0|           0
+  COMP "USB_StreamData(12)" OFFSET = OUT 16 | MAXDELAY    |    10.991ns|     5.009ns|       0|           0
    ns AFTER COMP "USB_StreamCLK"            |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  COMP "USB_StreamData(4)" OFFSET = OUT 16  | MAXDELAY    |    11.485ns|     4.515ns|       0|           0
+  COMP "USB_StreamData(3)" OFFSET = OUT 16  | MAXDELAY    |    11.299ns|     4.701ns|       0|           0
+  ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  COMP "USB_StreamData(2)" OFFSET = OUT 16  | MAXDELAY    |    11.336ns|     4.664ns|       0|           0
   ns AFTER COMP "USB_StreamCLK"             |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
   TS_StreamCLK = PERIOD TIMEGRP "USB_Stream | MINLOWPULSE |    12.100ns|     8.700ns|       0|           0
   CLK" 20.8 ns HIGH 50%                     |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_RegCLK = PERIOD TIMEGRP "USB_RegCLK" 2 | MINPERIOD   |    14.013ns|     5.987ns|       0|           0
-  0 ns HIGH 50%                             |             |            |            |        |            
-----------------------------------------------------------------------------------------------------------
-  TS_Interfaces_INST_ZestSC1_Host_StreamCLK | SETUP       |    14.264ns|     6.536ns|       0|           0
-  FB = PERIOD TIMEGRP         "Interfaces_I | HOLD        |     0.727ns|            |       0|           0
+  TS_Interfaces_INST_ZestSC1_Host_StreamCLK | SETUP       |    13.454ns|     7.346ns|       0|           0
+  FB = PERIOD TIMEGRP         "Interfaces_I | HOLD        |     0.815ns|            |       0|           0
   NST_ZestSC1_Host_StreamCLKFB" TS_StreamCL |             |            |            |        |            
   K HIGH 50%                                |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_RegCLK = PERIOD TIMEGRP "USB_RegCLK" 2 | MINPERIOD   |    14.013ns|     5.987ns|       0|           0
+  0 ns HIGH 50%                             |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
   TS_Interfaces_INST_SRAM_SramClkOut = PERI | MINPERIOD   |    18.684ns|     1.316ns|       0|           0
   OD TIMEGRP         "Interfaces_INST_SRAM_ |             |            |            |        |            
@@ -468,8 +469,8 @@ Derived Constraints for TS_StreamCLK
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_StreamCLK                   |     20.800ns|      8.700ns|      6.536ns|            0|            0|            0|          642|
-| TS_Interfaces_INST_ZestSC1_Hos|     20.800ns|      6.536ns|          N/A|            0|            0|          642|            0|
+|TS_StreamCLK                   |     20.800ns|      8.700ns|      7.346ns|            0|            0|            0|          642|
+| TS_Interfaces_INST_ZestSC1_Hos|     20.800ns|      7.346ns|          N/A|            0|            0|          642|            0|
 | t_StreamCLKFB                 |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -479,12 +480,12 @@ Derived Constraints for TS_RegCLK
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_RegCLK                      |     20.000ns|      5.987ns|     19.879ns|            0|            0|            0|      5332022|
-| TS_Interfaces_INST_ZestSC1_Hos|     20.000ns|      8.993ns|     19.879ns|            0|            0|         1637|      5330385|
+|TS_RegCLK                      |     20.000ns|      5.987ns|     18.113ns|            0|            0|            0|      5346206|
+| TS_Interfaces_INST_ZestSC1_Hos|     20.000ns|      8.107ns|     18.113ns|            0|            0|         1637|      5344569|
 | t_RegCLKFB                    |             |             |             |             |             |             |             |
 |  TS_Interfaces_INST_SRAM_SramC|     20.000ns|      1.316ns|          N/A|            0|            0|            0|            0|
 |  lkOut                        |             |             |             |             |             |             |             |
-|  TS_LeonTheProfessional_clkgen|     28.000ns|     27.831ns|          N/A|            0|            0|      5330385|            0|
+|  TS_LeonTheProfessional_clkgen|     28.000ns|     25.358ns|          N/A|            0|            0|      5344569|            0|
 |  0_xc3s_v_clk0B               |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -502,10 +503,10 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 11 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 1 mins 6 secs 
-Total CPU time to PAR completion: 1 mins 6 secs 
+Total REAL time to PAR completion: 1 mins 17 secs 
+Total CPU time to PAR completion: 1 mins 17 secs 
 
-Peak Memory Usage:  665 MB
+Peak Memory Usage:  675 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.

@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 
@@ -1285,6 +1285,18 @@ Analyzing hierarchy for entity <apbctrl> in library <grlib> (architecture <struc
 	nslaves = 16
 	pslvdisable = 0
 
+Analyzing hierarchy for entity <apbuart> in library <gaisler> (architecture <rtl>) with generics.
+	abits = 8
+	console = 0
+	fifosize = 4
+	flow = 1
+	paddr = 1
+	parity = 1
+	pindex = 1
+	pirq = 2
+	pmask = 4095
+	sbits = 12
+
 Analyzing hierarchy for entity <irqmp> in library <gaisler> (architecture <rtl>) with generics.
 	bootreg = 1
 	eirq = 0
@@ -1316,7 +1328,7 @@ Analyzing hierarchy for entity <ahbram> in library <gaisler> (architecture <rtl>
 	haddr = 1024
 	hindex = 3
 	hmask = 4095
-	kbytes = 16
+	kbytes = 24
 	maccsz = 32
 	pipe = 0
 	scantest = 0
@@ -1761,6 +1773,27 @@ Analyzing hierarchy for entity <syncram> in library <techmap> (architecture <rtl
 	tech = 11
 	testen = 0
 
+Analyzing hierarchy for entity <syncram> in library <techmap> (architecture <rtl>) with generics.
+	abits = 11
+	custombits = 16
+	dbits = 8
+	tech = 11
+	testen = 0
+
+Analyzing hierarchy for entity <syncram> in library <techmap> (architecture <rtl>) with generics.
+	abits = 11
+	custombits = 16
+	dbits = 8
+	tech = 11
+	testen = 0
+
+Analyzing hierarchy for entity <syncram> in library <techmap> (architecture <rtl>) with generics.
+	abits = 11
+	custombits = 16
+	dbits = 8
+	tech = 11
+	testen = 0
+
 Analyzing hierarchy for entity <unisim_syncram64> in library <techmap> (architecture <behav>) with generics.
 	abits = 7
 
@@ -1789,6 +1822,10 @@ Analyzing hierarchy for entity <unisim_syncram> in library <techmap> (architectu
 	abits = 11
 	dbits = 8
 
+Analyzing hierarchy for entity <unisim_syncram> in library <techmap> (architecture <behav>) with generics.
+	abits = 11
+	dbits = 8
+
 Analyzing hierarchy for entity <unisim_syncram_dp> in library <techmap> (architecture <behav>) with generics.
 	abits = 8
 	dbits = 32
@@ -1806,11 +1843,11 @@ Analyzing Entity <TheBigLeonski> in library <work> (Architecture <arch>).
     Set user-defined property "DRIVE =  12" for instance <myRST_obuf> in unit <TheBigLeonski>.
     Set user-defined property "IOSTANDARD =  DEFAULT" for instance <myRST_obuf> in unit <TheBigLeonski>.
     Set user-defined property "SLEW =  SLOW" for instance <myRST_obuf> in unit <TheBigLeonski>.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 397: Unconnected output port 'User_StreamDataIn' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 397: Unconnected output port 'User_StreamDataInWE' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 397: Unconnected output port 'User_StreamDataOutBusy' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 397: Unconnected output port 'User_SRAM_DR_VALID' of component 'ZestSC1_Interfaces'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 397: Unconnected output port 'User_SRAM_DR' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 410: Unconnected output port 'User_StreamDataIn' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 410: Unconnected output port 'User_StreamDataInWE' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 410: Unconnected output port 'User_StreamDataOutBusy' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 410: Unconnected output port 'User_SRAM_DR_VALID' of component 'ZestSC1_Interfaces'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/TheBigLeonski.vhd" line 410: Unconnected output port 'User_SRAM_DR' of component 'ZestSC1_Interfaces'.
 INFO:Xst:2679 - Register <SRAMDataOut> in unit <TheBigLeonski> has a constant value of 000000000000000000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <USB_DataOutWE> in unit <TheBigLeonski> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <USB_DataOut> in unit <TheBigLeonski> has a constant value of 0000000000000000 during circuit operation. The register is replaced by logic.
@@ -1826,28 +1863,29 @@ Analyzing generic Entity <leon3mp> in library <work> (Architecture <rtl>).
 	padtech = 11
 	pclow = 2
 	use_ahbram_sim = 0
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clkn' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clk2x' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'sdclk' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'pciclk' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clk4x' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clk1xu' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clk2xu' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clkb' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clkc' of component 'clkgen'.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 148: Unconnected output port 'clk8x' of component 'clkgen'.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 152: Unconnected input port 'testrst' of component 'rstgen' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 152: Unconnected input port 'testen' of component 'rstgen' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 160: Unconnected input port 'testen' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 160: Unconnected input port 'testrst' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 160: Unconnected input port 'scanen' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 160: Unconnected input port 'testoen' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 160: Unconnected input port 'testsig' of component 'ahbctrl' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 184: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 193: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 226: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
-WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 238: Unconnected input port 'cpurun' of component 'irqmp' is tied to default value.
-WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 250: Unconnected output port 'gpto' of component 'gptimer'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected output port 'clkn' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected output port 'clk2x' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected output port 'sdclk' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected output port 'pciclk' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected output port 'clk4x' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected output port 'clk1xu' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected output port 'clk2xu' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected output port 'clkb' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected output port 'clkc' of component 'clkgen'.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 150: Unconnected output port 'clk8x' of component 'clkgen'.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 154: Unconnected input port 'testrst' of component 'rstgen' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 154: Unconnected input port 'testen' of component 'rstgen' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 162: Unconnected input port 'testen' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 162: Unconnected input port 'testrst' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 162: Unconnected input port 'scanen' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 162: Unconnected input port 'testoen' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 162: Unconnected input port 'testsig' of component 'ahbctrl' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 186: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 195: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 228: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 248: Unconnected input port 'cfgi' of component 'outpad' is tied to default value.
+WARNING:Xst:752 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 253: Unconnected input port 'cpurun' of component 'irqmp' is tied to default value.
+WARNING:Xst:753 - "/home/ttsiod/Github/grlib-gpl/designs/leon3-zestsc1-xc3s1000/leon3mp.vhd" line 265: Unconnected output port 'gpto' of component 'gptimer'.
 Entity <leon3mp> analyzed. Unit <leon3mp> generated.
 
 Analyzing generic Entity <clkgen> in library <techmap> (Architecture <struct>).
@@ -2700,6 +2738,19 @@ INFO:Xst:2679 - Register <r.p(0).hresp> in unit <apbctrlx> has a constant value 
 INFO:Xst:2679 - Register <r.p(0).hmaster> in unit <apbctrlx> has a constant value of 0000 during circuit operation. The register is replaced by logic.
 Entity <apbctrlx> analyzed. Unit <apbctrlx> generated.
 
+Analyzing generic Entity <apbuart> in library <gaisler> (Architecture <rtl>).
+	abits = 8
+	console = 0
+	fifosize = 4
+	flow = 1
+	paddr = 1
+	parity = 1
+	pindex = 1
+	pirq = 2
+	pmask = 4095
+	sbits = 12
+Entity <apbuart> analyzed. Unit <apbuart> generated.
+
 Analyzing generic Entity <irqmp> in library <gaisler> (Architecture <rtl>).
 	bootreg = 1
 	eirq = 0
@@ -2754,7 +2805,7 @@ Analyzing generic Entity <ahbram> in library <gaisler> (Architecture <rtl>).
 	haddr = 1024
 	hindex = 3
 	hmask = 4095
-	kbytes = 16
+	kbytes = 24
 	maccsz = 32
 	pipe = 0
 	scantest = 0
@@ -3225,6 +3276,100 @@ WARNING:Xst:646 - Signal <arst> is assigned but never used. This unconnected sig
 	inferred  32 Comparator(s).
 	inferred 354 Multiplexer(s).
 Unit <ahbctrl> synthesized.
+
+
+Synthesizing Unit <apbuart>.
+    Related source file is "/home/ttsiod/Github/grlib-gpl/lib/gaisler/uart/apbuart.vhd".
+WARNING:Xst:647 - Input <apbi.psel<0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <apbi.psel<2:15>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <apbi.pirq> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <apbi.pwdata<31:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <apbi.scanen> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <apbi.testen> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <apbi.paddr<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <apbi.paddr<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <apbi.testin> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <apbi.testrst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <apbi.testoen> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <r.txstate> of Case statement line 366 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <r.txstate> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Using one-hot encoding for signal <r.txstate>.
+    Using one-hot encoding for signal <r.rxstate>.
+    Found 12-bit register for signal <r.brate>.
+    Found 1-bit register for signal <r.break>.
+    Found 1-bit register for signal <r.breakirqen>.
+    Found 2-bit register for signal <r.ctsn>.
+    Found 1-bit register for signal <r.debug>.
+    Found 1-bit register for signal <r.delayirqen>.
+    Found 1-bit register for signal <r.dpar>.
+    Found 1-bit xor2 for signal <r.dpar$xor0000> created at line 468.
+    Found 1-bit register for signal <r.extclk>.
+    Found 1-bit register for signal <r.extclken>.
+    Found 1-bit register for signal <r.flow>.
+    Found 1-bit register for signal <r.frame>.
+    Found 1-bit register for signal <r.irq>.
+    Found 6-bit register for signal <r.irqcnt>.
+    Found 1-bit register for signal <r.irqpend>.
+    Found 1-bit register for signal <r.loopb>.
+    Found 1-bit register for signal <r.ovf>.
+    Found 1-bit register for signal <r.paren>.
+    Found 1-bit register for signal <r.parerr>.
+    Found 1-bit register for signal <r.parsel>.
+    Found 3-bit register for signal <r.rcnt>.
+    Found 1-bit register for signal <r.rfifoirqen>.
+    Found 32-bit register for signal <r.rhold>.
+    Found 1-bit register for signal <r.rirqen>.
+    Found 2-bit up counter for signal <r.rraddr>.
+    Found 1-bit register for signal <r.rsempty>.
+    Found 8-bit register for signal <r.rshift>.
+    Found 1-bit register for signal <r.rtsn>.
+    Found 2-bit register for signal <r.rwaddr>.
+    Found 3-bit register for signal <r.rxclk>.
+    Found 2-bit register for signal <r.rxdb>.
+    Found 1-bit register for signal <r.rxen>.
+    Found 5-bit register for signal <r.rxf>.
+    Found 5-bit register for signal <r.rxstate>.
+    Found 1-bit register for signal <r.rxtick>.
+    Found 12-bit register for signal <r.scaler>.
+    Found 1-bit register for signal <r.stop>.
+    Found 3-bit register for signal <r.tcnt>.
+    Found 1-bit register for signal <r.tfifoirqen>.
+    Found 32-bit register for signal <r.thold>.
+    Found 1-bit register for signal <r.tick>.
+    Found 1-bit register for signal <r.tirqen>.
+    Found 1-bit register for signal <r.tpar>.
+    Found 1-bit xor2 for signal <r.tpar$xor0000> created at line 385.
+    Found 2-bit register for signal <r.traddr>.
+    Found 1-bit register for signal <r.tsempty>.
+    Found 1-bit register for signal <r.tsemptyirqen>.
+    Found 10-bit register for signal <r.tshift>.
+    Found 2-bit up counter for signal <r.twaddr>.
+    Found 3-bit register for signal <r.txclk>.
+    Found 1-bit register for signal <r.txd>.
+    Found 1-bit register for signal <r.txen>.
+    Found 4-bit register for signal <r.txstate>.
+    Found 1-bit register for signal <r.txtick>.
+    Found 8-bit 4-to-1 multiplexer for signal <rdata_7_0$varindex0000> created at line 221.
+    Found 8-bit 4-to-1 multiplexer for signal <rdata_7_0$varindex0001> created at line 260.
+    Found 3-bit adder for signal <rxclk$add0001> created at line 310.
+    Found 12-bit subtractor for signal <scaler$sub0000> created at line 356.
+    Found 3-bit adder for signal <txclk$add0001> created at line 310.
+    Found 6-bit adder for signal <v.irqcnt$addsub0000> created at line 310.
+    Found 3-bit adder for signal <v.rcnt$add0001> created at line 310.
+    Found 3-bit subtractor for signal <v.rcnt$addsub0000> created at line 356.
+    Found 3-bit adder for signal <v.rcnt$addsub0001> created at line 310.
+    Found 2-bit adder for signal <v.rwaddr$add0001> created at line 310.
+    Found 3-bit adder for signal <v.tcnt$addsub0000> created at line 310.
+    Found 3-bit subtractor for signal <v.tcnt$sub0000> created at line 356.
+    Found 2-bit adder for signal <v.traddr$add0001> created at line 310.
+    Summary:
+	inferred   2 Counter(s).
+	inferred 178 D-type flip-flop(s).
+	inferred  11 Adder/Subtractor(s).
+	inferred  16 Multiplexer(s).
+Unit <apbuart> synthesized.
 
 
 Synthesizing Unit <irqmp>.
@@ -6661,9 +6806,13 @@ WARNING:Xst:1780 - Signal <u2o.flow> is never used or assigned. This unconnected
 WARNING:Xst:1780 - Signal <u2i.rxd> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <u2i.extclk> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <u2i.ctsn> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <u1i.rxd> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <u1i.extclk> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <u1i.ctsn> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <u1o.txen> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <u1o.scaler> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <u1o.rxen> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <u1o.rtsn> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <u1o.flow> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <u1i.ctsn> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:1780 - Signal <txd2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <tms> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <tdo> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <tdi> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -6680,6 +6829,7 @@ WARNING:Xst:1780 - Signal <sdi.regrdata> is never used or assigned. This unconne
 WARNING:Xst:1780 - Signal <sdi.datavalid> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <sdi.data> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <sdi.cb> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <rxd2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <memo.wrn> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <memo.writen> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <memo.vcdrive> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -6791,10 +6941,6 @@ WARNING:Xst:653 - Signal <apbo(10).prdata> is used but never assigned. This sour
 WARNING:Xst:653 - Signal <apbo(10).pirq> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
 WARNING:Xst:653 - Signal <apbo(10).pindex> is used but never assigned. This sourceless signal will be automatically connected to value 0000.
 WARNING:Xst:1781 - Signal <apbo(10).pconfig> is used but never assigned. Tied to default value.
-WARNING:Xst:653 - Signal <apbo(1).prdata> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
-WARNING:Xst:653 - Signal <apbo(1).pirq> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
-WARNING:Xst:653 - Signal <apbo(1).pindex> is used but never assigned. This sourceless signal will be automatically connected to value 0000.
-WARNING:Xst:1781 - Signal <apbo(1).pconfig> is used but never assigned. Tied to default value.
 WARNING:Xst:653 - Signal <apbo(0).prdata> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
 WARNING:Xst:653 - Signal <apbo(0).pirq> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
 WARNING:Xst:653 - Signal <apbo(0).pindex> is used but never assigned. This sourceless signal will be automatically connected to value 0000.
@@ -7170,53 +7316,55 @@ Macro Statistics
  8x2-bit ROM                                           : 1
 # Multipliers                                          : 1
  17x17-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 38
+# Adders/Subtractors                                   : 49
+ 12-bit subtractor                                     : 1
  16-bit subtractor                                     : 1
  18-bit addsub                                         : 1
- 2-bit adder                                           : 2
- 3-bit adder                                           : 12
+ 2-bit adder                                           : 4
+ 3-bit adder                                           : 17
  3-bit addsub                                          : 1
- 3-bit subtractor                                      : 3
+ 3-bit subtractor                                      : 5
  30-bit adder                                          : 4
  32-bit subtractor                                     : 1
  33-bit adder                                          : 4
  4-bit adder                                           : 1
  5-bit adder                                           : 1
+ 6-bit adder                                           : 1
  6-bit subtractor                                      : 1
  7-bit adder                                           : 2
  7-bit subtractor                                      : 1
  8-bit adder                                           : 2
  9-bit subtractor                                      : 1
-# Counters                                             : 12
+# Counters                                             : 14
  12-bit down counter                                   : 1
- 2-bit up counter                                      : 1
+ 2-bit up counter                                      : 3
  3-bit up counter                                      : 3
  30-bit up counter                                     : 1
  32-bit up counter                                     : 2
  4-bit up counter                                      : 2
  8-bit up counter                                      : 2
-# Registers                                            : 497
- 1-bit register                                        : 325
- 10-bit register                                       : 1
- 12-bit register                                       : 1
+# Registers                                            : 553
+ 1-bit register                                        : 357
+ 10-bit register                                       : 2
+ 12-bit register                                       : 3
  14-bit register                                       : 2
  15-bit register                                       : 4
  16-bit register                                       : 3
  18-bit register                                       : 6
- 2-bit register                                        : 22
+ 2-bit register                                        : 26
  20-bit register                                       : 2
  23-bit register                                       : 2
- 3-bit register                                        : 14
+ 3-bit register                                        : 18
  30-bit register                                       : 14
  32-bit register                                       : 36
  34-bit register                                       : 1
- 4-bit register                                        : 16
- 5-bit register                                        : 7
- 6-bit register                                        : 7
+ 4-bit register                                        : 17
+ 5-bit register                                        : 9
+ 6-bit register                                        : 8
  64-bit register                                       : 1
  65-bit register                                       : 1
  7-bit register                                        : 5
- 8-bit register                                        : 26
+ 8-bit register                                        : 35
  9-bit register                                        : 1
 # Comparators                                          : 196
  12-bit comparator equal                               : 176
@@ -7230,7 +7378,7 @@ Macro Statistics
  3-bit comparator not equal                            : 1
  4-bit comparator greater                              : 1
  8-bit comparator equal                                : 9
-# Multiplexers                                         : 191
+# Multiplexers                                         : 193
  1-bit 16-to-1 multiplexer                             : 1
  1-bit 4-to-1 multiplexer                              : 134
  1-bit 8-to-1 multiplexer                              : 23
@@ -7241,7 +7389,7 @@ Macro Statistics
  32-bit 4-to-1 multiplexer                             : 12
  32-bit 8-to-1 multiplexer                             : 11
  4-bit 4-to-1 multiplexer                              : 2
- 8-bit 4-to-1 multiplexer                              : 2
+ 8-bit 4-to-1 multiplexer                              : 4
 # Priority Encoders                                    : 2
  32-bit 1-of-6 priority encoder                        : 2
 # Tristates                                            : 50
@@ -7249,8 +7397,8 @@ Macro Statistics
  16-bit tristate buffer                                : 1
  8-bit tristate buffer                                 : 1
  9-bit tristate buffer                                 : 2
-# Xors                                                 : 88
- 1-bit xor2                                            : 86
+# Xors                                                 : 90
+ 1-bit xor2                                            : 88
  32-bit xor2                                           : 2
 
 =========================================================================
@@ -7346,33 +7494,35 @@ Macro Statistics
  8x2-bit ROM                                           : 1
 # Multipliers                                          : 1
  17x17-bit registered multiplier                       : 1
-# Adders/Subtractors                                   : 38
+# Adders/Subtractors                                   : 49
+ 12-bit subtractor                                     : 1
  16-bit subtractor                                     : 1
  18-bit addsub                                         : 1
- 2-bit adder                                           : 2
- 3-bit adder                                           : 12
+ 2-bit adder                                           : 4
+ 3-bit adder                                           : 17
  3-bit addsub                                          : 1
- 3-bit subtractor                                      : 3
+ 3-bit subtractor                                      : 5
  30-bit adder                                          : 4
  32-bit subtractor                                     : 1
  33-bit adder                                          : 4
  4-bit adder                                           : 1
  5-bit adder                                           : 1
+ 6-bit adder                                           : 1
  6-bit subtractor                                      : 1
  7-bit adder                                           : 2
  7-bit subtractor                                      : 1
  8-bit adder                                           : 2
  9-bit subtractor                                      : 1
-# Counters                                             : 12
+# Counters                                             : 14
  12-bit down counter                                   : 1
- 2-bit up counter                                      : 1
+ 2-bit up counter                                      : 3
  3-bit up counter                                      : 3
  30-bit up counter                                     : 1
  32-bit up counter                                     : 2
  4-bit up counter                                      : 2
  8-bit up counter                                      : 2
-# Registers                                            : 2669
- Flip-Flops                                            : 2669
+# Registers                                            : 2847
+ Flip-Flops                                            : 2847
 # Comparators                                          : 196
  12-bit comparator equal                               : 176
  14-bit comparator equal                               : 1
@@ -7385,7 +7535,7 @@ Macro Statistics
  3-bit comparator not equal                            : 1
  4-bit comparator greater                              : 1
  8-bit comparator equal                                : 9
-# Multiplexers                                         : 191
+# Multiplexers                                         : 193
  1-bit 16-to-1 multiplexer                             : 1
  1-bit 4-to-1 multiplexer                              : 134
  1-bit 8-to-1 multiplexer                              : 23
@@ -7396,11 +7546,11 @@ Macro Statistics
  32-bit 4-to-1 multiplexer                             : 12
  32-bit 8-to-1 multiplexer                             : 11
  4-bit 4-to-1 multiplexer                              : 2
- 8-bit 4-to-1 multiplexer                              : 2
+ 8-bit 4-to-1 multiplexer                              : 4
 # Priority Encoders                                    : 2
  32-bit 1-of-6 priority encoder                        : 2
-# Xors                                                 : 88
- 1-bit xor2                                            : 86
+# Xors                                                 : 90
+ 1-bit xor2                                            : 88
  32-bit xor2                                           : 2
 
 =========================================================================
@@ -7408,6 +7558,7 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <r.extclk> (without init value) has a constant value of 0 in block <apbuart>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <rp.pwd> (without init value) has a constant value of 0 in block <iu3>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <r.x.ipend> is unconnected in block <iu3>.
 WARNING:Xst:1710 - FF/Latch <r.trans_op> (without init value) has a constant value of 0 in block <mmu_icache>. This FF/Latch will be trimmed during the optimization process.
@@ -7450,6 +7601,8 @@ INFO:Xst:2261 - The FF/Latch <r.a.rfa2_3> in Unit <iu3> is equivalent to the fol
 INFO:Xst:2261 - The FF/Latch <r.a.ctrl.trap> in Unit <iu3> is equivalent to the following FF/Latch, which will be removed : <r.a.ctrl.tt> 
 INFO:Xst:2261 - The FF/Latch <RegOutput_0> in Unit <ZestSC1_Host> is equivalent to the following 7 FFs/Latches, which will be removed : <RegOutput_1> <RegOutput_2> <RegOutput_3> <RegOutput_4> <RegOutput_5> <RegOutput_6> <RegOutput_7> 
 WARNING:Xst:1710 - FF/Latch <r.hslave_2> (without init value) has a constant value of 0 in block <ahbctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <r.ctsn_0> (without init value) has a constant value of 0 in block <apbuart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r.ctsn_1> (without init value) has a constant value of 0 in block <apbuart>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <r.p(0).state_3> (without init value) has a constant value of 0 in block <apbctrlx>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <RegOutput_0> (without init value) has a constant value of 0 in block <ZestSC1_Host>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <RegFIFOInWriteCountG_0> of sequential type is unconnected in block <ZestSC1_Host>.
@@ -7543,6 +7696,8 @@ Optimizing unit <rstgen> ...
 Optimizing unit <ahbctrl> ...
 WARNING:Xst:2677 - Node <r.htrans_0> of sequential type is unconnected in block <ahbctrl>.
 
+Optimizing unit <apbuart> ...
+
 Optimizing unit <irqmp> ...
 
 Optimizing unit <gptimer> ...
@@ -7627,6 +7782,7 @@ WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_7> (without init
 WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_4> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_3> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <LeonTheProfessional/ahb0/r.hrdatam_2> (without init value) has a constant value of 0 in block <TheBigLeonski>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <LeonTheProfessional/ua1.uart1/r.rtsn> of sequential type is unconnected in block <TheBigLeonski>.
 WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.setaddrboot> of sequential type is unconnected in block <TheBigLeonski>.
 WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.forceerr_0> of sequential type is unconnected in block <TheBigLeonski>.
 WARNING:Xst:2677 - Node <LeonTheProfessional/irqctrl.irqctrl0/r.newaddr_31> of sequential type is unconnected in block <TheBigLeonski>.
@@ -7825,7 +7981,9 @@ FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_24 has b
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_30 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.d.inst_0_31 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_19 has been replicated 1 time(s)
+FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ctrl.inst_20 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.invop2 has been replicated 1 time(s)
+FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp2 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_20 has been replicated 1 time(s)
 FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.ctrl.inst_21 has been replicated 2 time(s)
@@ -7838,6 +7996,7 @@ FlipFlop LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.m.result_3 has be
 Final Macro Processing ...
 
 Processing Unit <TheBigLeonski> :
+	Found 2-bit shift register for signal <LeonTheProfessional/ua1.uart1/r.rxf_1>.
 	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_29>.
 	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_28>.
 	Found 3-bit shift register for signal <LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.x.ctrl.inst_27>.
@@ -7874,10 +8033,10 @@ Unit <TheBigLeonski> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 2458
- Flip-Flops                                            : 2458
-# Shift Registers                                      : 30
- 2-bit shift register                                  : 23
+# Registers                                            : 2636
+ Flip-Flops                                            : 2636
+# Shift Registers                                      : 31
+ 2-bit shift register                                  : 24
  3-bit shift register                                  : 6
  5-bit shift register                                  : 1
 
@@ -7907,52 +8066,52 @@ Design Statistics
 # IOs                              : 161
 
 Cell Usage :
-# BELS                             : 10706
+# BELS                             : 11226
 #      GND                         : 25
-#      INV                         : 34
-#      LUT1                        : 164
-#      LUT2                        : 741
-#      LUT2_D                      : 54
-#      LUT2_L                      : 77
-#      LUT3                        : 1632
-#      LUT3_D                      : 126
+#      INV                         : 48
+#      LUT1                        : 165
+#      LUT2                        : 814
+#      LUT2_D                      : 62
+#      LUT2_L                      : 72
+#      LUT3                        : 1715
+#      LUT3_D                      : 140
 #      LUT3_L                      : 116
-#      LUT4                        : 5322
-#      LUT4_D                      : 265
-#      LUT4_L                      : 623
-#      MUXCY                       : 487
-#      MUXF5                       : 598
+#      LUT4                        : 5475
+#      LUT4_D                      : 308
+#      LUT4_L                      : 719
+#      MUXCY                       : 504
+#      MUXF5                       : 609
 #      MUXF6                       : 31
 #      MUXF7                       : 20
 #      VCC                         : 1
-#      XORCY                       : 390
-# FlipFlops/Latches                : 2489
-#      FD                          : 234
+#      XORCY                       : 402
+# FlipFlops/Latches                : 2668
+#      FD                          : 280
 #      FDC                         : 8
 #      FDCE                        : 28
-#      FDE                         : 1674
+#      FDE                         : 1746
 #      FDPE                        : 2
-#      FDR                         : 82
-#      FDRE                        : 153
-#      FDRS                        : 84
-#      FDRSE                       : 3
-#      FDS                         : 162
+#      FDR                         : 100
+#      FDRE                        : 162
+#      FDRS                        : 89
+#      FDRSE                       : 4
+#      FDS                         : 190
 #      FDSE                        : 58
 #      OFDDRCPE                    : 1
 # RAMS                             : 25
 #      RAM16X1D                    : 1
 #      RAMB16                      : 24
-# Shift Registers                  : 30
-#      SRL16                       : 1
+# Shift Registers                  : 31
+#      SRL16                       : 2
 #      SRL16E                      : 29
 # Clock Buffers                    : 5
 #      BUFG                        : 5
-# IO Buffers                       : 150
-#      IBUF                        : 24
+# IO Buffers                       : 151
+#      IBUF                        : 25
 #      IBUFG                       : 2
 #      IOBUF                       : 1
-#      OBUF                        : 44
-#      OBUFT                       : 79
+#      OBUF                        : 45
+#      OBUFT                       : 78
 # DCMs                             : 4
 #      DCM                         : 4
 # MULTs                            : 1
@@ -7966,15 +8125,15 @@ Device utilization summary:
 
 Selected Device : 3s1000ft256-5 
 
- Number of Slices:                     4882  out of   7680    63%  
- Number of Slice Flip Flops:           2467  out of  15360    16%  
- Number of 4 input LUTs:               9186  out of  15360    59%  
-    Number used as logic:              9154
-    Number used as Shift registers:      30
+ Number of Slices:                     5133  out of   7680    66%  
+ Number of Slice Flip Flops:           2645  out of  15360    17%  
+ Number of 4 input LUTs:               9667  out of  15360    62%  
+    Number used as logic:              9634
+    Number used as Shift registers:      31
     Number used as RAMs:                  2
  Number of IOs:                         161
  Number of bonded IOBs:                 150  out of    173    86%  
-    IOB Flip Flops:                      22
+    IOB Flip Flops:                      23
  Number of BRAMs:                        24  out of     24   100%  
  Number of MULT18X18s:                    1  out of     24     4%  
  Number of GCLKs:                         5  out of      8    62%  
@@ -8004,7 +8163,7 @@ Clock Signal                       | Clock buffer(FF name)                      
 USB_RegCLK                         | Interfaces/INST_ZestSC1_Host/RegDCM:CLK0                                              | 42    |
 USB_StreamCLK                      | Interfaces/INST_ZestSC1_Host/StreamDCM:CLK0                                           | 45    |
 USB_RegCLK                         | Interfaces/INST_ZestSC1_Host/RegDCM:CLK0+Interfaces/INST_SRAM/DCM_INST:CLK0           | 2     |
-USB_RegCLK                         | Interfaces/INST_ZestSC1_Host/RegDCM:CLK0+LeonTheProfessional/clkgen0/xc3s.v/dll0:CLKFX| 2457  |
+USB_RegCLK                         | Interfaces/INST_ZestSC1_Host/RegDCM:CLK0+LeonTheProfessional/clkgen0/xc3s.v/dll0:CLKFX| 2637  |
 -----------------------------------+---------------------------------------------------------------------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -8022,7 +8181,7 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 12.686ns (Maximum Frequency: 78.828MHz)
+   Minimum period: 12.172ns (Maximum Frequency: 82.155MHz)
    Minimum input arrival time before clock: 6.313ns
    Maximum output required time after clock: 9.029ns
    Maximum combinational path delay: 9.243ns
@@ -8033,20 +8192,20 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'USB_RegCLK'
-  Clock period: 12.686ns (frequency: 78.828MHz)
-  Total number of paths / destination ports: 5270878 / 5801
+  Clock period: 12.172ns (frequency: 82.155MHz)
+  Total number of paths / destination ports: 5284807 / 6129
 -------------------------------------------------------------------------
-Delay:               17.760ns (Levels of Logic = 28)
-  Source:            LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1 (FF)
+Delay:               17.041ns (Levels of Logic = 28)
+  Source:            LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1_1 (FF)
   Destination:       LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.faddr_7 (FF)
   Source Clock:      USB_RegCLK rising 0.7X
   Destination Clock: USB_RegCLK rising 0.7X
 
-  Data Path: LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1 to LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.faddr_7
+  Data Path: LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1_1 to LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.faddr_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q            135   0.626   2.136  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1)
+     FDE:C->Q             18   0.626   1.263  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1_1 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/r.e.ldbp1_1)
      LUT3:I2->O            8   0.479   0.921  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/ex_op1_mux0000(0)1 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/divi_op1(0))
      MUXCY:DI->O           1   0.774   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(1) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(1))
      MUXCY:CI->O           1   0.056   0.000  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(2) (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/Madd_ex_add_res_add0000_cy(2))
@@ -8071,14 +8230,14 @@ Delay:               17.760ns (Levels of Logic = 28)
      LUT4:I3->O            1   0.479   0.704  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000227 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000227)
      LUT4:I3->O            1   0.479   0.851  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000257 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000257)
      LUT4:I1->O            8   0.479   1.091  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000326 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/iu/azero_cmp_eq0000)
-     LUT4:I1->O           16   0.479   1.051  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_diag_op_not000111 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/flush0_and0002)
-     MUXF5:S->O            1   0.540   0.704  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_or0000129_SW0 (N1931)
+     LUT4:I1->O           18   0.479   1.204  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_diag_op_not000111 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/flush0_and0002)
+     MUXF5:S->O            1   0.540   0.704  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_or0000129_SW0 (N2053)
      LUT4_D:I3->O         10   0.479   0.987  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_or0000141 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_or0000141)
      LUT4:I3->O            8   0.479   0.921  LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_not00011 (LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r_faddr_not0001)
      FDRE:CE                   0.524          LeonTheProfessional/l3.cpu[0].u0/leon3x0/vhdl.p0/c0mmu/dcache0/r.faddr_0
     ----------------------------------------
-    Total                     17.760ns (7.602ns logic, 10.158ns route)
-                                       (42.8% logic, 57.2% route)
+    Total                     17.041ns (7.602ns logic, 9.439ns route)
+                                       (44.6% logic, 55.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'USB_StreamCLK'
@@ -8096,8 +8255,8 @@ Delay:               8.196ns (Levels of Logic = 5)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDCE:C->Q             5   0.626   1.078  Interfaces/INST_ZestSC1_Host/FIFOOutReadCount_3 (Interfaces/INST_ZestSC1_Host/FIFOOutReadCount_3)
-     LUT3:I0->O            1   0.479   0.740  Interfaces/INST_ZestSC1_Host/LastDir_not00011_SW0 (N562)
-     LUT4_D:I2->LO         1   0.479   0.123  Interfaces/INST_ZestSC1_Host/LastDir_not00011 (N4132)
+     LUT3:I0->O            1   0.479   0.740  Interfaces/INST_ZestSC1_Host/LastDir_not00011_SW0 (N618)
+     LUT4_D:I2->LO         1   0.479   0.123  Interfaces/INST_ZestSC1_Host/LastDir_not00011 (N4355)
      LUT4:I3->O           13   0.479   1.289  Interfaces/INST_ZestSC1_Host/GrantPeriod_not00011 (Interfaces/INST_ZestSC1_Host/GrantPeriod_not0001)
      LUT2_D:I0->O          1   0.479   0.740  Interfaces/INST_ZestSC1_Host/Granted_not0001165 (N4)
      LUT4:I2->O            1   0.479   0.681  Interfaces/INST_ZestSC1_Host/Granted_not0001 (Interfaces/INST_ZestSC1_Host/Granted_not0001)
@@ -8108,7 +8267,7 @@ Delay:               8.196ns (Levels of Logic = 5)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'USB_RegCLK'
-  Total number of paths / destination ports: 107 / 73
+  Total number of paths / destination ports: 108 / 74
 -------------------------------------------------------------------------
 Offset:              5.203ns (Levels of Logic = 2)
   Source:            Interfaces/INST_ZestSC1_Host/ROC_1:O (PAD)
@@ -8141,7 +8300,7 @@ Offset:              6.313ns (Levels of Logic = 4)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             6   0.715   1.148  USB_StreamFX2Rdy_IBUF (USB_StreamFX2Rdy_IBUF)
-     LUT2:I0->O            2   0.479   0.768  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n_SW0 (N305)
+     LUT2:I0->O            2   0.479   0.768  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n_SW0 (N350)
      LUT4:I3->O            2   0.479   1.040  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n (USB_StreamSLRD_n_OBUF)
      LUT3:I0->O            1   0.479   0.681  Interfaces/INST_ZestSC1_Host/FX2FIFOEmpty_not00011 (Interfaces/INST_ZestSC1_Host/FX2FIFOEmpty_not0001)
      FDPE:CE                   0.524          Interfaces/INST_ZestSC1_Host/FX2FIFOEmpty
@@ -8151,7 +8310,7 @@ Offset:              6.313ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'USB_RegCLK'
-  Total number of paths / destination ports: 8 / 8
+  Total number of paths / destination ports: 9 / 9
 -------------------------------------------------------------------------
 Offset:              7.466ns (Levels of Logic = 2)
   Source:            Interfaces/INST_ZestSC1_Host/IntCounter_2 (FF)
@@ -8183,7 +8342,7 @@ Offset:              9.029ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDC:C->Q              6   0.626   1.023  Interfaces/INST_ZestSC1_Host/ReadCycle (Interfaces/INST_ZestSC1_Host/ReadCycle)
-     LUT2:I1->O            2   0.479   0.768  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n_SW0 (N305)
+     LUT2:I1->O            2   0.479   0.768  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n_SW0 (N350)
      LUT4:I3->O            2   0.479   0.745  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n (USB_StreamSLRD_n_OBUF)
      OBUF:I->O                 4.909          USB_StreamSLRD_n_OBUF (USB_StreamSLRD_n)
     ----------------------------------------
@@ -8203,7 +8362,7 @@ Delay:               9.243ns (Levels of Logic = 4)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             6   0.715   1.148  USB_StreamFX2Rdy_IBUF (USB_StreamFX2Rdy_IBUF)
-     LUT2:I0->O            2   0.479   0.768  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n_SW0 (N305)
+     LUT2:I0->O            2   0.479   0.768  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n_SW0 (N350)
      LUT4:I3->O            2   0.479   0.745  Interfaces/INST_ZestSC1_Host/USB_StreamSLRD_n (USB_StreamSLRD_n_OBUF)
      OBUF:I->O                 4.909          USB_StreamSLRD_n_OBUF (USB_StreamSLRD_n)
     ----------------------------------------
@@ -8213,15 +8372,15 @@ Delay:               9.243ns (Levels of Logic = 4)
 =========================================================================
 
 
-Total REAL time to Xst completion: 394.00 secs
-Total CPU time to Xst completion: 391.60 secs
+Total REAL time to Xst completion: 411.00 secs
+Total CPU time to Xst completion: 409.78 secs
  
 --> 
 
 
-Total memory usage is 1607876 kilobytes
+Total memory usage is 1619700 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 3192 (   0 filtered)
-Number of infos    :  255 (   0 filtered)
+Number of warnings : 3209 (   0 filtered)
+Number of infos    :  256 (   0 filtered)
 
