@@ -198,7 +198,7 @@ out:
     return pc;
 }
 
-int printf(const char *fmt, ...)
+int dbg_printf(const char *fmt, ...)
 {
     va_list ap;
     va_start(ap, fmt);

@@ -7,5 +7,5 @@ int fib(int n)
 
 int main()
 {
-    printf("ZestSC1's Leon3 computed fib(29) = %d\n", fib(29));
+    dbg_printf("ZestSC1's Leon3 computed fib(29) = %d\n", fib(29));
 }

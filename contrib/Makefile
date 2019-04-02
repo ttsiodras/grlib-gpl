@@ -4,10 +4,15 @@ LDFLAGS = -m32 -L $(BASE)/linux/Lib -m32 -L $(BASE)/linux/Lib/ -lZestSC1 /usr/li
 OBJS = program_my_precious.o
 CFLAGS = -g -I $(BASE)/Inc -m32 -Wall -Wextra
 
-all:	program_my_precious example_program
+all:	program_my_precious example_program dhrystone
 
 program_my_precious:	program_my_precious.o
 	${CC} -o $@ $< ${LDFLAGS}
+
+dhrystone:	dhrystone.c my_printf.c
+	/opt/sparc-elf-3.4.4/bin/sparc-elf-gcc -mv8 -O2 -o $@ $^ -lsmall
+	/opt/sparc-elf-3.4.4/bin/sparc-elf-strip $@
+	/opt/sparc-elf-3.4.4/bin/sparc-elf-size $@
 
 example_program:	example_program.c my_printf.c
 	/opt/sparc-elf-3.4.4/bin/sparc-elf-gcc -mv8 -Os -o $@ $^ -lsmall
@@ -18,4 +23,4 @@ example_program:	example_program.c my_printf.c
 	${CC} -c ${CFLAGS} -o $@ $<
 
 clean:
-	rm -f program_my_precious program_my_precious.o example_program
+	rm -f program_my_precious program_my_precious.o example_program dhrystone

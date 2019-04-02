@@ -1,0 +1,124 @@
+                  SESSION: Tue Apr  2 23:12:01 2019
+                  GRMON version: v3.0.14 eval version
+                  OS: Linux
+                  Command line: /opt/grmon-eval-3.0.14/linux/bin64/grmon -u -uart /dev/ttyUSB0 -log dhrystone.log
+                  
+                  GRMON LEON debug monitor v3.0.14 64-bit eval version
+                  
+                  Copyright (C) 2018 Cobham Gaisler - All rights reserved.
+                  For latest updates, go to http://www.gaisler.com/
+                  Comments or bug-reports to support@gaisler.com
+                  
+                  This eval version will expire on 20/06/2019
+                  
+[SE0:sys]           using port /dev/ttyUSB0 @ 115200 baud
+[SE0:cli]         GRLIB build version: 4208
+[SE0:cli]         Detected frequency:  34 MHz
+[SE0:cli]         
+[SE0:cli]         Component                            Vendor
+[SE0:cli]         LEON3 SPARC V8 Processor             Cobham Gaisler
+[SE0:cli]         AHB Debug UART                       Cobham Gaisler
+[SE0:cli]         AHB/APB Bridge                       Cobham Gaisler
+[SE0:cli]         LEON3 Debug Support Unit             Cobham Gaisler
+[SE0:cli]         Single-port AHB SRAM module          Cobham Gaisler
+[SE0:cli]         Generic UART                         Cobham Gaisler
+[SE0:cli]         Multi-processor Interrupt Ctrl.      Cobham Gaisler
+[SE0:cli]         Modular Timer Unit                   Cobham Gaisler
+[SE0:cli]         
+[SE0:cli]         Use command 'info sys' to print a detailed report of attached cores
+[SE0:cli]         
+[SE0:cli]         grmon3> info sys
+[SE0:cli]         cpu0      Cobham Gaisler  LEON3 SPARC V8 Processor    
+[SE0:cli]                   AHB Master 0
+[SE0:cli]         ahbuart0  Cobham Gaisler  AHB Debug UART    
+[SE0:cli]                   AHB Master 1
+[SE0:cli]                   APB: 80000700 - 80000800
+[SE0:cli]                   Baudrate 115200, AHB frequency 34.00 MHz
+[SE0:cli]         apbmst0   Cobham Gaisler  AHB/APB Bridge    
+[SE0:cli]                   AHB: 80000000 - 80100000
+[SE0:cli]         dsu0      Cobham Gaisler  LEON3 Debug Support Unit    
+[SE0:cli]                   AHB: 90000000 - A0000000
+[SE0:cli]                   AHB trace: 128 lines, 32-bit bus
+[SE0:cli]                   CPU0:  win 8, itrace 128, V8 mul/div, lddel 1
+[SE0:cli]                          stack pointer 0x40003ff0
+[SE0:cli]                          icache 1 * 8 kB, 32 B/line
+[SE0:cli]                          dcache 1 * 8 kB, 32 B/line
+[SE0:cli]         ahbram0   Cobham Gaisler  Single-port AHB SRAM module    
+[SE0:cli]                   AHB: 40000000 - 40100000
+[SE0:cli]                   32-bit SRAM: 16 kB @ 0x40000000
+[SE0:cli]         uart0     Cobham Gaisler  Generic UART    
+[SE0:cli]                   APB: 80000100 - 80000200
+[SE0:cli]                   IRQ: 2
+[SE0:cli]                   Baudrate 38288, FIFO debug mode
+[SE0:cli]         irqmp0    Cobham Gaisler  Multi-processor Interrupt Ctrl.    
+[SE0:cli]                   APB: 80000200 - 80000300
+[SE0:cli]         gptimer0  Cobham Gaisler  Modular Timer Unit    
+[SE0:cli]                   APB: 80000300 - 80000400
+[SE0:cli]                   IRQ: 8
+[SE0:cli]                   8-bit scalar, 2 * 32-bit timers, divisor 34
+[SE0:cli]         
+[SE0:cli]         grmon3> load dhrystone
+[SE0:cli]         
+[SE0:cli]         40000000 .text                     14.4kB /  14.4kB   [===============>] 100%
+[SE0:cli]         40003980 .data                      1.6kB /   1.6kB   [===============>] 100%
+[SE0:cli]         Total size: 16.00kB (123.68kbit/s)
+[SE0:cli]         Entry point 0x40000000
+[SE0:cli]         Image /home/ttsiod/Github/grlib-gpl/contrib/dhrystone loaded
+[SE0:cli]         
+[SE0:cli]         grmon3> run
+[SE0:term0]       Dhrystone Benchmark, Version 2.1 (Language: C)
+[SE0:term0]       Execution starts, 300000 runs through Dhrystone
+[SE0:term0]       Execution ends
+[SE0:term0]       Final values of the variables used in the benchmark:
+[SE0:term0]       Int_Glob:            5
+[SE0:term0]               should be:   5
+[SE0:term0]       Bool_Glob:           1
+[SE0:term0]               should be:   1
+[SE0:term0]       Ch_1_Glob:           A
+[SE0:term0]               should be:   A
+[SE0:term0]       Ch_2_Glob:           B
+[SE0:term0]               should be:   B
+[SE0:term0]       Arr_1_Glob[8]:       7
+[SE0:term0]               should be:   7
+[SE0:term0]       Arr_2_Glob[8][7]:    300010
+[SE0:term0]               should be:   Number_Of_Runs + 10
+[SE0:term0]       Ptr_Glob->
+[SE0:term0]         Ptr_Comp:          1073757944
+[SE0:term0]               should be:   (implementation-dependent)
+[SE0:term0]         Discr:             0
+[SE0:term0]               should be:   0
+[SE0:term0]         Enum_Comp:         2
+[SE0:term0]               should be:   2
+[SE0:term0]         Int_Comp:          17
+[SE0:term0]               should be:   17
+[SE0:term0]         Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+[SE0:term0]               should be:   DHRYSTONE PROGRAM, SOME STRING
+[SE0:term0]       Next_Ptr_Glob->
+[SE0:term0]         Ptr_Comp:          1073757944
+[SE0:term0]               should be:   (implementation-dependent), same as above
+[SE0:term0]         Discr:             0
+[SE0:term0]               should be:   0
+[SE0:term0]         Enum_Comp:         1
+[SE0:term0]               should be:   1
+[SE0:term0]         Int_Comp:          18
+[SE0:term0]               should be:   18
+[SE0:term0]         Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+[SE0:term0]               should be:   DHRYSTONE PROGRAM, SOME STRING
+[SE0:term0]       Int_1_Loc:           5
+[SE0:term0]               should be:   5
+[SE0:term0]       Int_2_Loc:           13
+[SE0:term0]               should be:   13
+[SE0:term0]       Int_3_Loc:           7
+[SE0:term0]               should be:   7
+[SE0:term0]       Enum_Loc:            1
+[SE0:term0]               should be:   1
+[SE0:term0]       Str_1_Loc:           DHRYSTONE PROGRAM, 1'ST STRING
+[SE0:term0]               should be:   DHRYSTONE PROGRAM, 1'ST STRING
+[SE0:term0]       Str_2_Loc:           DHRYSTONE PROGRAM, 2'ND STRING
+[SE0:term0]               should be:   DHRYSTONE PROGRAM, 2'ND STRING
+[SE0:term0]       
+[SE0:term0]       Took: 9652 milliseconds
+[SE0:term0]       Dhrystones/sec: 31078
+[SE0:term0]       VAX MIPS: 17
+[SE0:term0]       
+[SE0:exec]        Program exited normally.
