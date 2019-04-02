@@ -20,3 +20,7 @@ well, priceless :-)
 
 Hats off to the Gaisler people; for making things so easy that even a complete
 newbie (HW-wise) like me, can actually put the pieces together.
+
+**UPDATE**: Here's the [complete log](contrib/dhrystone.txt) of the execution
+of the Dhrystone 2.1 benchmark in my Leon3; a benchmark that I barely managed
+to squeeze in my puny 16KB of BlockRAM :-)
