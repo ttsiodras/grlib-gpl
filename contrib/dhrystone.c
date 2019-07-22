@@ -23,6 +23,7 @@
 // I configure the 2nd HW timer inside it below, 
 // using these nice types from RTEMS:
 
+#pragma pack(8)
 typedef struct
 {
   volatile unsigned int value;
@@ -30,7 +31,9 @@ typedef struct
   volatile unsigned int conf;
   volatile unsigned int notused;
 } LEON3_Timer_SubType;
+#pragma pack()
 
+#pragma pack(8)
 typedef struct
 {
   volatile unsigned int scaler_value; /* common timer registers */
@@ -39,6 +42,7 @@ typedef struct
   volatile unsigned int notused;
   LEON3_Timer_SubType timer[8];
 } LEON3_Timer_Regs_Map;
+#pragma pack()
 
 // In my FPGA design, the gptimer0 lives in this offset
 static LEON3_Timer_Regs_Map *tregs = (LEON3_Timer_Regs_Map *) 0x80000300;
@@ -199,7 +203,7 @@ void dhry()
     /* Warning: With 16-Bit processors and Number_Of_Runs > 32000,  */
     /* overflow may occur for this array element.                   */
 
-    Number_Of_Runs = 300000;
+    Number_Of_Runs = 3000000;
 
     dbg_printf("Execution starts, ");
     dbg_printf("%u runs through Dhrystone\n", Number_Of_Runs);
@@ -325,7 +329,7 @@ void dhry()
     User_Time = End_Time - Begin_Time;
 
     if (User_Time < Too_Small_Time) {
-        dbg_printf("Measured time too small to obtain meaningful results\n");
+        dbg_printf("Measured time (%u) is too small to obtain meaningful results\n", User_Time);
         dbg_printf("Please increase number of runs\n");
     } else {
         dbg_printf("Took: %u milliseconds\n", User_Time/1000);
@@ -334,7 +338,7 @@ void dhry()
     }
 }
 
-int main() {
+int MAIN() {
     tregs->timer[1].reload = 0xFFFFFFFF;
     tregs->timer[1].conf = 0x5;
     dhry();

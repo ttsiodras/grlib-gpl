@@ -4,23 +4,40 @@ LDFLAGS = -m32 -L $(BASE)/linux/Lib -m32 -L $(BASE)/linux/Lib/ -lZestSC1 /usr/li
 OBJS = program_my_precious.o
 CFLAGS = -g -I $(BASE)/Inc -m32 -Wall -Wextra
 
+CROSS_BASE:=/opt/sparc-elf-3.4.4
+CROSS_PREFIX:=${CROSS_BASE}/bin/sparc-elf
+
+# Skip over building the FPGA reprogram utility if the ZestSC1 folder is missing
+ZESTSC1:=$(shell sh -c "[ -d ${BASE} ] && echo 1")
+ifeq (${ZESTSC1},1)
 all:	program_my_precious example_program dhrystone
+else
+all:	example_program dhrystone
+endif
+
+# The Dhrystone code performs a 64-bit division in the end
+# Extract the relevant object files from libc, and link with JUST them.
+longdivision:
+	[ ! -f _udivdi3.o ] && \
+	    { ar xv ${CROSS_BASE}/lib/gcc/sparc-elf/3.4.4*/v8/libgcc.a _udivdi3.o _clz.o ; } || exit 0
 
 program_my_precious:	program_my_precious.o
 	${CC} -o $@ $< ${LDFLAGS}
 
-dhrystone:	dhrystone.c my_printf.c
-	/opt/sparc-elf-3.4.4/bin/sparc-elf-gcc -mv8 -O2 -o $@ $^ -lsmall
-	/opt/sparc-elf-3.4.4/bin/sparc-elf-strip $@
-	/opt/sparc-elf-3.4.4/bin/sparc-elf-size $@
+dhrystone:	dhrystone.c my_printf.c | longdivision
+	# ${CROSS_PREFIX}-gcc -mv8 -O2 -DMAIN=main -o $@ $^ -lsmall
+	${CROSS_PREFIX}-gcc -nostdlib -mcpu=v8 -O2 -DMAIN=start -o $@ $^ _udivdi3.o _clz.o
+	${CROSS_PREFIX}-strip $@
+	${CROSS_PREFIX}-size $@
 
 example_program:	example_program.c my_printf.c
-	/opt/sparc-elf-3.4.4/bin/sparc-elf-gcc -mv8 -Os -o $@ $^ -lsmall
-	/opt/sparc-elf-3.4.4/bin/sparc-elf-strip $@
-	/opt/sparc-elf-3.4.4/bin/sparc-elf-size $@
+	${CROSS_PREFIX}-gcc -mv8 -Os -DMAIN=main -o $@ $^ -lsmall
+	# ${CROSS_PREFIX}-gcc -nostdlib -mcpu=v8 -O2 -DMAIN=start -o $@ $^
+	${CROSS_PREFIX}-strip $@
+	${CROSS_PREFIX}-size $@
 
 %.o:	%.c
 	${CC} -c ${CFLAGS} -o $@ $<
 
 clean:
-	rm -f program_my_precious program_my_precious.o example_program dhrystone
+	rm -f program_my_precious program_my_precious.o example_program dhrystone _clz.o _udivdi3.o
