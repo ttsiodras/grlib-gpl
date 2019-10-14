@@ -25,7 +25,7 @@ architecture arch of TheBigLeonski is
         dsuact   : out std_ulogic; -- debug signal connectd to a LED
 
         rx       : out std_ulogic; -- UART1 tx data
-        tx       : in  std_ulogic; -- UART1 rx data
+        tx       : in  std_ulogic -- UART1 rx data
     );
     end component;
 
@@ -91,8 +91,7 @@ begin
             iu_error => iu_error,
             dsuact => dsuact,
             rx => rx,
-            tx => tx,
-            IO => IO
+            tx => tx
         );
 
 end arch;

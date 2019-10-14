@@ -208,7 +208,7 @@ begin
         counter_dsu <= counter_dsu + 1;
         if counter_dsu = 25000000 then
             counter_dsu <= 0;
-            IO(45) <= heartbeat_led_dsu;
+            -- IO(45) <= heartbeat_led_dsu;
             heartbeat_led_dsu <= not heartbeat_led_dsu;
         end if;
       end if;
