@@ -65,8 +65,7 @@ entity leon3mp is
     iu_error : out std_ulogic;
     dsuact   : out std_ulogic;
     rx       : out std_ulogic;
-    tx       : in  std_ulogic;
-    IO : inout std_logic_vector(46 downto 0)
+    tx       : in  std_ulogic
   );
 end;
 
@@ -299,7 +298,7 @@ begin
 -- pragma translate_off
   x : report_design
   generic map (
-   msg1 => "ZestSC1 Orange Tree XC3S1000 Demonstration design",
+   msg1 => "Panologic G2 LX100 Demonstration design",
    fabtech => tech_table(fabtech), memtech => tech_table(memtech),
    mdel => 1
   );
