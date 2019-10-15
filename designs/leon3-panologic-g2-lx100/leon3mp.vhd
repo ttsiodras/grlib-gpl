@@ -60,12 +60,14 @@ entity leon3mp is
     use_ahbram_sim          : integer := 0
   );
   port (
-    resetn   : in  std_ulogic;
-    clk	     : in  std_ulogic;
-    iu_error : out std_ulogic;
-    dsuact   : out std_ulogic;
-    rx       : out std_ulogic;
-    tx       : in  std_ulogic
+    resetn        : in  std_ulogic;
+    clk           : in  std_ulogic;
+    iu_error      : out std_ulogic;
+    dsuact        : out std_ulogic;
+    rx            : out std_ulogic;
+    tx            : in  std_ulogic --;
+    -- tck, tms, tdi : in std_ulogic;
+    -- tdo           : out std_ulogic
   );
 end;
 
@@ -193,8 +195,8 @@ begin
   end generate;
 
   ahbjtaggen0 :if CFG_AHB_JTAG = 1 generate
-    ahbjtag0 : ahbjtag generic map(tech => fabtech, hindex => CFG_NCPU)
-      port map(rstn, clkm, tck, tms, tdi, tdo, ahbmi, ahbmo(CFG_NCPU),
+    ahbjtag0 : ahbjtag generic map(tech => fabtech, hindex => 1)
+      port map(rstn, clkm, tck, tms, tdi, tdo, ahbmi, ahbmo(1),
                open, open, open, open, open, open, open, gnd(0));
   end generate;
 
@@ -239,7 +241,7 @@ begin
     port map (rstn, clkm, apbi, apbo(2), irqo, irqi);
   end generate;
   irq3 : if CFG_IRQ3_ENABLE = 0 generate
-    x : for i in 0 to CFG_NCPU-1 generate
+    xx : for i in 0 to CFG_NCPU-1 generate
       irqi(i).irl <= "0000";
     end generate;
     apbo(2) <= apb_none;
