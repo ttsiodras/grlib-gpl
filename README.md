@@ -25,6 +25,8 @@ newbie (HW-wise) like me, can actually put the pieces together.
 of the Dhrystone 2.1 benchmark in my Leon3; a benchmark that I barely managed
 to squeeze in my puny 16KB of BlockRAM :-)
 
+# Running a grlib-gpl Leon3 inside my Pano Logic G2
+
 **UPDATE**, many months later:  I got my hands on a Pano Logic G2, thanks
 to the [magnificent Tom Verbeure](https://github.com/tomverbeure/panologic-g2).
 
@@ -40,11 +42,10 @@ After soldering my, erm, custom JTAG "adapter"...
 
 ...and two evenings later, I bootstrapped a Leon3 again - but this time,
 via JTAG *(order(s) of magnitude faster than UART)*, and since the XC6LX100
-is a monster (compared to the Spartan3), with 16 times more memory!
+is a monster (compared to the Spartan3), with 16 times more memory,
+and 4 Leon3 cores!
 
 ![A Leon3 inside a Pano Logic G2](contrib/pano-4.jpg "A Leon3 inside a Pano Logic G2")
-
-Wondering now, if I can fit more than one Leon3 here. Hmm...
 
 In any case, I need to write a blog post about this - I've done too many things,
 that must be documented.
