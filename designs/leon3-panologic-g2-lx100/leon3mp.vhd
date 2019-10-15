@@ -112,7 +112,7 @@ architecture rtl of leon3mp is
    signal gpioo : gpio_out_type;
    
    signal lclk : std_ulogic;
-   signal tck, tckn, tms, tdi, tdo : std_ulogic;
+   signal tck, tms, tdi, tdo : std_ulogic;
    
    -- my ZestSC1 board's frequency in KHz
    constant BOARD_FREQ : integer := 25000;
