@@ -31,6 +31,7 @@ use ieee.std_logic_1164.all;
 library gaisler;
 use gaisler.libdcom.all;
 use gaisler.sim.all;
+use gaisler.jtagtst.all;
 library techmap;
 use techmap.gencomp.all;
 use std.textio.all;
@@ -56,8 +57,10 @@ architecture behav of testbench is
   signal rstn : std_ulogic := '1';
   signal iu_error : std_ulogic;
   signal dsuact : std_ulogic;
-  signal dsu_tx : std_logic;
-  signal dsu_rx : std_logic;
+  signal tx : std_logic;
+  signal rx : std_logic;
+  signal tck, tms, tdi : std_ulogic;
+  signal tdo : std_ulogic;
 
   component leon3mp
     port (
@@ -65,8 +68,10 @@ architecture behav of testbench is
       resetn : in  std_ulogic;
       iu_error : out std_ulogic;
       dsuact : out std_ulogic;
-      dsu_rx : out std_ulogic; -- UART1 tx data
-      dsu_tx : in  std_ulogic  -- UART1 rx data
+      rx : out std_ulogic; -- UART1 tx data
+      tx : in  std_ulogic; -- UART1 rx data
+      tck, tms, tdi : in std_ulogic;
+      tdo : out std_ulogic
   );
   end component;
 
@@ -75,12 +80,16 @@ architecture behav of testbench is
 begin
   d3 : leon3mp
     port map (
-        clk => CLK,
         resetn => rstn,
+        clk => CLK,
         iu_error => iu_error,
         dsuact => dsuact,
-        dsu_rx => dsu_rx,
-        dsu_tx => dsu_tx
+        rx => rx,
+        tx => tx,
+        tck => tck,
+        tms => tms,
+        tdi => tdi,
+        tdo => tdo
     );
 
   clk <= not clk after CLK_PERIOD/2;
@@ -94,79 +103,24 @@ begin
       severity failure;  
   end process;
 
-  dsucom : process
-    procedure dsucfg(signal dsutx : out std_ulogic; signal dsurx : in std_ulogic) is
-      variable w32 : std_logic_vector(31 downto 0);
-      variable c8  : std_logic_vector(7 downto 0);
-      constant txp : time := 320 * 1 ns;
-      variable l : line;
-    begin
-      dsutx <= '1';
-      write(l, String'("Resetting for 40 cycles"));
-      writeline(output, l);
-      rstn <= '1';
-      wait for 40*CLK_PERIOD;
-      rstn <= '0';
-      wait for 10*CLK_PERIOD;
-
-      wait for 5000 ns;
-
-      -- Send exactly what grmon3 sends.
-      txc(dsutx, 16#55#, txp);
-      txc(dsutx, 16#55#, txp);
-      txc(dsutx, 16#55#, txp);
-      txc(dsutx, 16#55#, txp);
-      txc(dsutx, 16#80#, txp);
-      txc(dsutx, 16#ff#, txp);
-      txc(dsutx, 16#ff#, txp);
-      txc(dsutx, 16#ff#, txp);
-      txc(dsutx, 16#f0#, txp);
-      txc(dsutx, 16#80#, txp);
-      txc(dsutx, 16#ff#, txp);
-      txc(dsutx, 16#ff#, txp);
-      txc(dsutx, 16#ff#, txp);
-      txc(dsutx, 16#f0#, txp);
-      txc(dsutx, 16#ff#, txp);
-
-      -- and look at the magnificent output from our design;
-      -- the DSU replies with 00 00 10 70 ; the proper response!
-
-      -- This test can also be used - it is the original
-      -- scenario taken from digilent-xc3s1000.
-
-      -- txc(dsutx, 16#55#, txp);		-- sync uart
-
-      -- txc(dsutx, 16#c0#, txp);
-      -- txa(dsutx, 16#90#, 16#00#, 16#00#, 16#00#, txp);
-      -- txa(dsutx, 16#00#, 16#00#, 16#20#, 16#2e#, txp);
-
-      -- wait for 25000 ns;
-      -- txc(dsutx, 16#c0#, txp);
-      -- txa(dsutx, 16#90#, 16#00#, 16#00#, 16#20#, txp);
-      -- txa(dsutx, 16#00#, 16#00#, 16#00#, 16#01#, txp);
-
-      -- txc(dsutx, 16#c0#, txp);
-      -- txa(dsutx, 16#90#, 16#40#, 16#00#, 16#24#, txp);
-      -- txa(dsutx, 16#00#, 16#00#, 16#00#, 16#0D#, txp);
-
-      -- txc(dsutx, 16#c0#, txp);
-      -- txa(dsutx, 16#90#, 16#70#, 16#11#, 16#78#, txp);
-      -- txa(dsutx, 16#91#, 16#00#, 16#00#, 16#0D#, txp);
-
-      -- txa(dsutx, 16#90#, 16#40#, 16#00#, 16#44#, txp);
-      -- txa(dsutx, 16#00#, 16#00#, 16#20#, 16#00#, txp);
-
-      -- txc(dsutx, 16#80#, txp);
-      -- txa(dsutx, 16#90#, 16#40#, 16#00#, 16#44#, txp);
-
-      -- Look! The DSUACT signal goes high! All good.
-      wait for 50000 ns;
-
-      write(l, String'("Test completed."));
-      writeline(output, l);
-    end procedure;
+  jtagproc : process
+    variable l : line;
   begin
-    dsucfg(dsu_tx, dsu_rx);
+    write(l, String'("Resetting for 40 cycles"));
+    writeline(output, l);
+    rstn <= '1';
+    wait for 40*CLK_PERIOD;
+    rstn <= '0';
+    wait for 10*CLK_PERIOD;
+
+    wait for 5000 ns;
+
+    jtagcom(tdo, tck, tms, tdi, 100, 20, 16#40000000#, true);
+    wait for 990000 ns;
+
+    write(l, String'("JTAG Test completed."));
+    writeline(output, l);
     wait;
-  end process;
+   end process;
+
 end;
