@@ -25,8 +25,8 @@ program_my_precious:	program_my_precious.o
 	${CC} -o $@ $< ${LDFLAGS}
 
 dhrystone:	dhrystone.c my_printf.c | longdivision
-	# ${CROSS_PREFIX}-gcc -mv8 -O2 -DMAIN=main -o $@ $^ -lsmall
-	${CROSS_PREFIX}-gcc -nostdlib -mcpu=v8 -O2 -DMAIN=start -o $@ $^ _udivdi3.o _clz.o
+	${CROSS_PREFIX}-gcc -mv8 -O2 -DMAIN=main -o $@ $^ -lsmall
+	# ${CROSS_PREFIX}-gcc -nostdlib -mcpu=v8 -O2 -DMAIN=start -o $@ $^ _udivdi3.o _clz.o
 	${CROSS_PREFIX}-strip $@
 	${CROSS_PREFIX}-size $@
 

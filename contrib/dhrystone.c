@@ -203,7 +203,7 @@ void dhry()
     /* Warning: With 16-Bit processors and Number_Of_Runs > 32000,  */
     /* overflow may occur for this array element.                   */
 
-    Number_Of_Runs = 3000000;
+    Number_Of_Runs = 300000;
 
     dbg_printf("Execution starts, ");
     dbg_printf("%u runs through Dhrystone\n", Number_Of_Runs);
