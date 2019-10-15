@@ -195,8 +195,8 @@ begin
   end generate;
 
   ahbjtaggen0 :if CFG_AHB_JTAG = 1 generate
-    ahbjtag0 : ahbjtag generic map(tech => fabtech, hindex => 1)
-      port map(rstn, clkm, tck, tms, tdi, tdo, ahbmi, ahbmo(1),
+    ahbjtag0 : ahbjtag generic map(tech => fabtech, hindex => CFG_NCPU)
+      port map(rstn, clkm, tck, tms, tdi, tdo, ahbmi, ahbmo(CFG_NCPU),
                open, open, open, open, open, open, open, gnd(0));
   end generate;
 
