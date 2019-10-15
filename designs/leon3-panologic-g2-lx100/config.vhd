@@ -132,7 +132,7 @@ package config is
   constant CFG_ROMMASK : integer := 16#E00# + 16#100#;
 -- AHB RAM
   constant CFG_AHBRAMEN : integer := 1;
-  constant CFG_AHBRSZ : integer := 128;
+  constant CFG_AHBRSZ : integer := 256;
   constant CFG_AHBRADDR : integer := 16#400#;
   constant CFG_AHBRPIPE : integer := 0;
 -- UART 1
