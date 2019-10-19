@@ -1,0 +1,308 @@
+# Constraints file for ZestSC1
+# File name: ZestSC1.ucf
+# Version: 1.10
+# Date: 14/3/2006
+
+# Copyright (C) 2005 Orange Tree Technologies Ltd. All rights reserved.
+# Orange Tree Technologies grants the purchaser of a ZestSC1 the right to use and
+# modify this logic core in any form including but not limited to VHDL source code or
+# EDIF netlist in FPGA designs that target the ZestSC1.
+# Orange Tree Technologies prohibits the use of this logic core or any modification of
+# it in any form including but not limited to VHDL source code or EDIF netlist in
+# FPGA or ASIC designs that target any other hardware unless the purchaser of the
+# ZestSC1 has purchased the appropriate licence from Orange Tree Technologies.
+# Contact Orange Tree Technologies if you want to purchase such a licence.
+
+#*****************************************************************************************
+#**
+#**  Disclaimer: LIMITED WARRANTY AND DISCLAIMER. These designs are
+#**              provided to you "as is". Orange Tree Technologies and its licensors 
+#**              make and you receive no warranties or conditions, express, implied, 
+#**              statutory or otherwise, and Orange Tree Technologies specifically 
+#**              disclaims any implied warranties of merchantability, non-infringement,
+#**              or fitness for a particular purpose. Orange Tree Technologies does not
+#**              warrant that the functions contained in these designs will meet your 
+#**              requirements, or that the operation of these designs will be 
+#**              uninterrupted or error free, or that defects in the Designs will be 
+#**              corrected. Furthermore, Orange Tree Technologies does not warrant or 
+#**              make any representations regarding use or the results of the use of the 
+#**              designs in terms of correctness, accuracy, reliability, or otherwise.                                               
+#**
+#**              LIMITATION OF LIABILITY. In no event will Orange Tree Technologies 
+#**              or its licensors be liable for any loss of data, lost profits, cost or 
+#**              procurement of substitute goods or services, or for any special, 
+#**              incidental, consequential, or indirect damages arising from the use or 
+#**              operation of the designs or accompanying documentation, however caused 
+#**              and on any theory of liability. This limitation will apply even if 
+#**              Orange Tree Technologies has been advised of the possibility of such 
+#**              damage. This limitation shall apply notwithstanding the failure of the 
+#**              essential purpose of any limited remedies herein.
+#**
+#*****************************************************************************************
+
+#######################
+# Streaming interface #
+#######################
+net "USB_StreamCLK" IOSTANDARD = LVCMOS33;
+net "USB_StreamSLRD_n" IOSTANDARD = LVCMOS33 | DRIVE = 6 | SLEW = FAST;
+net "USB_StreamSLWR_n" IOSTANDARD = LVCMOS33 | DRIVE = 6 | SLEW = FAST;
+net "USB_StreamSLOE_n" IOSTANDARD = LVCMOS33 | DRIVE = 6 | SLEW = FAST;
+net "USB_StreamFX2Rdy" IOSTANDARD = LVCMOS33;
+net "USB_StreamFIFOADDR<*>" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "USB_StreamPKTEND_n" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "USB_StreamData<*>" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "USB_StreamFlags_n<*>" IOSTANDARD = LVCMOS33;
+
+net "USB_StreamCLK" LOC = "T9";
+net "USB_StreamCLK" TNM_net = "USB_StreamCLK";
+timespec "TS_StreamCLK" = PERIOD "USB_StreamCLK" 20.8 ns HIGH 50 %;
+
+net "USB_StreamFlags_n<0>" LOC = "t8";
+net "USB_StreamFlags_n<0>" OFFSET = IN 7 ns BEFORE USB_StreamCLK;
+net "USB_StreamFlags_n<1>" LOC = "t4";
+net "USB_StreamFlags_n<1>" OFFSET = IN 7 ns BEFORE USB_StreamCLK;
+net "USB_StreamFlags_n<2>" LOC = "r4";
+#net "USB_StreamFlags_n<2>" OFFSET = IN 7 ns BEFORE USB_StreamCLK;
+net "USB_StreamFX2Rdy" LOC = "p9";
+
+net "USB_StreamSLRD_n" LOC = "p5";
+net "USB_StreamSLRD_n" OFFSET = OUT 8 ns AFTER USB_StreamCLK;
+net "USB_StreamSLWR_n" LOC = "r6";
+net "USB_StreamSLWR_n" OFFSET = OUT 8 ns AFTER USB_StreamCLK;
+net "USB_StreamSLOE_n" LOC = "n8";
+net "USB_StreamSLOE_n" OFFSET = OUT 8 ns AFTER USB_StreamCLK;
+net "USB_StreamFIFOADDR<0>" LOC = "n10";
+net "USB_StreamFIFOADDR<1>" LOC = "m10";
+net "USB_StreamPKTEND_n" LOC = "r11";
+
+net "USB_StreamData<0>" LOC = "m6";
+net "USB_StreamData<1>" LOC = "n6";
+net "USB_StreamData<2>" LOC = "r7";
+net "USB_StreamData<3>" LOC = "t7";
+net "USB_StreamData<4>" LOC = "r10";
+net "USB_StreamData<5>" LOC = "p10";
+net "USB_StreamData<6>" LOC = "n11";
+net "USB_StreamData<7>" LOC = "m11";
+net "USB_StreamData<8>" LOC = "r12";
+net "USB_StreamData<9>" LOC = "p12";
+net "USB_StreamData<10>" LOC = "t13";
+net "USB_StreamData<11>" LOC = "r13";
+net "USB_StreamData<12>" LOC = "t10";
+net "USB_StreamData<13>" LOC = "p13";
+net "USB_StreamData<14>" LOC = "n12";
+net "USB_StreamData<15>" LOC = "t14";
+
+net "USB_StreamData<*>" OFFSET = in 4.0 ns before USB_StreamCLK;
+net "USB_StreamData<*>" OFFSET = out 16.0 ns after USB_StreamCLK;
+
+###########################
+# Memory mapped interface #
+###########################
+net "USB_RegCLK" IOSTANDARD = LVCMOS33;
+net "USB_RegAddr<*>" IOSTANDARD = LVCMOS33;
+net "USB_RegOE_n" IOSTANDARD = LVCMOS33;
+net "USB_RegRD_n" IOSTANDARD = LVCMOS33;
+net "USB_RegWR_n" IOSTANDARD = LVCMOS33;
+net "USB_RegCS_n" IOSTANDARD = LVCMOS33;
+net "USB_RegData<*>" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+
+net "USB_RegCLK" LOC = "r9";
+net "USB_RegCLK" TNM_net = "USB_RegCLK";
+timespec "TS_RegCLK" = PERIOD "USB_RegCLK" 20.0 ns HIGH 50 %;
+
+net "USB_RegAddr<0>" LOC = "j2";
+net "USB_RegAddr<1>" LOC = "j1";
+net "USB_RegAddr<2>" LOC = "g1";
+net "USB_RegAddr<3>" LOC = "h1";
+net "USB_RegAddr<4>" LOC = "h4";
+net "USB_RegAddr<5>" LOC = "h3";
+net "USB_RegAddr<6>" LOC = "g4";
+net "USB_RegAddr<7>" LOC = "g3";
+net "USB_RegAddr<8>" LOC = "f5";
+net "USB_RegAddr<9>" LOC = "g5";
+net "USB_RegAddr<10>" LOC = "f3";
+net "USB_RegAddr<11>" LOC = "f2";
+net "USB_RegAddr<12>" LOC = "e4";
+net "USB_RegAddr<13>" LOC = "f4";
+net "USB_RegAddr<14>" LOC = "e2";
+net "USB_RegAddr<15>" LOC = "e1";
+
+net "USB_RegData<0>" LOC = "m2";
+net "USB_RegData<1>" LOC = "m1";
+net "USB_RegData<2>" LOC = "l5";
+net "USB_RegData<3>" LOC = "l4";
+net "USB_RegData<4>" LOC = "l3";
+net "USB_RegData<5>" LOC = "l2";
+net "USB_RegData<6>" LOC = "k5";
+net "USB_RegData<7>" LOC = "k4";
+
+net "USB_RegOE_n" LOC = "j3";
+net "USB_RegRD_n" LOC = "j4";
+net "USB_RegWR_n" LOC = "k2";
+net "USB_RegCS_n" LOC = "k3";
+
+#####################
+# Interrupt to host #
+##################### 
+net "USB_Interrupt" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "USB_Interrupt" LOC = "n5";
+
+########################################
+# General purpose signals to/from host #
+########################################
+net "User_Signals<*>" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "User_Signals<0>" LOC = "r1";
+net "User_Signals<1>" LOC = "p1";
+net "User_Signals<2>" LOC = "p2";
+net "User_Signals<3>" LOC = "n3";
+net "User_Signals<4>" LOC = "n2";
+net "User_Signals<5>" LOC = "n1";
+net "User_Signals<6>" LOC = "m4";
+net "User_Signals<7>" LOC = "m3";
+
+#############################################
+# LEDs                                      #
+# Note: these are shared with IO pins below #
+#############################################
+#net "LEDs<*>" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+#net "LEDs<0>" LOC = "T12";
+#net "LEDs<1>" LOC = "K15";
+#net "LEDs<2>" LOC = "D15";
+#net "LEDs<3>" LOC = "D14";
+#net "LEDs<4>" LOC = "C15";
+#net "LEDs<5>" LOC = "C16";
+#net "LEDs<6>" LOC = "B16";
+#net "LEDs<7>" LOC = "G16";
+
+##################
+# SRAM Interface #
+##################
+net "S_A<*>" TNM="S_A_NAME";
+net "S_DA<*>" TNM="S_DA_NAME";
+net "S_DB<*>" TNM="S_DB_NAME";
+
+timegrp "S_A_GRP" = "S_A_NAME";
+timegrp "S_DA_GRP" = "S_DA_NAME";
+timegrp "S_DB_GRP" = "S_DB_NAME";
+
+timegrp "S_A_GRP" OFFSET = OUT 16.0 ns AFTER USB_RegCLK;
+timegrp "S_DA_GRP" OFFSET = OUT 16.0 ns AFTER USB_RegCLK;
+timegrp "S_DB_GRP" OFFSET = OUT 16.0 ns AFTER USB_RegCLK;
+net "S_WE_N" OFFSET = OUT 16.0 ns AFTER USB_RegCLK;
+
+net "S_CLK" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "S_A<*>" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "S_BWA_N" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "S_BWB_N" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "S_DA<*>" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "S_DB<*>" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "S_OE_N" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "S_WE_N" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "S_ADV_LD_N" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+
+net "S_CLK" LOC = "B7";
+net "S_A<0>" LOC = "D3";
+net "S_A<1>" LOC = "E3";
+net "S_A<2>" LOC = "D2";
+net "S_A<3>" LOC = "D1";
+net "S_A<4>" LOC = "C3";
+net "S_A<5>" LOC = "C2";
+net "S_A<6>" LOC = "B1";
+net "S_A<7>" LOC = "C1";
+net "S_A<8>" LOC = "G2";
+net "S_A<9>" LOC = "A5";
+net "S_A<10>" LOC = "A7";
+net "S_A<11>" LOC = "A3";
+net "S_A<12>" LOC = "D5";
+net "S_A<13>" LOC = "B4";
+net "S_A<14>" LOC = "A4";
+net "S_A<15>" LOC = "C5";
+net "S_A<16>" LOC = "B5";
+net "S_A<17>" LOC = "E6";
+net "S_A<18>" LOC = "D6";
+net "S_A<19>" LOC = "C6";
+net "S_A<20>" LOC = "B6";
+net "S_A<21>" LOC = "E7";
+net "S_A<22>" LOC = "D7";
+net "S_ADV_LD_N" LOC = "C7";
+net "S_BWA_N" LOC = "C8";
+net "S_BWB_N" LOC = "D8";
+net "S_DA<0>" LOC = "B10";
+net "S_DA<1>" LOC = "A10";
+net "S_DA<2>" LOC = "E10";
+net "S_DA<3>" LOC = "D10";
+net "S_DA<4>" LOC = "C11";
+net "S_DA<5>" LOC = "B11";
+net "S_DA<6>" LOC = "E11";
+net "S_DA<7>" LOC = "D11";
+net "S_DA<8>" LOC = "C12";
+net "S_DB<0>" LOC = "B12";
+net "S_DB<1>" LOC = "B13";
+net "S_DB<2>" LOC = "A13";
+net "S_DB<3>" LOC = "B14";
+net "S_DB<4>" LOC = "A14";
+net "S_DB<5>" LOC = "D12";
+net "S_DB<6>" LOC = "C10";
+net "S_DB<7>" LOC = "A12";
+net "S_DB<8>" LOC = "A9";
+net "S_OE_N" LOC = "C9";
+net "S_WE_N" LOC = "D9";
+
+
+#######################
+# Expansion connector #
+#######################
+net "IO_CLK_N" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "IO_CLK_P" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+net "IO<*>" IOSTANDARD = LVCMOS33 | DRIVE = 12 | SLEW = FAST;
+
+net "IO_CLK_N" LOC = "B8";
+net "IO_CLK_P" LOC = "A8";
+net "IO<0>" LOC = "T12";
+net "IO<1>" LOC = "K15";
+net "IO<2>" LOC = "P16";
+net "IO<3>" LOC = "R16";
+net "IO<4>" LOC = "P15";
+net "IO<5>" LOC = "P14";
+net "IO<6>" LOC = "N16";
+net "IO<7>" LOC = "N15";
+net "IO<8>" LOC = "M14";
+net "IO<9>" LOC = "N14";
+net "IO<10>" LOC = "M16";
+net "IO<11>" LOC = "M15";
+net "IO<12>" LOC = "L13";
+net "IO<13>" LOC = "M13";
+net "IO<14>" LOC = "L15";
+net "IO<15>" LOC = "L14";
+net "IO<16>" LOC = "K12";
+net "IO<17>" LOC = "L12";
+net "IO<18>" LOC = "K14";
+net "IO<19>" LOC = "K13";
+net "IO<20>" LOC = "J14";
+net "IO<21>" LOC = "J13";
+net "IO<22>" LOC = "J16";
+net "IO<23>" LOC = "K16";
+net "IO<24>" LOC = "H16";
+net "IO<25>" LOC = "H15";
+net "IO<26>" LOC = "H14";
+net "IO<27>" LOC = "H13";
+net "IO<28>" LOC = "G15";
+net "IO<29>" LOC = "G14";
+net "IO<30>" LOC = "G13";
+net "IO<31>" LOC = "G12";
+net "IO<32>" LOC = "F15";
+net "IO<33>" LOC = "F14";
+net "IO<34>" LOC = "F13";
+net "IO<35>" LOC = "F12";
+net "IO<36>" LOC = "E16";
+net "IO<37>" LOC = "E15";
+net "IO<38>" LOC = "E14";
+net "IO<39>" LOC = "E13";
+net "IO<40>" LOC = "D16";
+net "IO<41>" LOC = "D15";
+net "IO<42>" LOC = "D14";
+net "IO<43>" LOC = "C15";
+net "IO<44>" LOC = "C16";
+net "IO<45>" LOC = "B16";
+net "IO<46>" LOC = "G16";
+
