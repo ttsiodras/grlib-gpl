@@ -83,7 +83,7 @@ int main(int argc, char **argv)
     //
     // Method 1: Configure the FPGA directly from a file
     //
-    ZestSC1ConfigureFromFile(Handle, "../designs/leon3-zestsc1-xc3s1000/TheBigLeonski.bit");
+    ZestSC1ConfigureFromFile(Handle, "TheBigLeonski.bit");
     puts("Programmed!");
     while(1) {
         puts("Press Enter to send a reset (q to quit)\n");
