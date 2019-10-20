@@ -65,9 +65,7 @@ entity leon3mp is
     iu_error      : out std_ulogic;
     dsuact        : out std_ulogic;
     rx            : out std_ulogic;
-    tx            : in  std_ulogic --;
-    -- tck, tms, tdi : in std_ulogic;
-    -- tdo           : out std_ulogic
+    tx            : in  std_ulogic
   );
 end;
 

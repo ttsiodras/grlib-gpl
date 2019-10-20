@@ -59,7 +59,6 @@ architecture behav of testbench is
   signal dsuact : std_ulogic;
   signal tx : std_logic;
   signal rx : std_logic;
-  signal tck, tms, tdi : std_ulogic;
   signal tdo : std_ulogic;
 
   component leon3mp
@@ -69,9 +68,7 @@ architecture behav of testbench is
       iu_error : out std_ulogic;
       dsuact : out std_ulogic;
       rx : out std_ulogic; -- UART1 tx data
-      tx : in  std_ulogic; -- UART1 rx data
-      tck, tms, tdi : in std_ulogic;
-      tdo : out std_ulogic
+      tx : in  std_ulogic
   );
   end component;
 
@@ -85,11 +82,7 @@ begin
         iu_error => iu_error,
         dsuact => dsuact,
         rx => rx,
-        tx => tx,
-        tck => tck,
-        tms => tms,
-        tdi => tdi,
-        tdo => tdo
+        tx => tx
     );
 
   clk <= not clk after CLK_PERIOD/2;
@@ -115,10 +108,7 @@ begin
 
     wait for 5000 ns;
 
-    jtagcom(tdo, tck, tms, tdi, 100, 20, 16#40000000#, true);
-    wait for 990000 ns;
-
-    write(l, String'("JTAG Test completed."));
+    write(l, String'("Looks like we are booting."));
     writeline(output, l);
     wait;
    end process;
