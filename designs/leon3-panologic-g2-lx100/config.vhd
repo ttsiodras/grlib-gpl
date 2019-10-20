@@ -29,7 +29,7 @@ package config is
   -- my design can easily reach this speed.
   --
   -- 25*5/5 = 25
-  constant CFG_CLKMUL : integer := (5);
+  constant CFG_CLKMUL : integer := (10);
   constant CFG_CLKDIV : integer := (5);
   constant CFG_OCLKDIV : integer := 1;
   constant CFG_OCLKBDIV : integer := 0;
@@ -39,7 +39,7 @@ package config is
   constant CFG_CLK_NOFB : integer := 0;
 -- LEON3 processor core
   constant CFG_LEON3 : integer := 1;
-  constant CFG_NCPU : integer := (4);
+  constant CFG_NCPU : integer := (2);
   constant CFG_NWIN : integer := (8);
   constant CFG_V8 : integer := 2 + 4*0;
   constant CFG_MAC : integer := 0;
