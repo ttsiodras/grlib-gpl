@@ -254,7 +254,4 @@ vhdl esa ../../lib/esa/memoryctrl/mctrl.vhd
 vhdl work config.vhd
 vhdl work ahbrom.vhd
 vhdl work leon3mp.vhd
-vhdl work ZestSC1_Host.vhd
-vhdl work ZestSC1_Interfaces.vhd
-vhdl work ZestSC1_SRAM.vhd
 vhdl work TheBigLeonski.vhd

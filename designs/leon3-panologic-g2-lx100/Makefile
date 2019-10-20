@@ -1,6 +1,6 @@
 GRLIB=../..
-TOP=leon3mp
-BOARD=digilent-xc3s1000
+TOP=TheBigLeonski
+BOARD=panologic-g2
 include Makefile.inc
 DEVICE=$(PART)-$(PACKAGE)$(SPEED)
 UCF=leon3mp.ucf
@@ -8,7 +8,7 @@ UCF=leon3mp.ucf
 EFFORT=high
 XSTOPT=
 SYNPOPT="set_option -pipe 0; set_option -retiming 0; set_option -write_apr_constraint 0"
-VHDLSYNFILES=config.vhd ahbrom.vhd leon3mp.vhd ZestSC1_Host.vhd ZestSC1_Interfaces.vhd ZestSC1_SRAM.vhd
+VHDLSYNFILES=config.vhd ahbrom.vhd leon3mp.vhd TheBigLeonski.vhd
 VHDLSIMFILES=testbench.vhd
 SIMTOP=testbench
 #SDCFILE=$(GRLIB)/boards/$(BOARD)/default.sdc
