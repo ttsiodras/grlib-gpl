@@ -49,3 +49,6 @@ and 4 Leon3 cores!
 
 In any case, I need to write a blog post about this - I've done too many things,
 that must be documented.
+
+**UPDATE**: I finally found the willpower to document everything, in a 
+[very detailed blog post](https://www.thanassis.space/myowncpu.html). Enjoy!
