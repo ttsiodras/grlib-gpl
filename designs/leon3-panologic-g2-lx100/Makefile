@@ -29,4 +29,5 @@ include $(GRLIB)/software/leon3/Makefile
 
 
 ##################  project specific targets ##########################
-
+ghdl-ttsiodras:
+	ghdl -r -fexplicit --ieee=synopsys --mb-comments --warn-no-binding --workdir=gnu/work --work=work `cat ghdl.path` testbench
