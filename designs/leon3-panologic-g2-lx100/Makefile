@@ -29,5 +29,10 @@ include $(GRLIB)/software/leon3/Makefile
 
 
 ##################  project specific targets ##########################
-ghdl-ttsiodras:
+simulation-setup:
+	$(MAKE) distclean
+	$(MAKE) install-unisim XILINX=$$XILINX
+
+simulation:
+	$(MAKE) ghdl
 	ghdl -r -fexplicit --ieee=synopsys --mb-comments --warn-no-binding --workdir=gnu/work --work=work `cat ghdl.path` testbench

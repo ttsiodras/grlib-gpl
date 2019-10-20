@@ -110,7 +110,7 @@ begin
 
     write(l, String'("Looks like we are booting."));
     writeline(output, l);
-    wait;
+    assert false report "Reached end of test" severity failure;
    end process;
 
 end;
