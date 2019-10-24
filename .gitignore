@@ -1,2 +1,8 @@
 tags
 *.o
+designs/TheBigLeonski*
+designs/*burn.sh
+designs/leon3-zestsc1-xc3s1000/M*txt
+designs/leon3-zestsc1-xc3s1000/iseconfig/
+designs/leon3-zestsc1-xc3s1000/leon3mp_summary.html
+lib/tech/unisim/ise/unisim_*
