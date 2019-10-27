@@ -42,8 +42,16 @@ example_program:	example_program.c my_printf.c
 	${CROSS_PREFIX}-strip $@
 	${CROSS_PREFIX}-size $@
 
+mand:	mand.c
+	${CROSS_PREFIX}-gcc -mv8 -O2 -msoft-float -o $@ $^ -lsmall
+	${CROSS_PREFIX}-strip $@
+	${CROSS_PREFIX}-size $@
+
+mand-run:	mand
+	bash -c '/opt/grmon-eval-3.1.0/linux/bin64/grmon -u -xilusb -c <(echo -e "load mand\nrun\nquit\n")'
+
 %.o:	%.c
 	${CC} -c ${CFLAGS} -o $@ $<
 
 clean:
-	rm -f program_my_precious program_my_precious.o example_program dhrystone _clz.o _udivdi3.o
+	rm -f program_my_precious program_my_precious.o example_program dhrystone _clz.o _udivdi3.o mand
