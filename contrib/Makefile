@@ -17,18 +17,24 @@ endif
 
 # The Dhrystone code performs a 64-bit division in the end
 # Extract the relevant object files from libc, and link with JUST them.
-longdivision:
-	[ ! -f _udivdi3.o ] && \
-	    { ar xv ${CROSS_BASE}/lib/gcc/sparc-elf/3.4.4*/v8/libgcc.a _udivdi3.o _clz.o ; } || exit 0
+_udivdi3.o:
+	{ ar xv ${CROSS_BASE}/lib/gcc/sparc-elf/3.4.4*/v8/libgcc.a _udivdi3.o _clz.o ; } || exit 0
 
 program_my_precious:	program_my_precious.o
 	${CC} -o $@ $< ${LDFLAGS}
 
-dhrystone:	dhrystone.c my_printf.c | longdivision
+dhrystone-common:	dhrystone
+	${CROSS_PREFIX}-strip $<
+	${CROSS_PREFIX}-size $<
+
+dhrystone:	dhrystone.c my_printf.c
 	${CROSS_PREFIX}-gcc -mv8 -O2 -DMAIN=main -o $@ $^ -lsmall
-	# ${CROSS_PREFIX}-gcc -nostdlib -mcpu=v8 -O2 -DMAIN=start -o $@ $^ _udivdi3.o _clz.o
-	${CROSS_PREFIX}-strip $@
-	${CROSS_PREFIX}-size $@
+	$(MAKE) dhrystone-common
+
+dhrystone-small:	dhrystone.c my_printf.c | _udivdi3.o
+	${CROSS_PREFIX}-gcc -nostdlib -mcpu=v8 -O2 -DMAIN=start -o $@ $^ _udivdi3.o _clz.o
+	mv $@ dhrystone
+	$(MAKE) dhrystone-common
 
 example_program:	example_program.c my_printf.c
 	${CROSS_PREFIX}-gcc -mv8 -Os -DMAIN=main -o $@ $^ -lsmall
