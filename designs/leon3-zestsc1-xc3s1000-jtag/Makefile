@@ -29,4 +29,5 @@ include $(GRLIB)/software/leon3/Makefile
 
 
 ##################  project specific targets ##########################
-
+burn:	TheBigLeonski.bit
+	 xc3sprog -c jtaghs2 -v $<
