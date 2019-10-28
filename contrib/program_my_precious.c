@@ -1,29 +1,19 @@
-//////////////////////////////////////////////////////////////////////
+// This programs the FPGA with our LEON3 bitfile.
 //
-// File:      Example1.c
+// It is only necessary if ZestSC1 is programmed over USB; if JTAG is used,
+// this program is not necessary.
 //
-// Purpose:
-//    ZestSC1 Example Programs
-//    Simple card open/configure/close example
-//  
-// Copyright (c) 2004-2011 Orange Tree Technologies.
-// May not be reproduced without permission.
-//
-//////////////////////////////////////////////////////////////////////
+// In the 1st working version (ZestSC1 / USB-TTL / DSU-UART), this performed
+// one more task: it allowed the reset of the LEON3 after writing to a specific
+// address.  This is no longer necessary, since the introduction of a simple
+// state machine that resets the LEON3 in the first second (see reset_once
+// signal inside TheBigLeonski.vhd for details) 
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 #include "ZestSC1.h"
-
-//
-// Declare configuration images
-//
-extern unsigned long Image400Length;
-extern unsigned long Image400Image[];
-extern unsigned long Image1000Length;
-extern unsigned long Image1000Image[];
 
 //
 // Error handler function
@@ -35,7 +25,7 @@ void ErrorHandler(const char *Function,
 {
     (void) Handle;
     (void) Status;
-    printf("**** Example1 - Function %s returned an error\n        \"%s\"\n\n", Function, Msg);
+    printf("**** Function %s returned an error\n        \"%s\"\n\n", Function, Msg);
     exit(1);
 }
 
