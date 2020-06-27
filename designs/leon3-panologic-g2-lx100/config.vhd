@@ -29,7 +29,7 @@ package config is
   -- my design can easily reach this speed.
   --
   -- 25*5/5 = 25
-  constant CFG_CLKMUL : integer := (10);
+  constant CFG_CLKMUL : integer := (14);
   constant CFG_CLKDIV : integer := (5);
   constant CFG_OCLKDIV : integer := 1;
   constant CFG_OCLKBDIV : integer := 0;
