@@ -117,7 +117,7 @@ architecture rtl of leon3mp is
    
    -- my ZestSC1 board's frequency in KHz
    constant BOARD_FREQ : integer := 48000;
-   -- cpu frequency in KHz will be 34000 - as per my S/P/R results,
+   -- cpu frequency in KHz will be 44000 - as per my S/P/R results,
    -- my design can easily reach this speed.
    constant CPU_FREQ : integer := BOARD_FREQ * CFG_CLKMUL / CFG_CLKDIV;
    constant IOAEN : integer := 0;
@@ -127,8 +127,8 @@ architecture rtl of leon3mp is
    attribute syn_preserve : boolean;
    
   -- A "heartbeat" LED for the DSU - I used it to make sure the
-  -- locally instantiated clock here beats indeed at 34MHz
-  -- (search below for 34000000 to see the logic)
+  -- locally instantiated clock here beats indeed at 44MHz
+  -- (search below for 44000000 to see the logic)
   signal counter_dsu : integer := 0;
   signal heartbeat_led_dsu : std_logic := '1';
 begin
@@ -204,12 +204,12 @@ begin
   -- To verify that the clock shenanigans actually work on my board,
   -- I hooked this up to LED6 (i.e. the 2nd from the right) and
   -- confirmed that the clock driving the LEON3 and the DSU and all
-  -- the rest is indeed a 34MHz clock.
+  -- the rest is indeed a 44MHz clock.
   process(clkm)
   begin
       if rising_edge(clkm) then
         counter_dsu <= counter_dsu + 1;
-        if counter_dsu = 34000000 then
+        if counter_dsu = 44000000 then
             counter_dsu <= 0;
             IO(45) <= heartbeat_led_dsu;
             heartbeat_led_dsu <= not heartbeat_led_dsu;

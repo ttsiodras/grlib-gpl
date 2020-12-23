@@ -25,12 +25,12 @@ package config is
 -- Clock generator
   constant CFG_CLKTECH : integer := spartan3;
 
-  -- cpu frequency in KHz will be 34000 - as per my S/P/R results,
-  -- my design can easily reach this speed.
+  -- cpu frequency in KHz will be 44000 - as per my S/P/R results,
+  -- my design can reach this speed.
   --
-  -- 48*5/7 ~= 34
-  constant CFG_CLKMUL : integer := (8);
-  constant CFG_CLKDIV : integer := (9);
+  -- 48*11/12 = 44
+  constant CFG_CLKMUL : integer := (11);
+  constant CFG_CLKDIV : integer := (12);
   constant CFG_OCLKDIV : integer := 1;
   constant CFG_OCLKBDIV : integer := 0;
   constant CFG_OCLKCDIV : integer := 0;
