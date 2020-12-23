@@ -29,7 +29,7 @@ package config is
   -- my design can easily reach this speed.
   --
   -- 48*5/7 ~= 34
-  constant CFG_CLKMUL : integer := (7);
+  constant CFG_CLKMUL : integer := (8);
   constant CFG_CLKDIV : integer := (9);
   constant CFG_OCLKDIV : integer := 1;
   constant CFG_OCLKBDIV : integer := 0;
