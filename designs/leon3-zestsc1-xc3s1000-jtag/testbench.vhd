@@ -116,11 +116,12 @@ begin
 
     wait for 5000 ns;
 
-    jtagcom(tdo, tck, tms, tdi, 100, 20, 16#40000000#, true);
-    wait for 990000 ns;
+    -- jtagcom(tdo, tck, tms, tdi, 100, 20, 16#40000000#, true);
+    -- wait for 990000 ns;
 
-    write(l, String'("JTAG Test completed."));
+    write(l, String'("Test completed."));
     writeline(output, l);
+    assert false report "Reached end of test" severity failure;
     wait;
    end process;
 

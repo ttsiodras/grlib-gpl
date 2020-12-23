@@ -1,8 +1,10 @@
-all:	scriptgendone
+all:	scriptgendone testbench
 
 scriptgendone:
 	make distclean
 	make install-unisim XILINX=$$HOME/Xilinx/14.7/ISE_DS/ISE
+
+testbench:
 	GHDL_BACKEND=gcc make ghdl-run
 
 fast:
