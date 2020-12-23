@@ -37,7 +37,7 @@ dhrystone-small:	dhrystone.c my_printf.c | _udivdi3.o
 	$(MAKE) dhrystone-common
 
 dhrystone-run:	dhrystone
-	bash -c '/opt/grmon-eval-3.2.3/linux/bin64/grmon -u -xilusb -c <(echo -e "load dhrystone\nrun\nquit\n")'
+	bash -c '/opt/grmon-eval-3.2.10/linux/bin64/grmon -u -xilusb -c <(echo -e "load dhrystone\nrun\nquit\n")'
 
 example_program:	example_program.c my_printf.c
 	${CROSS_PREFIX}-gcc -mv8 -Os -DMAIN=main -o $@ $^ -lsmall
@@ -51,7 +51,7 @@ mand:	mand.c
 	${CROSS_PREFIX}-size $@
 
 mand-run:	mand
-	bash -c '/opt/grmon-eval-3.2.3/linux/bin64/grmon -u -xilusb -c <(echo -e "load mand\nrun\nquit\n")'
+	bash -c '/opt/grmon-eval-3.2.10/linux/bin64/grmon -u -xilusb -c <(echo -e "load mand\nrun\nquit\n")'
 
 %.o:	%.c
 	${CC} -c ${CFLAGS} -o $@ $<
